@@ -6,11 +6,11 @@
 //  Copyright © 2018年 XM. All rights reserved.
 //
 
-// 开放平台App信息，需要在雄迈开放平台上面创建APP来生成，每一个APP对应一组不同并且唯一的平台信息，不能重复
-#define UUID "xmeye"
-#define APPKEY "c40bdad0cfd24668a66d0a9e880eff92"
-#define APPSECRET "5f3259ae9a954ac78988d21be6c2acf7"
-#define MOVECARD 3
+// 开放平台App信息，需要在开放平台上面创建APP来生成，每一个APP对应一组不同并且唯一的平台信息，不能重复
+#define UUID "jufeng"   //客户唯一标识
+#define APPKEY "a16ea8f9d5164d1d830e8dbc66a71e24"   //APP唯一标识
+#define APPSECRET "672f645441b14a259356d027a6b8853f"   //内容保护参数
+#define MOVECARD 5   //内容保护参数
 
 #import "SDKInitializeModel.h"
 #import "FunSDK/FunSDK.h"

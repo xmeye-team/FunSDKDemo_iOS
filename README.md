@@ -2,7 +2,7 @@
 FunSDK(手机客户端SDK)Demo for iOS
 
  声明： 开发环境：Macos：10.13.6     Xcode：9.4.1 
- 第一次使用FunSDKDemo之前，请先登录雄迈开放平台，http://docs-open.xmeye.net/#/， 并仔细阅读新手指南和各项说明。 
+ 第一次使用FunSDKDemo之前，请先登录雄迈开放平台，http://docs-open.xmeye.net/#/  并仔细阅读新手指南和各项说明。 
 	
 	1、GitHub下载的代码，supporting/library文件夹中FunSDK.Framework可能是错误的，可以去开放平台上面下载最新的FunSDK.Framework来替换。  
     下载地址：http://docs-open.xmeye.net/#/downloadcenter/downloadcenter-FunSDKdowmload 或 https://open.xmeye.net。

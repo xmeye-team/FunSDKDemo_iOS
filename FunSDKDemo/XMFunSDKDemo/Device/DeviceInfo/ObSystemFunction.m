@@ -19,6 +19,7 @@
         _SupportIntelligentPlayBack = NO;
         _SupportSetDigIP = NO;
         _IPConsumer433Alarm = NO;
+        _SupportSmartH264 = NO;
     }
     return self;
 }

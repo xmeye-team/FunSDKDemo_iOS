@@ -21,5 +21,6 @@
 @property (nonatomic) BOOL SupportIntelligentPlayBack;//是否支持智能快放
 @property (nonatomic) BOOL SupportSetDigIP;//是否支持修改前端IP
 @property (nonatomic) BOOL IPConsumer433Alarm;//是否支持433报警
+@property (nonatomic) BOOL SupportSmartH264;//是否支持h264+
 
 @end

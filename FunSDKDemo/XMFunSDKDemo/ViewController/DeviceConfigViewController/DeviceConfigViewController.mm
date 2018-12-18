@@ -21,6 +21,8 @@
 #import "DeviceConfigViewController.h"
 #import "SystemInfoConfig.h"
 #import "AlarmMessageViewController.h"  //推送消息
+#import "EncodingFormatViewController.h"  //编码格式设置
+#import "SystemFunctionConfig.h"
 
 @interface DeviceConfigViewController ()<UITableViewDelegate,UITableViewDataSource,SystemInfoConfigDelegate>
 
@@ -29,6 +31,8 @@
 @property (nonatomic, strong) NSArray *configTitleArray;
 
 @property (nonatomic, strong) SystemInfoConfig * config;
+
+@property (nonatomic, strong) SystemFunctionConfig * functionConfig;
 
 @end
 
@@ -58,8 +62,22 @@
     //配置子视图
     [self configSubView];
     
+    //获取设备能力级SystemFunction
+    [self getSystemFunction];
+    
     //获取设备信息systeminfo
     [self getSysteminfo];
+  
+}
+
+//获取设备能力级SystemFunction
+- (void)getSystemFunction{
+    if (!_functionConfig) {
+        _functionConfig = [[SystemFunctionConfig alloc] init];
+    }
+    //获取通道
+    ChannelObject *channel = [[DeviceControl getInstance] getSelectChannel];
+    [_functionConfig getSystemFunction:channel.deviceMac];
 }
 //编码配置需要知道设备的模拟通道数量，所以在编码配置前需要获取一下
 - (void)getSysteminfo {
@@ -146,6 +164,15 @@
         AlarmMessageViewController *alarmMessageVC = [[AlarmMessageViewController alloc] initWithNibName:nil bundle:nil];
         [self.navigationController pushViewController:alarmMessageVC animated:NO];
         
+    }else if ([titleStr isEqualToString:TS("Encoding_format")]){
+        ChannelObject *channel = [[DeviceControl getInstance] getSelectChannel];
+        DeviceObject *object  = [[DeviceControl getInstance] GetDeviceObjectBySN:channel.deviceMac];
+        if(object.sysFunction.SupportSmartH264 == NO){
+            [SVProgressHUD showErrorWithStatus:TS("EE_MNETSDK_NOTSUPPORT")];
+            return;
+        }
+        EncodingFormatViewController *formatVC = [[EncodingFormatViewController alloc] init];
+        [self.navigationController pushViewController:formatVC animated:NO];
     }else{
         return;
     }
@@ -175,6 +202,7 @@
                               @{@"title":TS("Equipment_Update"),@"detailInfo":@""},
                               @{@"title":@"GB配置",@"detailInfo":@""},
                               @{@"title":@"Json和DevCmd调试",@"detailInfo":@""},
-                              @{@"title":@"鱼眼信息",@"detailInfo":@""}];
+                              @{@"title":@"鱼眼信息",@"detailInfo":@""},
+                              @{@"title":TS("Encoding_format"),@"detailInfo":@""}];
 }
 @end

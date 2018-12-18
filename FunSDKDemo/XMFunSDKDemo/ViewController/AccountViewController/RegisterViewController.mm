@@ -193,7 +193,7 @@
     }else{
         if(reslut != EE_AS_PHONE_CODE2 && reslut!= EE_AS_REGISTE_BY_EMAIL_CODE5){
             registerView.jumpBtn.hidden = NO;
-            [SVProgressHUD showSuccessWithStatus:TS("获取失败")];
+            [SVProgressHUD showSuccessWithStatus:TS("EE_AS_SYS_GET_USER_INFO_CODE4")];
         }
       
     }

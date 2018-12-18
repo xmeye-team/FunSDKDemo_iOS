@@ -659,3 +659,4 @@ factory_settings_success=Restore factory settings successfully
 factory_settings_failed=Restore factory settings failed
 Alarm_message_push=Alarm push
 Alarm_picture=Alarm picture
+Encoding_format=Encoding format

@@ -659,3 +659,4 @@ factory_settings_success=恢复出厂设置成功
 factory_settings_failed=恢复出厂设置失败
 Alarm_message_push=消息推送
 Alarm_picture=报警图片
+Encoding_format=编码格式

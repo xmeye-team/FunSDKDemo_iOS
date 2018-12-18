@@ -209,7 +209,7 @@
 {
     [SVProgressHUD dismiss];
     if (reslut >= 0) {
-        [SVProgressHUD showSuccessWithStatus:TS("设置成功")];
+        [SVProgressHUD showSuccessWithStatus:TS("Success")];
     }
     else{
          [MessageUI ShowErrorInt:(int)reslut];

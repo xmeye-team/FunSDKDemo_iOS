@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2939951321CA1BE2004FC87C /* WaterMarkViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2939951221CA1BE2004FC87C /* WaterMarkViewController.mm */; };
+		2939951B21CA2504004FC87C /* WaterMarkConfig.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2939951A21CA2504004FC87C /* WaterMarkConfig.mm */; };
 		2943D9A821C745B100073507 /* FunSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2943D9A721C745B100073507 /* FunSDK.framework */; };
 		2943D9B121C77F6F00073507 /* EncodingFormatViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2943D9B021C77F6F00073507 /* EncodingFormatViewController.mm */; };
 		5C78C27D1F53F0E5003CC286 /* libc.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C78C27B1F53EEA4003CC286 /* libc.tbd */; };
@@ -297,6 +299,15 @@
 
 /* Begin PBXFileReference section */
 		291E429E21A3A1F8009A73BE /* FunSDKDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FunSDKDemo.entitlements; sourceTree = "<group>"; };
+		2939951121CA1BE2004FC87C /* WaterMarkViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WaterMarkViewController.h; sourceTree = "<group>"; };
+		2939951221CA1BE2004FC87C /* WaterMarkViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = WaterMarkViewController.mm; sourceTree = "<group>"; };
+		2939951521CA23A0004FC87C /* fVideo_OsdLogo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fVideo_OsdLogo.h; sourceTree = "<group>"; };
+		2939951621CA241E004FC87C /* AVEnc_VideoWidget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVEnc_VideoWidget.h; sourceTree = "<group>"; };
+		2939951921CA2504004FC87C /* WaterMarkConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WaterMarkConfig.h; sourceTree = "<group>"; };
+		2939951A21CA2504004FC87C /* WaterMarkConfig.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = WaterMarkConfig.mm; sourceTree = "<group>"; };
+		2939951C21CA6407004FC87C /* ChannelTitle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChannelTitle.h; sourceTree = "<group>"; };
+		2939951D21CA6408004FC87C /* ChannelTitleAttribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChannelTitleAttribute.h; sourceTree = "<group>"; };
+		2939951E21CA642B004FC87C /* TimeTitleAttribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeTitleAttribute.h; sourceTree = "<group>"; };
 		2943D9A721C745B100073507 /* FunSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FunSDK.framework; sourceTree = "<group>"; };
 		2943D9AF21C77F6F00073507 /* EncodingFormatViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EncodingFormatViewController.h; sourceTree = "<group>"; };
 		2943D9B021C77F6F00073507 /* EncodingFormatViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = EncodingFormatViewController.mm; sourceTree = "<group>"; };
@@ -861,6 +872,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2939951021CA1BBA004FC87C /* WaterMarkViewController */ = {
+			isa = PBXGroup;
+			children = (
+				2939951121CA1BE2004FC87C /* WaterMarkViewController.h */,
+				2939951221CA1BE2004FC87C /* WaterMarkViewController.mm */,
+			);
+			path = WaterMarkViewController;
+			sourceTree = "<group>";
+		};
+		2939951421CA2372004FC87C /* WaterMark */ = {
+			isa = PBXGroup;
+			children = (
+				2939951521CA23A0004FC87C /* fVideo_OsdLogo.h */,
+				2939951621CA241E004FC87C /* AVEnc_VideoWidget.h */,
+				2939951C21CA6407004FC87C /* ChannelTitle.h */,
+				2939951D21CA6408004FC87C /* ChannelTitleAttribute.h */,
+				2939951E21CA642B004FC87C /* TimeTitleAttribute.h */,
+			);
+			path = WaterMark;
+			sourceTree = "<group>";
+		};
+		2939951821CA24DB004FC87C /* WaterMarkConfig */ = {
+			isa = PBXGroup;
+			children = (
+				2939951921CA2504004FC87C /* WaterMarkConfig.h */,
+				2939951A21CA2504004FC87C /* WaterMarkConfig.mm */,
+			);
+			path = WaterMarkConfig;
+			sourceTree = "<group>";
+		};
 		2943D9AE21C77F1900073507 /* EncodingFormatViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -1128,6 +1169,7 @@
 				96C6B2E821BB6867000B32E7 /* SystemResetConfig */,
 				96C6B2EB21BB6867000B32E7 /* TimeConfig */,
 				96C6B2F021BB6867000B32E7 /* UpgradeConfig */,
+				2939951821CA24DB004FC87C /* WaterMarkConfig */,
 				96C6B2F521BB6867000B32E7 /* VideoRotationConfig */,
 			);
 			path = DeviceConfigManager;
@@ -1354,6 +1396,7 @@
 		96C6B3AA21BB6868000B32E7 /* JsonHeader */ = {
 			isa = PBXGroup;
 			children = (
+				2939951421CA2372004FC87C /* WaterMark */,
 				96C6B3AB21BB6868000B32E7 /* AlarmDetect */,
 				96C6B3B021BB6868000B32E7 /* Capability */,
 				96C6B3BB21BB6868000B32E7 /* CarPark */,
@@ -1666,6 +1709,7 @@
 				96C6B47721BB6868000B32E7 /* TimeSynViewController */,
 				96C6B47A21BB6868000B32E7 /* UpgradeDeviceViewController */,
 				2943D9AE21C77F1900073507 /* EncodingFormatViewController */,
+				2939951021CA1BBA004FC87C /* WaterMarkViewController */,
 				96C6B44321BB6868000B32E7 /* DeviceconfigTableViewCell.h */,
 				96C6B44421BB6868000B32E7 /* DeviceconfigTableViewCell.m */,
 				96C6B46421BB6868000B32E7 /* ItemTableviewCell.h */,
@@ -2436,6 +2480,7 @@
 				96C6B4FF21BB6869000B32E7 /* SystemFunctionConfig.mm in Sources */,
 				96C6B5CC21BB6869000B32E7 /* PlayView.m in Sources */,
 				96C6B4E221BB6869000B32E7 /* NSUserDefaultData.m in Sources */,
+				2939951B21CA2504004FC87C /* WaterMarkConfig.mm in Sources */,
 				96C6B58221BB6869000B32E7 /* UserInfoCell.m in Sources */,
 				96C6B5A021BB6869000B32E7 /* AlarmDetectViewController.mm in Sources */,
 				96C6B4DC21BB6869000B32E7 /* GTMNSString+HTML.m in Sources */,
@@ -2483,6 +2528,7 @@
 				96C6B4D921BB6869000B32E7 /* LoginShowControl.m in Sources */,
 				96C6B5A421BB6869000B32E7 /* DeviceConfigViewController.mm in Sources */,
 				2943D9B121C77F6F00073507 /* EncodingFormatViewController.mm in Sources */,
+				2939951321CA1BE2004FC87C /* WaterMarkViewController.mm in Sources */,
 				96C6B58421BB6869000B32E7 /* ChangePasswordView.m in Sources */,
 				96C6B4FE21BB6869000B32E7 /* StorageConfig.mm in Sources */,
 				96C6B59B21BB6869000B32E7 /* SerialNumAddViewController.mm in Sources */,

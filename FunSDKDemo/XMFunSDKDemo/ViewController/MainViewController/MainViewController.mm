@@ -91,7 +91,7 @@
     }
     if ([title isEqualToString:TS("About_Device")]) {
         //如果是直连状态，不支持添加设备
-        if ([[LoginShowControl getInstance] getLoginType]) {
+        if ([[LoginShowControl getInstance] getLoginType] == loginTypeAP) {
             UIAlertController *alert = [UIAlertController alertControllerWithTitle:TS("Error_Prompt") message:TS("not_support_add_device") preferredStyle:UIAlertControllerStyleAlert];
             UIAlertAction *okAction = [UIAlertAction actionWithTitle:TS("OK") style:UIAlertActionStyleCancel handler:nil];
             [alert addAction:okAction];

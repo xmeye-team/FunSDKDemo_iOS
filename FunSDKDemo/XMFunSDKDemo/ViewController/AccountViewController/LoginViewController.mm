@@ -73,6 +73,19 @@
     [SVProgressHUD showWithMaskType:SVProgressHUDMaskTypeBlack];
     [accountModel loginWithTypeLocal];
 }
+//ap直连
+- (IBAction)apLogin:(id)sender {
+    //判断当前网络是否为ap直连
+    if (![NSString checkSSID:[NSString getCurrent_SSID]]) {
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:TS("Error_Prompt") message:TS("check_wifi_setting") preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *okAction = [UIAlertAction actionWithTitle:TS("OK") style:UIAlertActionStyleCancel handler:nil];
+        [alert addAction:okAction];
+        [self presentViewController:alert animated:YES completion:nil];
+        return;
+    }
+    [SVProgressHUD showWithMaskType:SVProgressHUDMaskTypeBlack];
+    [accountModel loginWithTypeAP];
+}
 
 #pragma mark 登录结果回调,result 结果信息，一般<0是失败，>=0是成功
 - (void)loginWithNameDelegate:(long)reslut {

@@ -90,6 +90,14 @@
         [self.navigationController pushViewController:accountVC animated:YES];
     }
     if ([title isEqualToString:TS("About_Device")]) {
+        //如果是直连状态，不支持添加设备
+        if ([[LoginShowControl getInstance] getLoginType]) {
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:TS("Error_Prompt") message:TS("not_support_add_device") preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction *okAction = [UIAlertAction actionWithTitle:TS("OK") style:UIAlertActionStyleCancel handler:nil];
+            [alert addAction:okAction];
+            [self presentViewController:alert animated:YES completion:nil];
+            return;
+        }
         //添加设备控制器，包括序列号添加设备、IP域名添加设备、Wi-Fi快速配置添加设备、局域网搜索添加设备等
         DeviceAddViewController *deviceAddVC = [[DeviceAddViewController alloc] initWithNibName:nil bundle:nil];
         [self.navigationController pushViewController:deviceAddVC animated:YES];

@@ -63,6 +63,9 @@
 #pragma mark 本地登陆   local login
 - (void)loginWithTypeLocal;
 
+#pragma mark ap直连  ap login
+- (void)loginWithTypeAP;
+
 #pragma mark 登出  login out
 - (void)loginOut;
 

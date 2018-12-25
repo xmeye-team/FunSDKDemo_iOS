@@ -665,3 +665,6 @@ Watermark_text=自定义水印文字
 enter_custom_watermark=请输入自定义水印文字
 Watermark_setting=水印设置
 Osd_Watermark_switch=官方水印开关
+Error_Prompt=错误提示
+check_wifi_setting=请检查你的WIFI设置，确保你已经连接上AP设备.
+not_support_add_device=ap模式不支持添加设备

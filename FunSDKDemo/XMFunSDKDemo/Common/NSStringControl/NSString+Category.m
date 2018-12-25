@@ -134,7 +134,7 @@
 + (BOOL)checkSSID:(NSString*)ssid {
     if ([ssid hasPrefix:@"robot_"] || [ssid hasPrefix:@"card"]|| [ssid hasPrefix:@"car_"]
         || [ssid hasPrefix:@"seye_"] ||[ssid hasPrefix:@"NVR"]|| [ssid hasPrefix:@"DVR"]
-        || [ssid hasPrefix:@"beye_"] ||[ssid hasPrefix:@"IPC"]|| [ssid hasPrefix:@"Car_"] || [ssid hasPrefix:@"BOB_"] || [ssid hasPrefix:@"xmjp_"] || [ssid hasPrefix:@"UTEC"])
+        || [ssid hasPrefix:@"beye_"] ||[ssid hasPrefix:@"IPC"]|| [ssid hasPrefix:@"Car_"] || [ssid hasPrefix:@"BOB_"] || [ssid hasPrefix:@"xmjp_"] || [ssid hasPrefix:@"UTEC"] || [ssid hasPrefix:@"camera_"])
     {
         return YES;
     }else{

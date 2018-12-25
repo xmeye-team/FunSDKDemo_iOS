@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2939951321CA1BE2004FC87C /* WaterMarkViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2939951221CA1BE2004FC87C /* WaterMarkViewController.mm */; };
+		2939951B21CA2504004FC87C /* WaterMarkConfig.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2939951A21CA2504004FC87C /* WaterMarkConfig.mm */; };
 		2943D9A821C745B100073507 /* FunSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2943D9A721C745B100073507 /* FunSDK.framework */; };
 		2943D9B121C77F6F00073507 /* EncodingFormatViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2943D9B021C77F6F00073507 /* EncodingFormatViewController.mm */; };
 		5C78C27D1F53F0E5003CC286 /* libc.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C78C27B1F53EEA4003CC286 /* libc.tbd */; };
@@ -41,6 +43,9 @@
 		964B892B1D766A82003FA9AD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82214340198F0FAC009AEEB3 /* UIKit.framework */; };
 		964B892C1D766A82003FA9AD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8221433C198F0FAC009AEEB3 /* Foundation.framework */; };
 		9651367E21B1158200430F26 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9651367D21B1158100430F26 /* AVKit.framework */; };
+		96A0FFFB21CDCCBD00D3F459 /* AnalyzeConfig.mm in Sources */ = {isa = PBXBuildFile; fileRef = 96A0FFFA21CDCCBD00D3F459 /* AnalyzeConfig.mm */; };
+		96B8A8FB21CE1C9D00206580 /* AnalyzeDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 96B8A8FA21CE1C9D00206580 /* AnalyzeDataSource.m */; };
+		96B8A90321CE256400206580 /* AnalyzerViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 96B8A90221CE256400206580 /* AnalyzerViewController.mm */; };
 		96C6B4D121BB6869000B32E7 /* AlarmManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = 96C6B26E21BB6867000B32E7 /* AlarmManager.mm */; };
 		96C6B4D221BB6869000B32E7 /* DeviceManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = 96C6B27121BB6867000B32E7 /* DeviceManager.mm */; };
 		96C6B4D321BB6869000B32E7 /* UserAccountModel.mm in Sources */ = {isa = PBXBuildFile; fileRef = 96C6B27421BB6867000B32E7 /* UserAccountModel.mm */; };
@@ -297,6 +302,15 @@
 
 /* Begin PBXFileReference section */
 		291E429E21A3A1F8009A73BE /* FunSDKDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FunSDKDemo.entitlements; sourceTree = "<group>"; };
+		2939951121CA1BE2004FC87C /* WaterMarkViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WaterMarkViewController.h; sourceTree = "<group>"; };
+		2939951221CA1BE2004FC87C /* WaterMarkViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = WaterMarkViewController.mm; sourceTree = "<group>"; };
+		2939951521CA23A0004FC87C /* fVideo_OsdLogo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fVideo_OsdLogo.h; sourceTree = "<group>"; };
+		2939951621CA241E004FC87C /* AVEnc_VideoWidget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVEnc_VideoWidget.h; sourceTree = "<group>"; };
+		2939951921CA2504004FC87C /* WaterMarkConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WaterMarkConfig.h; sourceTree = "<group>"; };
+		2939951A21CA2504004FC87C /* WaterMarkConfig.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = WaterMarkConfig.mm; sourceTree = "<group>"; };
+		2939951C21CA6407004FC87C /* ChannelTitle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChannelTitle.h; sourceTree = "<group>"; };
+		2939951D21CA6408004FC87C /* ChannelTitleAttribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChannelTitleAttribute.h; sourceTree = "<group>"; };
+		2939951E21CA642B004FC87C /* TimeTitleAttribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeTitleAttribute.h; sourceTree = "<group>"; };
 		2943D9A721C745B100073507 /* FunSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FunSDK.framework; sourceTree = "<group>"; };
 		2943D9AF21C77F6F00073507 /* EncodingFormatViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EncodingFormatViewController.h; sourceTree = "<group>"; };
 		2943D9B021C77F6F00073507 /* EncodingFormatViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = EncodingFormatViewController.mm; sourceTree = "<group>"; };
@@ -326,8 +340,40 @@
 		9651367D21B1158100430F26 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
 		969B224A1A0865AC007BAE95 /* libbz2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libbz2.dylib; path = usr/lib/libbz2.dylib; sourceTree = SDKROOT; };
 		969B224C1A0897BE007BAE95 /* libz.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.dylib; path = usr/lib/libz.1.dylib; sourceTree = SDKROOT; };
+		96A0FFF921CDCCBD00D3F459 /* AnalyzeConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AnalyzeConfig.h; sourceTree = "<group>"; };
+		96A0FFFA21CDCCBD00D3F459 /* AnalyzeConfig.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AnalyzeConfig.mm; sourceTree = "<group>"; };
 		96AD70B31B9D6A0800DD26AC /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		96B003E51A527AEC00B4EAC2 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		96B8A8DF21CE14EC00206580 /* AbandumRule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbandumRule.h; sourceTree = "<group>"; };
+		96B8A8E021CE14EC00206580 /* AVDRule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVDRule.h; sourceTree = "<group>"; };
+		96B8A8E121CE14EC00206580 /* Boundary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Boundary.h; sourceTree = "<group>"; };
+		96B8A8E221CE14EC00206580 /* CPCRule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPCRule.h; sourceTree = "<group>"; };
+		96B8A8E321CE14EC00206580 /* Detect_Analyze.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Detect_Analyze.h; sourceTree = "<group>"; };
+		96B8A8E421CE14EC00206580 /* EndPt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EndPt.h; sourceTree = "<group>"; };
+		96B8A8E521CE14EC00206580 /* EventHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventHandler.h; sourceTree = "<group>"; };
+		96B8A8E621CE14EC00206580 /* Limit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Limit.h; sourceTree = "<group>"; };
+		96B8A8E721CE14EC00206580 /* LimitPara.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LimitPara.h; sourceTree = "<group>"; };
+		96B8A8E821CE14EC00206580 /* Line.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Line.h; sourceTree = "<group>"; };
+		96B8A8E921CE14EC00206580 /* NoParkingRule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoParkingRule.h; sourceTree = "<group>"; };
+		96B8A8EA21CE14EC00206580 /* OscPara.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OscPara.h; sourceTree = "<group>"; };
+		96B8A8EB21CE14EC00206580 /* OscRg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OscRg.h; sourceTree = "<group>"; };
+		96B8A8EC21CE14EC00206580 /* OSCRule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSCRule.h; sourceTree = "<group>"; };
+		96B8A8ED21CE14EC00206580 /* PEARule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PEARule.h; sourceTree = "<group>"; };
+		96B8A8EE21CE14EC00206580 /* PerimeterRule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PerimeterRule.h; sourceTree = "<group>"; };
+		96B8A8EF21CE14EC00206580 /* Points.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Points.h; sourceTree = "<group>"; };
+		96B8A8F021CE14EC00206580 /* RuleConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RuleConfig.h; sourceTree = "<group>"; };
+		96B8A8F121CE14EC00206580 /* SpclRgs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpclRgs.h; sourceTree = "<group>"; };
+		96B8A8F221CE14EC00206580 /* StartPt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartPt.h; sourceTree = "<group>"; };
+		96B8A8F321CE14EC00206580 /* StolenRule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StolenRule.h; sourceTree = "<group>"; };
+		96B8A8F421CE14EC00206580 /* SubRgA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubRgA.h; sourceTree = "<group>"; };
+		96B8A8F521CE14EC00206580 /* SubRgB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubRgB.h; sourceTree = "<group>"; };
+		96B8A8F621CE14EC00206580 /* SubRgC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubRgC.h; sourceTree = "<group>"; };
+		96B8A8F721CE14EC00206580 /* TripWire.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TripWire.h; sourceTree = "<group>"; };
+		96B8A8F821CE14EC00206580 /* TripWireRule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TripWireRule.h; sourceTree = "<group>"; };
+		96B8A8F921CE1C9D00206580 /* AnalyzeDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalyzeDataSource.h; sourceTree = "<group>"; };
+		96B8A8FA21CE1C9D00206580 /* AnalyzeDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalyzeDataSource.m; sourceTree = "<group>"; };
+		96B8A90121CE256400206580 /* AnalyzerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalyzerViewController.h; sourceTree = "<group>"; };
+		96B8A90221CE256400206580 /* AnalyzerViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AnalyzerViewController.mm; sourceTree = "<group>"; };
 		96C332081A81ED270079DFA2 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		96C6B26D21BB6867000B32E7 /* AlarmManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlarmManager.h; sourceTree = "<group>"; };
 		96C6B26E21BB6867000B32E7 /* AlarmManager.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AlarmManager.mm; sourceTree = "<group>"; };
@@ -452,7 +498,6 @@
 		96C6B3AC21BB6868000B32E7 /* Detect_BlindDetect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Detect_BlindDetect.h; sourceTree = "<group>"; };
 		96C6B3AD21BB6868000B32E7 /* Detect_LossDetect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Detect_LossDetect.h; sourceTree = "<group>"; };
 		96C6B3AE21BB6868000B32E7 /* Detect_MotionDetect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Detect_MotionDetect.h; sourceTree = "<group>"; };
-		96C6B3AF21BB6868000B32E7 /* EventHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventHandler.h; sourceTree = "<group>"; };
 		96C6B3B121BB6868000B32E7 /* AlarmFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlarmFunction.h; sourceTree = "<group>"; };
 		96C6B3B221BB6868000B32E7 /* CommFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommFunction.h; sourceTree = "<group>"; };
 		96C6B3B321BB6868000B32E7 /* EncodeFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EncodeFunction.h; sourceTree = "<group>"; };
@@ -861,6 +906,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2939951021CA1BBA004FC87C /* WaterMarkViewController */ = {
+			isa = PBXGroup;
+			children = (
+				2939951121CA1BE2004FC87C /* WaterMarkViewController.h */,
+				2939951221CA1BE2004FC87C /* WaterMarkViewController.mm */,
+			);
+			path = WaterMarkViewController;
+			sourceTree = "<group>";
+		};
+		2939951421CA2372004FC87C /* WaterMark */ = {
+			isa = PBXGroup;
+			children = (
+				2939951521CA23A0004FC87C /* fVideo_OsdLogo.h */,
+				2939951621CA241E004FC87C /* AVEnc_VideoWidget.h */,
+				2939951C21CA6407004FC87C /* ChannelTitle.h */,
+				2939951D21CA6408004FC87C /* ChannelTitleAttribute.h */,
+				2939951E21CA642B004FC87C /* TimeTitleAttribute.h */,
+			);
+			path = WaterMark;
+			sourceTree = "<group>";
+		};
+		2939951821CA24DB004FC87C /* WaterMarkConfig */ = {
+			isa = PBXGroup;
+			children = (
+				2939951921CA2504004FC87C /* WaterMarkConfig.h */,
+				2939951A21CA2504004FC87C /* WaterMarkConfig.mm */,
+			);
+			path = WaterMarkConfig;
+			sourceTree = "<group>";
+		};
 		2943D9AE21C77F1900073507 /* EncodingFormatViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -929,6 +1004,59 @@
 				82214340198F0FAC009AEEB3 /* UIKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		96A0FFF821CDCC7B00D3F459 /* AnalyzeConfig */ = {
+			isa = PBXGroup;
+			children = (
+				96A0FFF921CDCCBD00D3F459 /* AnalyzeConfig.h */,
+				96A0FFFA21CDCCBD00D3F459 /* AnalyzeConfig.mm */,
+				96B8A8F921CE1C9D00206580 /* AnalyzeDataSource.h */,
+				96B8A8FA21CE1C9D00206580 /* AnalyzeDataSource.m */,
+			);
+			path = AnalyzeConfig;
+			sourceTree = "<group>";
+		};
+		96B8A8DE21CE14EC00206580 /* Analyzer */ = {
+			isa = PBXGroup;
+			children = (
+				96B8A8DF21CE14EC00206580 /* AbandumRule.h */,
+				96B8A8E021CE14EC00206580 /* AVDRule.h */,
+				96B8A8E121CE14EC00206580 /* Boundary.h */,
+				96B8A8E221CE14EC00206580 /* CPCRule.h */,
+				96B8A8E321CE14EC00206580 /* Detect_Analyze.h */,
+				96B8A8E421CE14EC00206580 /* EndPt.h */,
+				96B8A8E521CE14EC00206580 /* EventHandler.h */,
+				96B8A8E621CE14EC00206580 /* Limit.h */,
+				96B8A8E721CE14EC00206580 /* LimitPara.h */,
+				96B8A8E821CE14EC00206580 /* Line.h */,
+				96B8A8E921CE14EC00206580 /* NoParkingRule.h */,
+				96B8A8EA21CE14EC00206580 /* OscPara.h */,
+				96B8A8EB21CE14EC00206580 /* OscRg.h */,
+				96B8A8EC21CE14EC00206580 /* OSCRule.h */,
+				96B8A8ED21CE14EC00206580 /* PEARule.h */,
+				96B8A8EE21CE14EC00206580 /* PerimeterRule.h */,
+				96B8A8EF21CE14EC00206580 /* Points.h */,
+				96B8A8F021CE14EC00206580 /* RuleConfig.h */,
+				96B8A8F121CE14EC00206580 /* SpclRgs.h */,
+				96B8A8F221CE14EC00206580 /* StartPt.h */,
+				96B8A8F321CE14EC00206580 /* StolenRule.h */,
+				96B8A8F421CE14EC00206580 /* SubRgA.h */,
+				96B8A8F521CE14EC00206580 /* SubRgB.h */,
+				96B8A8F621CE14EC00206580 /* SubRgC.h */,
+				96B8A8F721CE14EC00206580 /* TripWire.h */,
+				96B8A8F821CE14EC00206580 /* TripWireRule.h */,
+			);
+			path = Analyzer;
+			sourceTree = "<group>";
+		};
+		96B8A90021CE256400206580 /* AnalyzerViewController */ = {
+			isa = PBXGroup;
+			children = (
+				96B8A90121CE256400206580 /* AnalyzerViewController.h */,
+				96B8A90221CE256400206580 /* AnalyzerViewController.mm */,
+			);
+			path = AnalyzerViewController;
 			sourceTree = "<group>";
 		};
 		96C6B26A21BB6867000B32E7 /* XMFunSDKDemo */ = {
@@ -1115,6 +1243,7 @@
 		96C6B2B021BB6867000B32E7 /* DeviceConfigManager */ = {
 			isa = PBXGroup;
 			children = (
+				96A0FFF821CDCC7B00D3F459 /* AnalyzeConfig */,
 				96C6B2B121BB6867000B32E7 /* AlarmDetectConfig */,
 				96C6B2B421BB6867000B32E7 /* AlarmMessageConfig */,
 				96C6B2B921BB6867000B32E7 /* CommonConfig */,
@@ -1128,6 +1257,7 @@
 				96C6B2E821BB6867000B32E7 /* SystemResetConfig */,
 				96C6B2EB21BB6867000B32E7 /* TimeConfig */,
 				96C6B2F021BB6867000B32E7 /* UpgradeConfig */,
+				2939951821CA24DB004FC87C /* WaterMarkConfig */,
 				96C6B2F521BB6867000B32E7 /* VideoRotationConfig */,
 			);
 			path = DeviceConfigManager;
@@ -1354,6 +1484,11 @@
 		96C6B3AA21BB6868000B32E7 /* JsonHeader */ = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< HEAD
+				96B8A8DE21CE14EC00206580 /* Analyzer */,
+=======
+				2939951421CA2372004FC87C /* WaterMark */,
+>>>>>>> f82c1b454b3e8059be0e5e4cbbe6c207ce8851f6
 				96C6B3AB21BB6868000B32E7 /* AlarmDetect */,
 				96C6B3B021BB6868000B32E7 /* Capability */,
 				96C6B3BB21BB6868000B32E7 /* CarPark */,
@@ -1376,7 +1511,6 @@
 				96C6B3AC21BB6868000B32E7 /* Detect_BlindDetect.h */,
 				96C6B3AD21BB6868000B32E7 /* Detect_LossDetect.h */,
 				96C6B3AE21BB6868000B32E7 /* Detect_MotionDetect.h */,
-				96C6B3AF21BB6868000B32E7 /* EventHandler.h */,
 			);
 			path = AlarmDetect;
 			sourceTree = "<group>";
@@ -1654,6 +1788,7 @@
 			children = (
 				96C6B44521BB6868000B32E7 /* DeviceConfigViewController.h */,
 				96C6B44621BB6868000B32E7 /* DeviceConfigViewController.mm */,
+				96B8A90021CE256400206580 /* AnalyzerViewController */,
 				96C6B43021BB6868000B32E7 /* AboutDeviceViewController */,
 				96C6B43321BB6868000B32E7 /* AlarmMessageViewController */,
 				96C6B43B21BB6868000B32E7 /* AlarmViewController */,
@@ -1666,6 +1801,7 @@
 				96C6B47721BB6868000B32E7 /* TimeSynViewController */,
 				96C6B47A21BB6868000B32E7 /* UpgradeDeviceViewController */,
 				2943D9AE21C77F1900073507 /* EncodingFormatViewController */,
+				2939951021CA1BBA004FC87C /* WaterMarkViewController */,
 				96C6B44321BB6868000B32E7 /* DeviceconfigTableViewCell.h */,
 				96C6B44421BB6868000B32E7 /* DeviceconfigTableViewCell.m */,
 				96C6B46421BB6868000B32E7 /* ItemTableviewCell.h */,
@@ -2401,10 +2537,12 @@
 				96C6B50021BB6869000B32E7 /* SystemInfoConfig.mm in Sources */,
 				96C6B4DA21BB6869000B32E7 /* MessageUI.mm in Sources */,
 				96C6B5B421BB6869000B32E7 /* PasswordView.m in Sources */,
+				96B8A8FB21CE1C9D00206580 /* AnalyzeDataSource.m in Sources */,
 				96C6B58721BB6869000B32E7 /* ForgetPasswordViewController.mm in Sources */,
 				96C6B59921BB6869000B32E7 /* QuickConfigurationViewController.mm in Sources */,
 				96C6B57E21BB6869000B32E7 /* FunMsgListener.mm in Sources */,
 				96C6B4F421BB6869000B32E7 /* TimeInfo.m in Sources */,
+				96A0FFFB21CDCCBD00D3F459 /* AnalyzeConfig.mm in Sources */,
 				96C6B4F221BB6869000B32E7 /* PictureInfo.m in Sources */,
 				96C6B5D021BB6869000B32E7 /* MyProgressView.m in Sources */,
 				96C6B58821BB6869000B32E7 /* LoginViewController.mm in Sources */,
@@ -2436,6 +2574,7 @@
 				96C6B4FF21BB6869000B32E7 /* SystemFunctionConfig.mm in Sources */,
 				96C6B5CC21BB6869000B32E7 /* PlayView.m in Sources */,
 				96C6B4E221BB6869000B32E7 /* NSUserDefaultData.m in Sources */,
+				2939951B21CA2504004FC87C /* WaterMarkConfig.mm in Sources */,
 				96C6B58221BB6869000B32E7 /* UserInfoCell.m in Sources */,
 				96C6B5A021BB6869000B32E7 /* AlarmDetectViewController.mm in Sources */,
 				96C6B4DC21BB6869000B32E7 /* GTMNSString+HTML.m in Sources */,
@@ -2465,6 +2604,7 @@
 				96C6B59C21BB6869000B32E7 /* AboutDeviceViewController.mm in Sources */,
 				96C6B5BB21BB6869000B32E7 /* DeviceListTableViewCell.m in Sources */,
 				96C6B4E021BB6869000B32E7 /* NSString+Extention.m in Sources */,
+				96B8A90321CE256400206580 /* AnalyzerViewController.mm in Sources */,
 				96C6B5D721BB6869000B32E7 /* VRFunctionView.mm in Sources */,
 				96C6B5B021BB6869000B32E7 /* EncodeViewController.mm in Sources */,
 				96C6B4E121BB6869000B32E7 /* NSString+Path.m in Sources */,
@@ -2483,6 +2623,7 @@
 				96C6B4D921BB6869000B32E7 /* LoginShowControl.m in Sources */,
 				96C6B5A421BB6869000B32E7 /* DeviceConfigViewController.mm in Sources */,
 				2943D9B121C77F6F00073507 /* EncodingFormatViewController.mm in Sources */,
+				2939951321CA1BE2004FC87C /* WaterMarkViewController.mm in Sources */,
 				96C6B58421BB6869000B32E7 /* ChangePasswordView.m in Sources */,
 				96C6B4FE21BB6869000B32E7 /* StorageConfig.mm in Sources */,
 				96C6B59B21BB6869000B32E7 /* SerialNumAddViewController.mm in Sources */,

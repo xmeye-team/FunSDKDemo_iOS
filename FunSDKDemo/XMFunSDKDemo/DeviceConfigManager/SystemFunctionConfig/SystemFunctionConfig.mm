@@ -52,7 +52,7 @@
     if ([param.name isEqualToString:[NSString stringWithUTF8String:functionCfg.Name()]]) {
         //是否支持智能分析
         if (functionCfg.mAlarmFunction.VideoAnalyze.Value() == YES) {//老的智能分析
-            object.sysFunction.NewVideoAnalyze = functionCfg.mAlarmFunction.NewVideoAnalyze.Value();
+            object.sysFunction.NewVideoAnalyze = functionCfg.mAlarmFunction.VideoAnalyze.Value();
         }
         if (functionCfg.mAlarmFunction.NewVideoAnalyze.Value() == YES) {//新的智能分析
             object.sysFunction.NewVideoAnalyze = functionCfg.mAlarmFunction.NewVideoAnalyze.Value();

@@ -23,6 +23,7 @@
 #import "AlarmMessageViewController.h"  //推送消息
 #import "EncodingFormatViewController.h"  //编码格式设置
 #import "SystemFunctionConfig.h"
+#import "WaterMarkViewController.h"       //水印设置
 
 @interface DeviceConfigViewController ()<UITableViewDelegate,UITableViewDataSource,SystemInfoConfigDelegate>
 
@@ -173,6 +174,9 @@
         }
         EncodingFormatViewController *formatVC = [[EncodingFormatViewController alloc] init];
         [self.navigationController pushViewController:formatVC animated:NO];
+    }else if([titleStr isEqualToString:TS("水印设置")]){
+        WaterMarkViewController *waterMarkVC = [[WaterMarkViewController alloc] init];
+        [self.navigationController pushViewController:waterMarkVC animated:NO];
     }else{
         return;
     }
@@ -203,6 +207,7 @@
                               @{@"title":@"GB配置",@"detailInfo":@""},
                               @{@"title":@"Json和DevCmd调试",@"detailInfo":@""},
                               @{@"title":@"鱼眼信息",@"detailInfo":@""},
-                              @{@"title":TS("Encoding_format"),@"detailInfo":@""}];
+                              @{@"title":TS("Encoding_format"),@"detailInfo":@""},
+                              @{@"title":TS("Watermark_setting"),@"detailInfo":@""}];
 }
 @end

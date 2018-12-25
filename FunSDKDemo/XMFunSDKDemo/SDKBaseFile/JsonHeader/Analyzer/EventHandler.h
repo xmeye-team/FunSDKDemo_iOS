@@ -1,5 +1,5 @@
 #pragma once
-#include "FunSDK/JObject.h"
+#import "FunSDK/JObject.h"
 
 #define JK_EventHandler "EventHandler" 
 class EventHandler : public JObject
@@ -8,36 +8,36 @@ public:
 	JStrObj		AlarmInfo;
 	JBoolObj		AlarmOutEnable;
 	JIntObj		AlarmOutLatch;
-    JIntHex    AlarmOutMask;
+	JStrObj		AlarmOutMask;
 	JBoolObj		BeepEnable;
 	JIntObj		EventLatch;
 	JBoolObj		FTPEnable;
 	JBoolObj		LogEnable;
 	JBoolObj		MailEnable;
 	JBoolObj		MatrixEnable;
-	JIntHex		MatrixMask;
+	JStrObj		MatrixMask;
 	JBoolObj		MessageEnable;
 	JBoolObj		MsgtoNetEnable;
 	JBoolObj		MultimediaMsgEnable;
 	JBoolObj		PtzEnable;
-	//JObjArray		PtzLink;
+	JObjArray<JObject>		PtzLink;
 	JBoolObj		RecordEnable;
 	JIntObj		RecordLatch;
-	JIntHex		RecordMask;
+	JStrObj		RecordMask;
 	JBoolObj		ShortMsgEnable;
 	JBoolObj		ShowInfo;
-	JIntHex		ShowInfoMask;
+	JStrObj		ShowInfoMask;
 	JBoolObj		SnapEnable;
-	JIntHex		SnapShotMask;
-	JObjArray<JObjArray<JStrObj> >	TimeSection;
+	JStrObj		SnapShotMask;
+	JObjArray<JObject>		TimeSection;
 	JBoolObj		TipEnable;
 	JBoolObj		TourEnable;
-	JIntHex		TourMask;
+	JStrObj		TourMask;
 	JBoolObj		VoiceEnable;
 
 public:
-	EventHandler(JObject *pParent = NULL, const char *szName = JK_EventHandler):
-	JObject(pParent,szName),
+    EventHandler(JObject *pParent = NULL, const char *szName = JK_EventHandler):
+    JObject(pParent,szName),
 	AlarmInfo(this, "AlarmInfo"),
 	AlarmOutEnable(this, "AlarmOutEnable"),
 	AlarmOutLatch(this, "AlarmOutLatch"),
@@ -53,7 +53,7 @@ public:
 	MsgtoNetEnable(this, "MsgtoNetEnable"),
 	MultimediaMsgEnable(this, "MultimediaMsgEnable"),
 	PtzEnable(this, "PtzEnable"),
-	//PtzLink(this, "PtzLink"),
+	PtzLink(this, "PtzLink"),
 	RecordEnable(this, "RecordEnable"),
 	RecordLatch(this, "RecordLatch"),
 	RecordMask(this, "RecordMask"),
@@ -69,5 +69,5 @@ public:
 	VoiceEnable(this, "VoiceEnable"){
 	};
 
-	~EventHandler(void){};
+    ~EventHandler(void){};
 };

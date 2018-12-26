@@ -36,4 +36,6 @@
 #pragma mark  保存智能分析配置
 - (void)setAnalyzeConfig;
 
+- (NSMutableArray*)getEnableArray;//获取码流开关数组
+
 @end

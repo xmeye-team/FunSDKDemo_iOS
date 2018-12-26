@@ -92,11 +92,19 @@
     }
     AnalyzeDataSource *dataSource = [config getAnalyzeDataSource];
     if ([title isEqualToString:TS("Analyzer_Enable")]) {
-        if (dataSource.AnalyzeEnable == YES) {
-            cell.Labeltext.text = TS("open");
-        }else{
-             cell.Labeltext.text = TS("close");
-        }
+            cell.Labeltext.text =  [dataSource getEnableString:dataSource.AnalyzeEnable];
+    }
+    if ([title isEqualToString:TS("Analyzer_Type")]) {
+            cell.Labeltext.text = [dataSource getAnalyzeTypeString:dataSource.ModuleType];
+    }
+    if ([title isEqualToString:TS("Analyzer_Level")]) {
+        cell.Labeltext.text = [NSString stringWithFormat:@"%d",dataSource.PeaLevel];
+    }
+    if ([title isEqualToString:TS("Analyzer_Rule")]) {
+        cell.Labeltext.text =  [dataSource getEnableString:dataSource.PeaShowRule];
+    }
+    if ([title isEqualToString:TS("Analyzer_Trace")]) {
+        cell.Labeltext.text =  [dataSource getEnableString:dataSource.PeaShowTrace];
     }
     return cell;
 }
@@ -115,20 +123,35 @@
         //itemVC的单元格点击回调,设置各种属性
         ItemTableviewCell *cell = [weakSelf.analyzerTableView cellForRowAtIndexPath:indexPath];
         cell.Labeltext.text = encodeString;
+        AnalyzeDataSource *dataSource = [config getAnalyzeDataSource];
         if ([cell.textLabel.text isEqualToString:TS("Analyzer_Enable")]) {
-             AnalyzeDataSource *dataSource = [config getAnalyzeDataSource];
-            if ([encodeString isEqualToString:TS("open")]) {
-                dataSource.AnalyzeEnable = YES;
-            }else if ([encodeString isEqualToString:TS("close")])
-                 dataSource.AnalyzeEnable = NO;
-        }else{
-            return;
+            dataSource.AnalyzeEnable = [dataSource getEnableBool:encodeString];
+        }
+        if ([cell.textLabel.text isEqualToString:TS("Analyzer_Type")]) {
+            dataSource.ModuleType = (int)[dataSource getAnalyzeTypeInt:encodeString];
+        }
+        if ([cell.textLabel.text isEqualToString:TS("Analyzer_Level")]) {
+            dataSource.PeaLevel = [encodeString intValue];
+        }
+        if ([cell.textLabel.text isEqualToString:TS("Analyzer_Rule")]) {
+            dataSource.PeaShowRule = [dataSource getEnableBool:encodeString];
+        }
+        if ([cell.textLabel.text isEqualToString:TS("Analyzer_Trace")]) {
+            dataSource.PeaShowTrace = [dataSource getEnableBool:encodeString];
         }
     };
     //点击单元格之后进行分别赋值
+    AnalyzeDataSource *dataSource = [config getAnalyzeDataSource];
     if ([titleStr isEqualToString:TS("Analyzer_Enable")]) {
-        NSMutableArray *array = (NSMutableArray*)@[TS("open"),TS("close")];
-        [itemVC setValueArray:array];
+        [itemVC setValueArray:[config getEnableArray]];
+    }else if ([titleStr isEqualToString:TS("Analyzer_Type")]) {
+        [itemVC setValueArray:(NSMutableArray*)[dataSource analyzeTypeArray]]; //警戒算法，分3种
+    }else if ([titleStr isEqualToString:TS("Analyzer_Level")]) {
+        [itemVC setValueArray:(NSMutableArray*)[dataSource analyzeLevelArray]]; //警戒级别，1-5（可能不同）
+    }else if ([titleStr isEqualToString:TS("Analyzer_Rule")]) {
+        [itemVC setValueArray:[config getEnableArray]];
+    }else if ([titleStr isEqualToString:TS("Analyzer_Trace")]) {
+        [itemVC setValueArray:[config getEnableArray]];
     }else{
         return;
     }
@@ -139,6 +162,7 @@
 
 #pragma mark - 界面和数据初始化
 - (void)configSubView {
+     self.navigationItem.title = TS("AnalyzeConfig");
     UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave  target:self action:@selector(saveConfig)];
     self.navigationItem.rightBarButtonItem = rightButton;
     [self.view addSubview:self.analyzerTableView];
@@ -154,7 +178,7 @@
 }
 #pragma mark - 界面和数据初始化
 - (void)initDataSource {
-    analyzerTitleArray = (NSMutableArray*)@[TS("Analyzer_Enable")];
+    analyzerTitleArray = (NSMutableArray*)@[TS("Analyzer_Enable"),TS("Analyzer_Type"),TS("Analyzer_Level"),TS("Analyzer_Rule"),TS("Analyzer_Trace")];
 }
 
 - (void)didReceiveMemoryWarning {

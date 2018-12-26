@@ -241,6 +241,15 @@
     }
     return dataSource;
 }
+
+- (NSMutableArray*)getEnableArray {//获取开关数组
+    NSMutableArray *array = [[NSMutableArray alloc] initWithCapacity:0];
+    for (int i =0 ; i< 2; i++) {
+        NSString *enable = [dataSource getEnableString:i];
+        [array addObject:enable];
+    }
+    return array;
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

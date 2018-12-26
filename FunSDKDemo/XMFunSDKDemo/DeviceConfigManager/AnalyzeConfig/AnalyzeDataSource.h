@@ -24,7 +24,7 @@ enum DrawType{
 @interface AnalyzeDataSource : NSObject
 
 @property (nonatomic) BOOL AnalyzeEnable;  //智能分析开关
-@property (nonatomic) int ModuleType;  //智能分析算法
+@property (nonatomic) int ModuleType;  //智能分析算法   0周界警戒  1警戒线   2 警戒区域
 //周界警戒
 @property (nonatomic) int PeaLevel;       //警戒级别
 @property (nonatomic) BOOL PeaShowRule;   //显示规则
@@ -55,5 +55,19 @@ enum DrawType{
 @property (nonatomic) BOOL InterfereEnable;  //人为干扰检测
 @property (nonatomic) BOOL FreezeEnable;   //画面冻结检测
 @property (nonatomic) BOOL NosignalEnable;  //信号缺失检测
+
+#pragma mark - 获取开关字符串
+-(NSString *)getEnableString:(BOOL)enable;
+#pragma mark  获取开关BOOL值
+-(BOOL)getEnableBool:(NSString *)enableStr;
+
+- (NSArray *)analyzeLevelArray;
+
+- (NSArray *)analyzeTypeArray;
+
+- (NSString *)getAnalyzeTypeString:(NSInteger)type;
+#pragma mark  根据String获取int
+- (NSInteger)getAnalyzeTypeInt:(NSString*)typeString;
+
 
 @end

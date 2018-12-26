@@ -20,7 +20,7 @@
     
     //启动时 注册FunSDK
     [SDKInitializeModel SDKInit];
-    //通过第一个参数控制是否打开报警推送
+    //通过第一个参数控制是否打开手机报警推送
     [self canRemoteNotification:YES byFinishLaunchingWithOptions:launchOptions];
     //初始化视图控制器
     [self initRootWindow];

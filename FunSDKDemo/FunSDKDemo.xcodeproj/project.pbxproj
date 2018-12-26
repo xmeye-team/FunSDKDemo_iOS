@@ -1484,11 +1484,8 @@
 		96C6B3AA21BB6868000B32E7 /* JsonHeader */ = {
 			isa = PBXGroup;
 			children = (
-<<<<<<< HEAD
 				96B8A8DE21CE14EC00206580 /* Analyzer */,
-=======
 				2939951421CA2372004FC87C /* WaterMark */,
->>>>>>> f82c1b454b3e8059be0e5e4cbbe6c207ce8851f6
 				96C6B3AB21BB6868000B32E7 /* AlarmDetect */,
 				96C6B3B021BB6868000B32E7 /* Capability */,
 				96C6B3BB21BB6868000B32E7 /* CarPark */,

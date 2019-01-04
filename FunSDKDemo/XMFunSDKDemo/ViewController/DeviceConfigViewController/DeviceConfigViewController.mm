@@ -24,6 +24,7 @@
 #import "EncodingFormatViewController.h"  //编码格式设置
 #import "SystemFunctionConfig.h"
 #import "WaterMarkViewController.h"       //水印设置
+#import "HumanDetectionViewController.h"  //人形检测
 
 @interface DeviceConfigViewController ()<UITableViewDelegate,UITableViewDataSource,SystemInfoConfigDelegate>
 
@@ -174,9 +175,12 @@
         }
         EncodingFormatViewController *formatVC = [[EncodingFormatViewController alloc] init];
         [self.navigationController pushViewController:formatVC animated:NO];
-    }else if([titleStr isEqualToString:TS("水印设置")]){
+    }else if([titleStr isEqualToString:TS("Watermark_setting")]){
         WaterMarkViewController *waterMarkVC = [[WaterMarkViewController alloc] init];
         [self.navigationController pushViewController:waterMarkVC animated:NO];
+    }else if([titleStr isEqualToString:TS("appEventHumanDetectAlarm")]){
+        HumanDetectionViewController *humandetectVC = [[HumanDetectionViewController alloc] init];
+        [self.navigationController pushViewController:humandetectVC animated:NO];
     }else{
         return;
     }
@@ -208,6 +212,7 @@
                               @{@"title":@"Json和DevCmd调试",@"detailInfo":@""},
                               @{@"title":@"鱼眼信息",@"detailInfo":@""},
                               @{@"title":TS("Encoding_format"),@"detailInfo":@""},
-                              @{@"title":TS("Watermark_setting"),@"detailInfo":@""}];
+                              @{@"title":TS("Watermark_setting"),@"detailInfo":@""},
+                              @{@"title":TS("appEventHumanDetectAlarm"),@"detailInfo":@""}];
 }
 @end

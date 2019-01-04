@@ -22,6 +22,7 @@
 #import "SystemInfoConfig.h"
 #import "AlarmMessageViewController.h"  //推送消息
 #import "EncodingFormatViewController.h"  //编码格式设置
+#import "AnalyzerViewController.h"  //智能分析
 #import "SystemFunctionConfig.h"
 #import "WaterMarkViewController.h"       //水印设置
 #import "HumanDetectionViewController.h"  //人形检测
@@ -166,6 +167,15 @@
         AlarmMessageViewController *alarmMessageVC = [[AlarmMessageViewController alloc] initWithNibName:nil bundle:nil];
         [self.navigationController pushViewController:alarmMessageVC animated:NO];
         
+    }else if ([titleStr isEqualToString:TS("AnalyzeConfig")]){
+        ChannelObject *channel = [[DeviceControl getInstance] getSelectChannel];
+        DeviceObject *object  = [[DeviceControl getInstance] GetDeviceObjectBySN:channel.deviceMac];
+        if(object.sysFunction.NewVideoAnalyze == NO){
+            [SVProgressHUD showErrorWithStatus:TS("EE_MNETSDK_NOTSUPPORT")];
+            return;
+        }
+        AnalyzerViewController *analyzeVC = [[AnalyzerViewController alloc] init];
+        [self.navigationController pushViewController:analyzeVC animated:NO];
     }else if ([titleStr isEqualToString:TS("Encoding_format")]){
         ChannelObject *channel = [[DeviceControl getInstance] getSelectChannel];
         DeviceObject *object  = [[DeviceControl getInstance] GetDeviceObjectBySN:channel.deviceMac];
@@ -211,6 +221,7 @@
                               @{@"title":@"GB配置",@"detailInfo":@""},
                               @{@"title":@"Json和DevCmd调试",@"detailInfo":@""},
                               @{@"title":@"鱼眼信息",@"detailInfo":@""},
+                              @{@"title":TS("AnalyzeConfig"),@"detailInfo":@""},
                               @{@"title":TS("Encoding_format"),@"detailInfo":@""},
                               @{@"title":TS("Watermark_setting"),@"detailInfo":@""},
                               @{@"title":TS("appEventHumanDetectAlarm"),@"detailInfo":@""}];

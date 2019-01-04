@@ -45,6 +45,9 @@
 		964B892B1D766A82003FA9AD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82214340198F0FAC009AEEB3 /* UIKit.framework */; };
 		964B892C1D766A82003FA9AD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8221433C198F0FAC009AEEB3 /* Foundation.framework */; };
 		9651367E21B1158200430F26 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9651367D21B1158100430F26 /* AVKit.framework */; };
+		96A0FFFB21CDCCBD00D3F459 /* AnalyzeConfig.mm in Sources */ = {isa = PBXBuildFile; fileRef = 96A0FFFA21CDCCBD00D3F459 /* AnalyzeConfig.mm */; };
+		96B8A8FB21CE1C9D00206580 /* AnalyzeDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 96B8A8FA21CE1C9D00206580 /* AnalyzeDataSource.m */; };
+		96B8A90321CE256400206580 /* AnalyzerViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 96B8A90221CE256400206580 /* AnalyzerViewController.mm */; };
 		96C6B4D121BB6869000B32E7 /* AlarmManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = 96C6B26E21BB6867000B32E7 /* AlarmManager.mm */; };
 		96C6B4D221BB6869000B32E7 /* DeviceManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = 96C6B27121BB6867000B32E7 /* DeviceManager.mm */; };
 		96C6B4D321BB6869000B32E7 /* UserAccountModel.mm in Sources */ = {isa = PBXBuildFile; fileRef = 96C6B27421BB6867000B32E7 /* UserAccountModel.mm */; };
@@ -344,8 +347,40 @@
 		9651367D21B1158100430F26 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
 		969B224A1A0865AC007BAE95 /* libbz2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libbz2.dylib; path = usr/lib/libbz2.dylib; sourceTree = SDKROOT; };
 		969B224C1A0897BE007BAE95 /* libz.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.dylib; path = usr/lib/libz.1.dylib; sourceTree = SDKROOT; };
+		96A0FFF921CDCCBD00D3F459 /* AnalyzeConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AnalyzeConfig.h; sourceTree = "<group>"; };
+		96A0FFFA21CDCCBD00D3F459 /* AnalyzeConfig.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AnalyzeConfig.mm; sourceTree = "<group>"; };
 		96AD70B31B9D6A0800DD26AC /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		96B003E51A527AEC00B4EAC2 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		96B8A8DF21CE14EC00206580 /* AbandumRule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbandumRule.h; sourceTree = "<group>"; };
+		96B8A8E021CE14EC00206580 /* AVDRule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVDRule.h; sourceTree = "<group>"; };
+		96B8A8E121CE14EC00206580 /* Boundary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Boundary.h; sourceTree = "<group>"; };
+		96B8A8E221CE14EC00206580 /* CPCRule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPCRule.h; sourceTree = "<group>"; };
+		96B8A8E321CE14EC00206580 /* Detect_Analyze.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Detect_Analyze.h; sourceTree = "<group>"; };
+		96B8A8E421CE14EC00206580 /* EndPt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EndPt.h; sourceTree = "<group>"; };
+		96B8A8E521CE14EC00206580 /* EventHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventHandler.h; sourceTree = "<group>"; };
+		96B8A8E621CE14EC00206580 /* Limit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Limit.h; sourceTree = "<group>"; };
+		96B8A8E721CE14EC00206580 /* LimitPara.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LimitPara.h; sourceTree = "<group>"; };
+		96B8A8E821CE14EC00206580 /* Line.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Line.h; sourceTree = "<group>"; };
+		96B8A8E921CE14EC00206580 /* NoParkingRule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoParkingRule.h; sourceTree = "<group>"; };
+		96B8A8EA21CE14EC00206580 /* OscPara.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OscPara.h; sourceTree = "<group>"; };
+		96B8A8EB21CE14EC00206580 /* OscRg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OscRg.h; sourceTree = "<group>"; };
+		96B8A8EC21CE14EC00206580 /* OSCRule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSCRule.h; sourceTree = "<group>"; };
+		96B8A8ED21CE14EC00206580 /* PEARule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PEARule.h; sourceTree = "<group>"; };
+		96B8A8EE21CE14EC00206580 /* PerimeterRule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PerimeterRule.h; sourceTree = "<group>"; };
+		96B8A8EF21CE14EC00206580 /* Points.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Points.h; sourceTree = "<group>"; };
+		96B8A8F021CE14EC00206580 /* RuleConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RuleConfig.h; sourceTree = "<group>"; };
+		96B8A8F121CE14EC00206580 /* SpclRgs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpclRgs.h; sourceTree = "<group>"; };
+		96B8A8F221CE14EC00206580 /* StartPt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartPt.h; sourceTree = "<group>"; };
+		96B8A8F321CE14EC00206580 /* StolenRule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StolenRule.h; sourceTree = "<group>"; };
+		96B8A8F421CE14EC00206580 /* SubRgA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubRgA.h; sourceTree = "<group>"; };
+		96B8A8F521CE14EC00206580 /* SubRgB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubRgB.h; sourceTree = "<group>"; };
+		96B8A8F621CE14EC00206580 /* SubRgC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubRgC.h; sourceTree = "<group>"; };
+		96B8A8F721CE14EC00206580 /* TripWire.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TripWire.h; sourceTree = "<group>"; };
+		96B8A8F821CE14EC00206580 /* TripWireRule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TripWireRule.h; sourceTree = "<group>"; };
+		96B8A8F921CE1C9D00206580 /* AnalyzeDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalyzeDataSource.h; sourceTree = "<group>"; };
+		96B8A8FA21CE1C9D00206580 /* AnalyzeDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalyzeDataSource.m; sourceTree = "<group>"; };
+		96B8A90121CE256400206580 /* AnalyzerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalyzerViewController.h; sourceTree = "<group>"; };
+		96B8A90221CE256400206580 /* AnalyzerViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AnalyzerViewController.mm; sourceTree = "<group>"; };
 		96C332081A81ED270079DFA2 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		96C6B26D21BB6867000B32E7 /* AlarmManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlarmManager.h; sourceTree = "<group>"; };
 		96C6B26E21BB6867000B32E7 /* AlarmManager.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AlarmManager.mm; sourceTree = "<group>"; };
@@ -470,7 +505,6 @@
 		96C6B3AC21BB6868000B32E7 /* Detect_BlindDetect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Detect_BlindDetect.h; sourceTree = "<group>"; };
 		96C6B3AD21BB6868000B32E7 /* Detect_LossDetect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Detect_LossDetect.h; sourceTree = "<group>"; };
 		96C6B3AE21BB6868000B32E7 /* Detect_MotionDetect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Detect_MotionDetect.h; sourceTree = "<group>"; };
-		96C6B3AF21BB6868000B32E7 /* EventHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventHandler.h; sourceTree = "<group>"; };
 		96C6B3B121BB6868000B32E7 /* AlarmFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlarmFunction.h; sourceTree = "<group>"; };
 		96C6B3B221BB6868000B32E7 /* CommFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommFunction.h; sourceTree = "<group>"; };
 		96C6B3B321BB6868000B32E7 /* EncodeFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EncodeFunction.h; sourceTree = "<group>"; };
@@ -1005,6 +1039,59 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		96A0FFF821CDCC7B00D3F459 /* AnalyzeConfig */ = {
+			isa = PBXGroup;
+			children = (
+				96A0FFF921CDCCBD00D3F459 /* AnalyzeConfig.h */,
+				96A0FFFA21CDCCBD00D3F459 /* AnalyzeConfig.mm */,
+				96B8A8F921CE1C9D00206580 /* AnalyzeDataSource.h */,
+				96B8A8FA21CE1C9D00206580 /* AnalyzeDataSource.m */,
+			);
+			path = AnalyzeConfig;
+			sourceTree = "<group>";
+		};
+		96B8A8DE21CE14EC00206580 /* Analyzer */ = {
+			isa = PBXGroup;
+			children = (
+				96B8A8DF21CE14EC00206580 /* AbandumRule.h */,
+				96B8A8E021CE14EC00206580 /* AVDRule.h */,
+				96B8A8E121CE14EC00206580 /* Boundary.h */,
+				96B8A8E221CE14EC00206580 /* CPCRule.h */,
+				96B8A8E321CE14EC00206580 /* Detect_Analyze.h */,
+				96B8A8E421CE14EC00206580 /* EndPt.h */,
+				96B8A8E521CE14EC00206580 /* EventHandler.h */,
+				96B8A8E621CE14EC00206580 /* Limit.h */,
+				96B8A8E721CE14EC00206580 /* LimitPara.h */,
+				96B8A8E821CE14EC00206580 /* Line.h */,
+				96B8A8E921CE14EC00206580 /* NoParkingRule.h */,
+				96B8A8EA21CE14EC00206580 /* OscPara.h */,
+				96B8A8EB21CE14EC00206580 /* OscRg.h */,
+				96B8A8EC21CE14EC00206580 /* OSCRule.h */,
+				96B8A8ED21CE14EC00206580 /* PEARule.h */,
+				96B8A8EE21CE14EC00206580 /* PerimeterRule.h */,
+				96B8A8EF21CE14EC00206580 /* Points.h */,
+				96B8A8F021CE14EC00206580 /* RuleConfig.h */,
+				96B8A8F121CE14EC00206580 /* SpclRgs.h */,
+				96B8A8F221CE14EC00206580 /* StartPt.h */,
+				96B8A8F321CE14EC00206580 /* StolenRule.h */,
+				96B8A8F421CE14EC00206580 /* SubRgA.h */,
+				96B8A8F521CE14EC00206580 /* SubRgB.h */,
+				96B8A8F621CE14EC00206580 /* SubRgC.h */,
+				96B8A8F721CE14EC00206580 /* TripWire.h */,
+				96B8A8F821CE14EC00206580 /* TripWireRule.h */,
+			);
+			path = Analyzer;
+			sourceTree = "<group>";
+		};
+		96B8A90021CE256400206580 /* AnalyzerViewController */ = {
+			isa = PBXGroup;
+			children = (
+				96B8A90121CE256400206580 /* AnalyzerViewController.h */,
+				96B8A90221CE256400206580 /* AnalyzerViewController.mm */,
+			);
+			path = AnalyzerViewController;
+			sourceTree = "<group>";
+		};
 		96C6B26A21BB6867000B32E7 /* XMFunSDKDemo */ = {
 			isa = PBXGroup;
 			children = (
@@ -1190,6 +1277,7 @@
 			isa = PBXGroup;
 			children = (
 				2996E10121D46F2500D111B8 /* HumanDetectionConfig */,
+				96A0FFF821CDCC7B00D3F459 /* AnalyzeConfig */,
 				96C6B2B121BB6867000B32E7 /* AlarmDetectConfig */,
 				96C6B2B421BB6867000B32E7 /* AlarmMessageConfig */,
 				96C6B2B921BB6867000B32E7 /* CommonConfig */,
@@ -1431,6 +1519,7 @@
 			isa = PBXGroup;
 			children = (
 				2996E0FB21D463AA00D111B8 /* HumanDetection */,
+				96B8A8DE21CE14EC00206580 /* Analyzer */,
 				2939951421CA2372004FC87C /* WaterMark */,
 				96C6B3AB21BB6868000B32E7 /* AlarmDetect */,
 				96C6B3B021BB6868000B32E7 /* Capability */,
@@ -1454,7 +1543,6 @@
 				96C6B3AC21BB6868000B32E7 /* Detect_BlindDetect.h */,
 				96C6B3AD21BB6868000B32E7 /* Detect_LossDetect.h */,
 				96C6B3AE21BB6868000B32E7 /* Detect_MotionDetect.h */,
-				96C6B3AF21BB6868000B32E7 /* EventHandler.h */,
 			);
 			path = AlarmDetect;
 			sourceTree = "<group>";
@@ -1732,6 +1820,7 @@
 			children = (
 				96C6B44521BB6868000B32E7 /* DeviceConfigViewController.h */,
 				96C6B44621BB6868000B32E7 /* DeviceConfigViewController.mm */,
+				96B8A90021CE256400206580 /* AnalyzerViewController */,
 				96C6B43021BB6868000B32E7 /* AboutDeviceViewController */,
 				96C6B43321BB6868000B32E7 /* AlarmMessageViewController */,
 				96C6B43B21BB6868000B32E7 /* AlarmViewController */,
@@ -2482,10 +2571,12 @@
 				96C6B50021BB6869000B32E7 /* SystemInfoConfig.mm in Sources */,
 				96C6B4DA21BB6869000B32E7 /* MessageUI.mm in Sources */,
 				96C6B5B421BB6869000B32E7 /* PasswordView.m in Sources */,
+				96B8A8FB21CE1C9D00206580 /* AnalyzeDataSource.m in Sources */,
 				96C6B58721BB6869000B32E7 /* ForgetPasswordViewController.mm in Sources */,
 				96C6B59921BB6869000B32E7 /* QuickConfigurationViewController.mm in Sources */,
 				96C6B57E21BB6869000B32E7 /* FunMsgListener.mm in Sources */,
 				96C6B4F421BB6869000B32E7 /* TimeInfo.m in Sources */,
+				96A0FFFB21CDCCBD00D3F459 /* AnalyzeConfig.mm in Sources */,
 				96C6B4F221BB6869000B32E7 /* PictureInfo.m in Sources */,
 				96C6B5D021BB6869000B32E7 /* MyProgressView.m in Sources */,
 				96C6B58821BB6869000B32E7 /* LoginViewController.mm in Sources */,
@@ -2548,6 +2639,7 @@
 				96C6B59C21BB6869000B32E7 /* AboutDeviceViewController.mm in Sources */,
 				96C6B5BB21BB6869000B32E7 /* DeviceListTableViewCell.m in Sources */,
 				96C6B4E021BB6869000B32E7 /* NSString+Extention.m in Sources */,
+				96B8A90321CE256400206580 /* AnalyzerViewController.mm in Sources */,
 				96C6B5D721BB6869000B32E7 /* VRFunctionView.mm in Sources */,
 				96C6B5B021BB6869000B32E7 /* EncodeViewController.mm in Sources */,
 				96C6B4E121BB6869000B32E7 /* NSString+Path.m in Sources */,

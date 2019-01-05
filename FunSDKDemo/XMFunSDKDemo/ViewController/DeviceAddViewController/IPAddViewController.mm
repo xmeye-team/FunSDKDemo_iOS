@@ -17,6 +17,7 @@
     NSArray *titleArray;                //列表数组
     DeviceManager *deviceManager;       //设备管理器
     UITextField *devNameTF;             //设备名
+    UITextField *loginNameTF;           //登录名
     UITextField *devPswTF;              //设备密码
     UITextField *devIPTF;               //设备ip或者域名
     UITextField *devPortTF;             //设备端口
@@ -102,7 +103,7 @@
     [deviceManager addDeviceByDeviceIP:devIPTF.text deviceName:devNameTF.text password:devPswTF.text port:devPortTF.text];
     //修改设备名称和设备密码
     NSString *devmac = [NSString stringWithFormat:@"%@:%@",devIPTF.text, (devPortTF.text.length == 0) ? @"34567" :devPortTF.text];
-    [deviceManager changeDevicePsw:devmac devName:devNameTF.text password:devPswTF.text];
+    [deviceManager changeDevice:devmac devName:devNameTF.text username:loginNameTF.text password:devPswTF.text];
 }
 
 #pragma mark - tableViewDataSource/Delegate
@@ -136,6 +137,7 @@
         [[NSAttributedString alloc]initWithString:TS("Enter_LoginName") attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:12]}];
         cell.inputTextField.text = @"admin";
         cell.inputTextField.enabled = NO;
+        loginNameTF = cell.inputTextField;
     }
     else if ([titleStr isEqualToString:TS("Password2")]){
         cell.inputTextField.attributedPlaceholder =

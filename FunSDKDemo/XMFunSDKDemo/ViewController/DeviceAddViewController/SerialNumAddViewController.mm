@@ -18,6 +18,7 @@
     NSArray *titleArray;                //列表数组
     DeviceManager *deviceManager;       //设备管理器
     UITextField *devNameTF;             //设备名
+    UITextField *loginNameTF;           //登录名
     UITextField *devPswTF;              //设备密码
     UITextField *devSerialTF;           //设备序列号
 }
@@ -97,9 +98,9 @@
     }
     [SVProgressHUD show];
     //通过序列号添加
-    [deviceManager addDeviceByDeviseSerialnumber:devSerialTF.text];
-    //修改设备名称和设备密码
-    [deviceManager changeDevicePsw:devSerialTF.text devName:devNameTF.text password:devPswTF.text];
+    [deviceManager addDeviceByDeviseSerialnumber:devSerialTF.text deviceName:devNameTF.text];
+    //修改设备登录名称和设备密码
+    [deviceManager changeDevice:devSerialTF.text devName:devNameTF.text username:loginNameTF.text password:devPswTF.text];
 }
 
 #pragma mark 点击二维码扫描
@@ -154,6 +155,7 @@
         [[NSAttributedString alloc]initWithString:TS("Enter_LoginName") attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:12]}];
         cell.inputTextField.text = @"admin";
         cell.inputTextField.enabled = NO;
+        loginNameTF = cell.inputTextField;
     }
     else if ([titleStr isEqualToString:TS("Password2")]){
         cell.inputTextField.attributedPlaceholder =

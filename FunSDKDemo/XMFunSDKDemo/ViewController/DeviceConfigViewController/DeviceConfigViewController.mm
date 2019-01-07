@@ -25,6 +25,7 @@
 #import "AnalyzerViewController.h"  //智能分析
 #import "SystemFunctionConfig.h"
 #import "WaterMarkViewController.h"       //水印设置
+#import "BuzzerViewController.h"            //蜂鸣功能
 
 @interface DeviceConfigViewController ()<UITableViewDelegate,UITableViewDataSource,SystemInfoConfigDelegate>
 
@@ -187,6 +188,9 @@
     }else if([titleStr isEqualToString:TS("Watermark_setting")]){
         WaterMarkViewController *waterMarkVC = [[WaterMarkViewController alloc] init];
         [self.navigationController pushViewController:waterMarkVC animated:NO];
+    }else if([titleStr isEqualToString:TS("Buzzer_setting")]){
+        BuzzerViewController *BuzzerVC = [[BuzzerViewController alloc] init];
+        [self.navigationController pushViewController:BuzzerVC animated:NO];
     }else{
         return;
     }
@@ -219,6 +223,7 @@
                               @{@"title":@"鱼眼信息",@"detailInfo":@""},
                               @{@"title":TS("AnalyzeConfig"),@"detailInfo":@""},
                               @{@"title":TS("Encoding_format"),@"detailInfo":@""},
-                              @{@"title":TS("Watermark_setting"),@"detailInfo":@""}];
+                              @{@"title":TS("Watermark_setting"),@"detailInfo":@""},
+                              @{@"title":TS("Buzzer_setting"),@"detailInfo":@""}];
 }
 @end

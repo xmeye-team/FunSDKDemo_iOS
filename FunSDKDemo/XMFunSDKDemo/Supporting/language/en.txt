@@ -668,3 +668,5 @@ Osd_Watermark_switch=Official Watermark Switch
 Error_Prompt=Error Prompt
 check_wifi_setting=Please check your WIFI setting and make sure you are connecting AP device.
 not_support_add_device=Ap mode does not support adding devices
+Buzzer_setting=AlarmBell
+config_Save_Success=save Success

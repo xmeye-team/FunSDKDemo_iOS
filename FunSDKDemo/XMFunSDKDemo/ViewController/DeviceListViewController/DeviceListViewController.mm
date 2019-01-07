@@ -244,7 +244,6 @@
             }];
             UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:TS("Cancel") style:UIAlertActionStyleCancel handler:nil];
             UIAlertAction *okAction = [UIAlertAction actionWithTitle:TS("OK") style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-               
                 UITextField *passWordTextField = alert.textFields.firstObject;
                 DeviceObject *devObject = [deviceArray objectAtIndex:selectNum];
                  DeviceManager *manager = [DeviceManager getInstance];

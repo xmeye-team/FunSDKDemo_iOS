@@ -13,6 +13,8 @@
 		2939951321CA1BE2004FC87C /* WaterMarkViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2939951221CA1BE2004FC87C /* WaterMarkViewController.mm */; };
 		2939951B21CA2504004FC87C /* WaterMarkConfig.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2939951A21CA2504004FC87C /* WaterMarkConfig.mm */; };
 		2943D9B121C77F6F00073507 /* EncodingFormatViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2943D9B021C77F6F00073507 /* EncodingFormatViewController.mm */; };
+		2996E10021D466D200D111B8 /* HumanDetectionViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2996E0FF21D466D200D111B8 /* HumanDetectionViewController.mm */; };
+		2996E10421D46F8100D111B8 /* HumanDetectionConfig.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2996E10321D46F8100D111B8 /* HumanDetectionConfig.mm */; };
 		5C78C27D1F53F0E5003CC286 /* libc.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C78C27B1F53EEA4003CC286 /* libc.tbd */; };
 		901182C91DF0102100148C94 /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A14646751DEFBAC9005B8541 /* VideoToolbox.framework */; };
 		964B89061D766A82003FA9AD /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8218057B199D957A0080D4C0 /* ImageIO.framework */; };
@@ -320,6 +322,11 @@
 		2939951E21CA642B004FC87C /* TimeTitleAttribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeTitleAttribute.h; sourceTree = "<group>"; };
 		2943D9AF21C77F6F00073507 /* EncodingFormatViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EncodingFormatViewController.h; sourceTree = "<group>"; };
 		2943D9B021C77F6F00073507 /* EncodingFormatViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = EncodingFormatViewController.mm; sourceTree = "<group>"; };
+		2996E0FC21D463E200D111B8 /* Detect_HumanDetectionDVR.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Detect_HumanDetectionDVR.h; sourceTree = "<group>"; };
+		2996E0FE21D466D200D111B8 /* HumanDetectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HumanDetectionViewController.h; sourceTree = "<group>"; };
+		2996E0FF21D466D200D111B8 /* HumanDetectionViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = HumanDetectionViewController.mm; sourceTree = "<group>"; };
+		2996E10221D46F8100D111B8 /* HumanDetectionConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HumanDetectionConfig.h; sourceTree = "<group>"; };
+		2996E10321D46F8100D111B8 /* HumanDetectionConfig.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = HumanDetectionConfig.mm; sourceTree = "<group>"; };
 		5C78C27B1F53EEA4003CC286 /* libc.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libc.tbd; path = usr/lib/libc.tbd; sourceTree = SDKROOT; };
 		5CB0347E1F4D6D80003053D8 /* MobileVideo.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = MobileVideo.db; sourceTree = "<group>"; };
 		82180563199D94D90080D4C0 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -969,6 +976,32 @@
 			path = EncodingFormatViewController;
 			sourceTree = "<group>";
 		};
+		2996E0FB21D463AA00D111B8 /* HumanDetection */ = {
+			isa = PBXGroup;
+			children = (
+				2996E0FC21D463E200D111B8 /* Detect_HumanDetectionDVR.h */,
+			);
+			path = HumanDetection;
+			sourceTree = "<group>";
+		};
+		2996E0FD21D4669000D111B8 /* HumanDetectionViewController */ = {
+			isa = PBXGroup;
+			children = (
+				2996E0FE21D466D200D111B8 /* HumanDetectionViewController.h */,
+				2996E0FF21D466D200D111B8 /* HumanDetectionViewController.mm */,
+			);
+			path = HumanDetectionViewController;
+			sourceTree = "<group>";
+		};
+		2996E10121D46F2500D111B8 /* HumanDetectionConfig */ = {
+			isa = PBXGroup;
+			children = (
+				2996E10221D46F8100D111B8 /* HumanDetectionConfig.h */,
+				2996E10321D46F8100D111B8 /* HumanDetectionConfig.mm */,
+			);
+			path = HumanDetectionConfig;
+			sourceTree = "<group>";
+		};
 		82214330198F0FAC009AEEB3 = {
 			isa = PBXGroup;
 			children = (
@@ -1268,6 +1301,7 @@
 			isa = PBXGroup;
 			children = (
 				203BD11921DF5FEA005B91E9 /* BuzzerConfig */,
+				2996E10121D46F2500D111B8 /* HumanDetectionConfig */,
 				96A0FFF821CDCC7B00D3F459 /* AnalyzeConfig */,
 				96C6B2B121BB6867000B32E7 /* AlarmDetectConfig */,
 				96C6B2B421BB6867000B32E7 /* AlarmMessageConfig */,
@@ -1509,6 +1543,7 @@
 		96C6B3AA21BB6868000B32E7 /* JsonHeader */ = {
 			isa = PBXGroup;
 			children = (
+				2996E0FB21D463AA00D111B8 /* HumanDetection */,
 				96B8A8DE21CE14EC00206580 /* Analyzer */,
 				2939951421CA2372004FC87C /* WaterMark */,
 				96C6B3AB21BB6868000B32E7 /* AlarmDetect */,
@@ -1825,6 +1860,7 @@
 				2943D9AE21C77F1900073507 /* EncodingFormatViewController */,
 				2939951021CA1BBA004FC87C /* WaterMarkViewController */,
 				203BD12121DF74EA005B91E9 /* BuzzerViewController */,
+				2996E0FD21D4669000D111B8 /* HumanDetectionViewController */,
 				96C6B44321BB6868000B32E7 /* DeviceconfigTableViewCell.h */,
 				96C6B44421BB6868000B32E7 /* DeviceconfigTableViewCell.m */,
 				96C6B46421BB6868000B32E7 /* ItemTableviewCell.h */,
@@ -2532,6 +2568,7 @@
 				96C6B5D121BB6869000B32E7 /* ProgressBackView.mm in Sources */,
 				96C6B59521BB6869000B32E7 /* LANSearchViewController.mm in Sources */,
 				96C6B59A21BB6869000B32E7 /* ScanAnimationView.m in Sources */,
+				2996E10421D46F8100D111B8 /* HumanDetectionConfig.mm in Sources */,
 				96C6B4D621BB6869000B32E7 /* FileControl.mm in Sources */,
 				203BD11C21DF602D005B91E9 /* BuzzerConfig.mm in Sources */,
 				96C6B5C721BB6869000B32E7 /* XMPlayerVC.mm in Sources */,
@@ -2612,6 +2649,7 @@
 				96C6B5CD21BB6869000B32E7 /* PTZView.m in Sources */,
 				96C6B5D821BB6869000B32E7 /* VRGLViewController.mm in Sources */,
 				96C6B5B921BB6869000B32E7 /* TimeSynViewController.mm in Sources */,
+				2996E10021D466D200D111B8 /* HumanDetectionViewController.mm in Sources */,
 				96C6B4FB21BB6869000B32E7 /* RecordDataSourse.m in Sources */,
 				96C6B59321BB6869000B32E7 /* SearchDeviceCell.m in Sources */,
 				96C6B4D321BB6869000B32E7 /* UserAccountModel.mm in Sources */,
@@ -2926,6 +2964,11 @@
 				PRODUCT_NAME = FunSDKDemo;
 				PROVISIONING_PROFILE = "584edf9c-a7bb-452c-9210-d75a6c0aa429";
 				PROVISIONING_PROFILE_SPECIFIER = yangxiang;
+				PRODUCT_BUNDLE_IDENTIFIER = com.CY.PushTest;
+				PRODUCT_MODULE_NAME = "";
+				PRODUCT_NAME = FunSDKDemo;
+				PROVISIONING_PROFILE = "584edf9c-a7bb-452c-9210-d75a6c0aa429";
+				PROVISIONING_PROFILE_SPECIFIER = DevCYPushTest;
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2985,6 +3028,11 @@
 				PRODUCT_NAME = FunSDKDemo;
 				PROVISIONING_PROFILE = "584edf9c-a7bb-452c-9210-d75a6c0aa429";
 				PROVISIONING_PROFILE_SPECIFIER = yangxiang;
+				PRODUCT_BUNDLE_IDENTIFIER = com.CY.PushTest;
+				PRODUCT_MODULE_NAME = "";
+				PRODUCT_NAME = FunSDKDemo;
+				PROVISIONING_PROFILE = "584edf9c-a7bb-452c-9210-d75a6c0aa429";
+				PROVISIONING_PROFILE_SPECIFIER = DevCYPushTest;
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				TARGETED_DEVICE_FAMILY = "1,2";

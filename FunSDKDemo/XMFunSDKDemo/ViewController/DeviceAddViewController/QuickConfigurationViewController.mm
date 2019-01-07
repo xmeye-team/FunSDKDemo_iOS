@@ -83,7 +83,7 @@
     DeviceObject *object = [configView.deviceArray objectAtIndex:0];
     [SVProgressHUD showWithMaskType:SVProgressHUDMaskTypeBlack];
     //通过序列号添加
-    [deviceManager addDeviceByDeviseSerialnumber:object.deviceMac];
+    [deviceManager addDeviceByDeviseSerialnumber:object.deviceMac deviceName:object.deviceMac];
 }
 
 #pragma mark - funsdk回调处理

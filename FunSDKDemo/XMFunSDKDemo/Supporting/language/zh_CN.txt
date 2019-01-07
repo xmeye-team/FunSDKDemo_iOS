@@ -679,3 +679,4 @@ check_wifi_setting=请检查你的WIFI设置，确保你已经连接上AP设备.
 not_support_add_device=ap模式不支持添加设备
 Buzzer_setting=蜂鸣状态
 config_Save_Success=配置保存成功
+appEventHumanDetectAlarm=人形检测

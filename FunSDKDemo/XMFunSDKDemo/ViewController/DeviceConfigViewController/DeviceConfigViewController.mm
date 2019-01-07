@@ -26,6 +26,7 @@
 #import "SystemFunctionConfig.h"
 #import "WaterMarkViewController.h"       //水印设置
 #import "BuzzerViewController.h"            //蜂鸣功能
+#import "HumanDetectionViewController.h"  //人形检测
 
 @interface DeviceConfigViewController ()<UITableViewDelegate,UITableViewDataSource,SystemInfoConfigDelegate>
 
@@ -191,6 +192,9 @@
     }else if([titleStr isEqualToString:TS("Buzzer_setting")]){
         BuzzerViewController *BuzzerVC = [[BuzzerViewController alloc] init];
         [self.navigationController pushViewController:BuzzerVC animated:NO];
+    }else if([titleStr isEqualToString:TS("appEventHumanDetectAlarm")]){
+        HumanDetectionViewController *humandetectVC = [[HumanDetectionViewController alloc] init];
+        [self.navigationController pushViewController:humandetectVC animated:NO];
     }else{
         return;
     }
@@ -225,5 +229,6 @@
                               @{@"title":TS("Encoding_format"),@"detailInfo":@""},
                               @{@"title":TS("Watermark_setting"),@"detailInfo":@""},
                               @{@"title":TS("Buzzer_setting"),@"detailInfo":@""}];
+                              @{@"title":TS("appEventHumanDetectAlarm"),@"detailInfo":@""}];
 }
 @end

@@ -15,6 +15,7 @@
 @interface DeviceListViewController ()<UITableViewDelegate,UITableViewDataSource,DeviceManagerDelegate>
 {
     NSMutableArray *deviceArray; //设备信息数组
+    int selectNum;               //当前选择的设置
 }
 @property (nonatomic, strong) UIBarButtonItem *rightBarBtn;
 
@@ -177,6 +178,7 @@
     
     [SVProgressHUD showWithStatus:TS("Get_Channle")];
     //现获取设备通道信息，多通道预览时需要。如果不需要支持多通道预览，则可以不获取通道信息，直接打开0通道
+    selectNum = (int)indexPath.section;
     [[DeviceManager getInstance] getDeviceChannel:devObject.deviceMac];
     //获取成功之后，在回调接口中进入预览界面   - (void)getDeviceChannel:(NSString *)sId result:(int)result
 }
@@ -233,6 +235,26 @@
 #pragma mark 获取设备通道结果
 - (void)getDeviceChannel:(NSString *)sId result:(int)result {
     if (result <= 0) {
+        if(result == EE_DVR_PASSWORD_NOT_VALID)//密码错误，弹出密码修改框
+        {
+            [SVProgressHUD dismiss];
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:TS("EE_DVR_PASSWORD_NOT_VALID") message:sId preferredStyle:UIAlertControllerStyleAlert];
+            [alert addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+                textField.placeholder = TS("set_new_psd");
+            }];
+            UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:TS("Cancel") style:UIAlertActionStyleCancel handler:nil];
+            UIAlertAction *okAction = [UIAlertAction actionWithTitle:TS("OK") style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                UITextField *passWordTextField = alert.textFields.firstObject;
+                DeviceObject *devObject = [deviceArray objectAtIndex:selectNum];
+                 DeviceManager *manager = [DeviceManager getInstance];
+                //点击确定修改密码
+                [manager changeDevicePsw:sId devName:devObject.loginName password:passWordTextField.text];
+            }];
+            [alert addAction:cancelAction];
+            [alert addAction:okAction];
+            [self presentViewController:alert animated:YES completion:nil];
+            return;
+        }
         [MessageUI ShowErrorInt:result];
         return;
     }

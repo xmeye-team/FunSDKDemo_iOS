@@ -28,18 +28,11 @@
 		964B890F1D766A82003FA9AD /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96AD70B31B9D6A0800DD26AC /* CoreLocation.framework */; };
 		964B89101D766A82003FA9AD /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96C332081A81ED270079DFA2 /* AssetsLibrary.framework */; };
 		964B89111D766A82003FA9AD /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96B003E51A527AEC00B4EAC2 /* CoreTelephony.framework */; };
-		964B89141D766A82003FA9AD /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 96F3B9171A4E4E1E00EE7897 /* libsqlite3.0.dylib */; };
-		964B89151D766A82003FA9AD /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 82180581199D95BE0080D4C0 /* libz.dylib */; };
-		964B89171D766A82003FA9AD /* libz.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 969B224C1A0897BE007BAE95 /* libz.1.dylib */; };
-		964B89181D766A82003FA9AD /* libbz2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 969B224A1A0865AC007BAE95 /* libbz2.dylib */; };
 		964B89191D766A82003FA9AD /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82180583199D95DA0080D4C0 /* MediaPlayer.framework */; };
-		964B891A1D766A82003FA9AD /* libresolv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8218057F199D958C0080D4C0 /* libresolv.dylib */; };
 		964B891C1D766A82003FA9AD /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82180579199D95710080D4C0 /* SystemConfiguration.framework */; };
 		964B891E1D766A82003FA9AD /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82180577199D955F0080D4C0 /* CoreFoundation.framework */; };
-		964B891F1D766A82003FA9AD /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 82180575199D954F0080D4C0 /* libiconv.dylib */; };
 		964B89201D766A82003FA9AD /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82180573199D953F0080D4C0 /* CoreVideo.framework */; };
 		964B89221D766A82003FA9AD /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82180571199D95370080D4C0 /* QuartzCore.framework */; };
-		964B89231D766A82003FA9AD /* libiconv.2.4.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8218056B199D94F90080D4C0 /* libiconv.2.4.0.dylib */; };
 		964B89241D766A82003FA9AD /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82180569199D94ED0080D4C0 /* OpenGLES.framework */; };
 		964B89261D766A82003FA9AD /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82180567199D94E70080D4C0 /* OpenAL.framework */; };
 		964B89291D766A82003FA9AD /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82180565199D94E00080D4C0 /* CoreAudio.framework */; };
@@ -317,6 +310,11 @@
 		96FF06A621E33695006CFBA3 /* CloudVideoDownloadViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 96FF06A521E33695006CFBA3 /* CloudVideoDownloadViewController.mm */; };
 		96FF06A921E349D8006CFBA3 /* CLouldVideoResource.m in Sources */ = {isa = PBXBuildFile; fileRef = 96FF06A821E349D7006CFBA3 /* CLouldVideoResource.m */; };
 		96FF06AC21E44D06006CFBA3 /* PlayCloudVideoViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 96FF06AB21E44D06006CFBA3 /* PlayCloudVideoViewController.mm */; };
+		96FF06BA21E4A21B006CFBA3 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 96FF06B921E4A21B006CFBA3 /* libsqlite3.0.tbd */; };
+		96FF06BC21E4A240006CFBA3 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 96FF06BB21E4A240006CFBA3 /* libz.tbd */; };
+		96FF06BE21E4A249006CFBA3 /* libbz2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 96FF06BD21E4A249006CFBA3 /* libbz2.tbd */; };
+		96FF06C021E4A254006CFBA3 /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 96FF06BF21E4A254006CFBA3 /* libresolv.tbd */; };
+		96FF06C221E4A263006CFBA3 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 96FF06C121E4A263006CFBA3 /* libiconv.tbd */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -910,6 +908,11 @@
 		96FF06A821E349D7006CFBA3 /* CLouldVideoResource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLouldVideoResource.m; sourceTree = "<group>"; };
 		96FF06AA21E44D06006CFBA3 /* PlayCloudVideoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlayCloudVideoViewController.h; sourceTree = "<group>"; };
 		96FF06AB21E44D06006CFBA3 /* PlayCloudVideoViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = PlayCloudVideoViewController.mm; sourceTree = "<group>"; };
+		96FF06B921E4A21B006CFBA3 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		96FF06BB21E4A240006CFBA3 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		96FF06BD21E4A249006CFBA3 /* libbz2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libbz2.tbd; path = usr/lib/libbz2.tbd; sourceTree = SDKROOT; };
+		96FF06BF21E4A254006CFBA3 /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
+		96FF06C121E4A263006CFBA3 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
 		A14646751DEFBAC9005B8541 /* VideoToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VideoToolbox.framework; path = System/Library/Frameworks/VideoToolbox.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -918,13 +921,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C78C27D1F53F0E5003CC286 /* libc.tbd in Frameworks */,
+				96FF06C221E4A263006CFBA3 /* libiconv.tbd in Frameworks */,
+				96FF06C021E4A254006CFBA3 /* libresolv.tbd in Frameworks */,
+				96FF06BE21E4A249006CFBA3 /* libbz2.tbd in Frameworks */,
+				96FF06BC21E4A240006CFBA3 /* libz.tbd in Frameworks */,
+				96FF06BA21E4A21B006CFBA3 /* libsqlite3.0.tbd in Frameworks */,
 				96EFBD3D21BE029A005EBA5A /* libstdc++.6.0.9.tbd in Frameworks */,
 				96EFBD3B21BE028D005EBA5A /* Masonry.framework in Frameworks */,
 				96EFBD2621BB966A005EBA5A /* libfisheye.a in Frameworks */,
 				9651367E21B1158200430F26 /* AVKit.framework in Frameworks */,
 				964B890B1D766A82003FA9AD /* AVFoundation.framework in Frameworks */,
 				96FE567B21A5357800B8057D /* GLKit.framework in Frameworks */,
-				5C78C27D1F53F0E5003CC286 /* libc.tbd in Frameworks */,
 				964B89071D766A82003FA9AD /* CoreImage.framework in Frameworks */,
 				901182C91DF0102100148C94 /* VideoToolbox.framework in Frameworks */,
 				964B89061D766A82003FA9AD /* ImageIO.framework in Frameworks */,
@@ -937,20 +945,13 @@
 				964B89101D766A82003FA9AD /* AssetsLibrary.framework in Frameworks */,
 				96EFBD2721BB966A005EBA5A /* libFSCalendar.a in Frameworks */,
 				964B89111D766A82003FA9AD /* CoreTelephony.framework in Frameworks */,
-				964B89141D766A82003FA9AD /* libsqlite3.0.dylib in Frameworks */,
-				964B89151D766A82003FA9AD /* libz.dylib in Frameworks */,
-				964B89171D766A82003FA9AD /* libz.1.dylib in Frameworks */,
-				964B89181D766A82003FA9AD /* libbz2.dylib in Frameworks */,
 				203BD11321DF5C31005B91E9 /* FunSDK.framework in Frameworks */,
 				964B89191D766A82003FA9AD /* MediaPlayer.framework in Frameworks */,
-				964B891A1D766A82003FA9AD /* libresolv.dylib in Frameworks */,
 				964B891C1D766A82003FA9AD /* SystemConfiguration.framework in Frameworks */,
 				964B891E1D766A82003FA9AD /* CoreFoundation.framework in Frameworks */,
-				964B891F1D766A82003FA9AD /* libiconv.dylib in Frameworks */,
 				964B89201D766A82003FA9AD /* CoreVideo.framework in Frameworks */,
 				964B89221D766A82003FA9AD /* QuartzCore.framework in Frameworks */,
 				96EFBD2A21BB966A005EBA5A /* XMNetInterface.framework in Frameworks */,
-				964B89231D766A82003FA9AD /* libiconv.2.4.0.dylib in Frameworks */,
 				964B89241D766A82003FA9AD /* OpenGLES.framework in Frameworks */,
 				964B89261D766A82003FA9AD /* OpenAL.framework in Frameworks */,
 				96EFBD2821BB966A005EBA5A /* libvrsoft.a in Frameworks */,
@@ -1068,6 +1069,11 @@
 		8221433B198F0FAC009AEEB3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				96FF06C121E4A263006CFBA3 /* libiconv.tbd */,
+				96FF06BF21E4A254006CFBA3 /* libresolv.tbd */,
+				96FF06BD21E4A249006CFBA3 /* libbz2.tbd */,
+				96FF06BB21E4A240006CFBA3 /* libz.tbd */,
+				96FF06B921E4A21B006CFBA3 /* libsqlite3.0.tbd */,
 				96EFBD3C21BE029A005EBA5A /* libstdc++.6.0.9.tbd */,
 				96EFBD3A21BE028D005EBA5A /* Masonry.framework */,
 				9651367D21B1158100430F26 /* AVKit.framework */,

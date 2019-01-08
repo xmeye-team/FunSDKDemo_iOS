@@ -256,7 +256,7 @@
 #pragma mark  录像按文件查询查询回调
 - (void)getVideoResult:(NSInteger)result{
     if (result >= 0) {
-        [pBackView refreshProgressWithSearchResult:[videoConfig getVideoTimeArray]];
+        //[pBackView refreshProgressWithSearchResult:[videoConfig getVideoTimeArray]];
         
         [pVIew playViewBufferIng];
         [mediaPlayer startPlayBack:dateView.date];

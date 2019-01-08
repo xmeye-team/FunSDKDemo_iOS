@@ -27,6 +27,8 @@
 #import "AnalyzerViewController.h"  //智能分析
 #import "SystemFunctionConfig.h"
 #import "WaterMarkViewController.h"       //水印设置
+#import "BuzzerViewController.h"            //蜂鸣功能
+#import "HumanDetectionViewController.h"  //人形检测
 
 @interface DeviceConfigViewController ()<UITableViewDelegate,UITableViewDataSource,SystemInfoConfigDelegate>
 
@@ -199,6 +201,12 @@
     }else if([titleStr isEqualToString:TS("Cloud_storage")]){ //云服务
         CloudAbilityViewController *cloudVC = [[CloudAbilityViewController alloc] init];
         [self.navigationController pushViewController:cloudVC animated:NO];
+    }else if([titleStr isEqualToString:TS("Buzzer_setting")]){
+        BuzzerViewController *BuzzerVC = [[BuzzerViewController alloc] init];
+        [self.navigationController pushViewController:BuzzerVC animated:NO];
+    }else if([titleStr isEqualToString:TS("appEventHumanDetectAlarm")]){
+        HumanDetectionViewController *humandetectVC = [[HumanDetectionViewController alloc] init];
+        [self.navigationController pushViewController:humandetectVC animated:NO];
     }else{
         return;
     }
@@ -232,6 +240,8 @@
                               @{@"title":TS("AnalyzeConfig"),@"detailInfo":@""},
                               @{@"title":TS("Cloud_storage"),@"detailInfo":@""},
                               @{@"title":TS("Encoding_format"),@"detailInfo":@""},
-                              @{@"title":TS("Watermark_setting"),@"detailInfo":@""}];
+                              @{@"title":TS("Watermark_setting"),@"detailInfo":@""},
+                              @{@"title":TS("Buzzer_setting"),@"detailInfo":@""},
+                              @{@"title":TS("appEventHumanDetectAlarm"),@"detailInfo":@""}];
 }
 @end

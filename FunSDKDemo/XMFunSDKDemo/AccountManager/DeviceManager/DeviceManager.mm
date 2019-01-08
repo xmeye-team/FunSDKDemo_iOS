@@ -43,14 +43,17 @@
     return self;
 }
 #pragma mark -通过序列号、局域网搜索、ap模式连接添加设备
-- (void)addDeviceByDeviseSerialnumber:(NSString*)serialNumber devType:(int)type; {
+- (void)addDeviceByDeviseSerialnumber:(NSString*)serialNumber deviceName:(NSString *)deviceName devType:(int)type {
     //直接通过序列号添加设备
+    if (deviceName == nil) {
+        deviceName = serialNumber;
+    }
     SDBDeviceInfo devInfo = {0};
     STRNCPY(devInfo.loginName, SZSTR(@"admin"));
     STRNCPY(devInfo.loginPsw, SZSTR(@""));
     STRNCPY(devInfo.Devmac, SZSTR(serialNumber));
-    STRNCPY(devInfo.Devname, SZSTR(serialNumber));
     devInfo.nType = type;
+    STRNCPY(devInfo.Devname, SZSTR(deviceName));
     devInfo.nPort = 34567;
     FUN_SysAdd_Device(self.msgHandle, &devInfo);
 }
@@ -203,7 +206,7 @@
     FUN_DevSetLocalPwd(devInfo.Devmac, [user UTF8String], [psw UTF8String]);
 }
 
-#pragma mark - 修改设备名称和设备密码
+#pragma mark - 修改设备密码
 - (void)changeDevicePsw:(NSString *)devMac devName:(NSString *)name password:(NSString *)psw {
     FUN_DevSetLocalPwd(SZSTR(devMac),SZSTR(name), SZSTR(psw));
 }
@@ -371,6 +374,12 @@
             }
         }
             break;
+            
+#pragma mark - 修改密码
+        case EMSG_SYS_EDIT_PWD_XM:
+        {
+            NSLog(@"修改密码成功");
+        }
         #pragma mark 删除设备回调
         case EMSG_SYS_DELETE_DEV:{   // 删除设备
             NSMutableArray *deviceArray = [[DeviceControl getInstance] currentDeviceArray];

@@ -67,7 +67,7 @@
 - (void)addDeviceToList:(NSMessage *)msg;
 
 #pragma mark -通过序列号、局域网搜索、ap模式连接添加设备
-- (void)addDeviceByDeviseSerialnumber:(NSString*)serialNumber devType:(int)type;//通过输入设备序列号添加
+- (void)addDeviceByDeviseSerialnumber:(NSString*)serialNumber deviceName:(NSString *)deviceName devType:(int)type;//通过输入设备序列号添加
 - (void)addDeviceByDeviceIP:(NSString *)deviceIP deviceName:(NSString *)name password:(NSString *)psw port:(NSString *)port;//通过ip/域名进行添加
 - (void)addDeviceByAP;//ap模式下只能直接连接打开，无法进行账号相关操作
 - (void)SearchDevice;//搜索局域网下的设备
@@ -88,7 +88,7 @@
 
 #pragma mark - 修改设备信息 name:设备名称，user：设备用户名，默认admin，psw：用户密码
 - (void)changeDevice:(NSString *)devMac devName:(NSString *)name username:(NSString *)user password:(NSString *)psw;
-#pragma mark - 修改设备名称和设备密码
+#pragma mark - 修改设备密码
 - (void)changeDevicePsw:(NSString *)devMac devName:(NSString *)name password:(NSString *)psw;
 #pragma mark - 删除设备
 - (void)deleteDeviceWithDevMac:(NSString *)devMac;

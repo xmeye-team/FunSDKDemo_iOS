@@ -690,3 +690,5 @@ IDR_MSG_RESERVER_WAKE=预约唤醒
 Caller=访客来电
 IDR_LOW_BATTERY=电量低
 IDR_MSG_FORCE_DISMANTLE=智能设备被拔出
+Buzzer_setting=蜂鸣状态
+config_Save_Success=配置保存成功

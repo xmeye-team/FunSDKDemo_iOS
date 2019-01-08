@@ -20,6 +20,7 @@
 #import "VRGLViewController.h"
 #import "HardVRViewController.h"
 #import "UILabelOutLined.h"
+#import "DeviceManager.h"
 
 @interface PlayViewController () <MediaplayerControlDelegate,basePlayFunctionViewDelegate,PlayMenuViewDelegate,TalKViewDelegate,PTZViewDelegate>
 {
@@ -168,6 +169,30 @@
 #pragma mark - 开始预览结果回调
 -(void)mediaPlayer:(MediaplayerControl*)mediaPlayer startResult:(int)result DSSResult:(int)dssResult {
     if (result < 0) {
+        if(result == EE_DVR_PASSWORD_NOT_VALID)//密码错误，弹出密码修改框
+        {
+            [SVProgressHUD dismiss];
+            ChannelObject *channel = [[DeviceControl getInstance] getSelectChannel];
+            DeviceObject *device = [[DeviceControl getInstance] GetDeviceObjectBySN:channel.deviceMac];
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:TS("EE_DVR_PASSWORD_NOT_VALID") message:channel.deviceMac preferredStyle:UIAlertControllerStyleAlert];
+            [alert addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+                textField.placeholder = TS("set_new_psd");
+            }];
+            UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:TS("Cancel") style:UIAlertActionStyleCancel handler:nil];
+            UIAlertAction *okAction = [UIAlertAction actionWithTitle:TS("OK") style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                
+                UITextField *passWordTextField = alert.textFields.firstObject;
+                DeviceManager *manager = [DeviceManager getInstance];
+                //点击确定修改密码
+                [manager changeDevicePsw:channel.deviceMac devName:device.loginName password:passWordTextField.text];
+                //开始播放视频
+                [self startRealPlay];
+            }];
+            [alert addAction:cancelAction];
+            [alert addAction:okAction];
+            [self presentViewController:alert animated:YES completion:nil];
+            return;
+        }
         [MessageUI ShowErrorInt:result];
     }else {
          if (dssResult == 3) { //DSS 打开视频成功

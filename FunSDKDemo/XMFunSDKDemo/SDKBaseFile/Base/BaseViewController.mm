@@ -64,9 +64,6 @@ private:
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //[[UIApplication sharedApplication] setStatusBarStyle:StatusColor];
-    //_info.Init((__bridge void *)self);
-    //_hWnd = _info.GetId();
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationWillResignActives) name:UIApplicationWillResignActiveNotification object:nil];
     
@@ -90,10 +87,8 @@ private:
     [super viewWillDisappear:animated];
 }
 
--(void)applicationWillResignActives
-{
-    if ([SVProgressHUD isVisible])
-    {
+-(void)applicationWillResignActives {
+    if ([SVProgressHUD isVisible]) {
         [SVProgressHUD dismiss];
     }
 }
@@ -102,20 +97,17 @@ private:
 {
 }
 
--(int)MsgHandle
-{
+-(int)MsgHandle {
     if (_info.GetId() == 0) {
         _info.Init((__bridge void *)self);
     }
     return _info.GetId();
 }
 
--(void)CloseMsgHandle
-{
+-(void)CloseMsgHandle {
 }
 
--(void)didReceiveMemoryWarning
-{
+-(void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
 -(void)dismis

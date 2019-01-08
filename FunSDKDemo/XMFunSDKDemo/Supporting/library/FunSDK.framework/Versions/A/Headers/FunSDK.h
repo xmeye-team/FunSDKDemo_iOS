@@ -64,6 +64,7 @@ typedef enum EFUN_DEV_TYPE
     EE_DEV_PEEPHOLE = 26,                               //猫眼设备--xmjp_peephole
     EE_DEV_DOORLOCK = 0x11110027,                       //门锁设备--xmjp_stl_xxxx
     EE_DEV_DOORLOCK_V2 = 0x11110031, 					//门锁设备支持音频和对讲--xmjp_stl_xxxx
+    EE_DEV_SMALL_V = 0x11110032,						//小V设备--camera_xxxx
 	EE_DEV_BULLET_EG = 0x11310028,                      //EG型枪机--XMJP_bullet_xxxx
 	EE_DEV_BULLET_EC = 0x11310029,                      //EC型枪机--XMJP_bullet_xxxx
 	EE_DEV_BULLET_EB = 0x11310030,						//EB型枪机--XMJP_bullet_xxxx
@@ -219,7 +220,25 @@ int FUN_XMCloundPlatformInit(const char *uuid, const char *appKey, const char *a
 void Fun_Log(char *szLog);
 void Fun_LogInit(UI_HANDLE hUser, const char *szServerIP, int nServerPort, const char *szLogFile, int nLogLevel = 0x3);
 void Fun_SendLogFile(const char *szFile);
-void Fun_Crash(char *crashInfo);  //
+void Fun_Crash(char *crashInfo);
+
+/*******************SDK编译**************************
+* 方法名: FunSDK编译版本信息
+* 描  述: FunSDK编译版本日期，版本号
+* 返回值:
+*      date=%s&time=%s&number=1.0.0  日期&时间&FunSDK版本号
+*      版本号组成：1.0.0：主版本号.次版本号.修订号
+*      		         主版本号：全盘重构时增加；重大功能或方向改变时增加；大范围不兼容之前的接口时增加；
+*			         次版本号：增加新的业务功能时增加；
+*			         修订号：增加新的接口时增加；在接口不变的情况下，增加接口的非必填属性时增加；增强和扩展接口功能时增加。
+* 参  数:
+*      输入(in)
+*      输出(out)
+*          [无]
+* 结果消息：
+* 		[无]
+****************************************************/
+char *Fun_GetVersionInfo(char szVersion[512]);
 
 // 后台，前台切换函数
 void Fun_SetActive(int nActive);
@@ -466,6 +485,26 @@ int FUN_DevGetConfig_Json(UI_HANDLE hUser, const char *szDevId, const char *szCo
 int FUN_DevSetConfig_Json(UI_HANDLE hUser, const char *szDevId, const char *szCommand, const void *pConfig, int nConfigLen, int nChannelNO = -1, int nTimeout = 15000, int nSeq = 0);
 int FUN_DevGetConfigJson(UI_HANDLE hUser, const char *szDevId, const char *szCmd, int nChannelNO = -1, int nCmdReq = 0, int nSeq = 0, const char *pInParam = NULL, int nCmdRes = 0, int nTimeout = 0);
 int FUN_DevSetConfigJson(UI_HANDLE hUser, const char *szDevId, const char *szCmd, const char *pInParam, int nChannelNO = -1, int nCmdReq = 0, int nSeq = 0, int nCmdRes = 0, int nTimeout = 0);
+/*******************配置相关的接口**************************
+* 方法名: 设备配置获取、设置
+* 描  述: 设备配置获取、设置(Json格式，*不需要登陆设备)
+* 返回值:
+*      [无]
+* 参  数:
+*      输入(in)
+*          [szCmd:配置命令字]
+*          [pInParam:配置对象字节流-json格式]
+*          [nCmdReq:命令ID]
+*          [nChannelNO:通道号]
+*          [nCmdRes:暂时未使用]
+*          [nTimeout:超时时间  *<=0库里面默认根据网络类型设置]
+*      输出(out)
+*          [无]
+* 结果消息：
+* 		消息id:GET_CONFIG_JSON_DEV_NOT_LOGIN
+****************************************************/
+int FUN_DevConfigJson_NotLogin(UI_HANDLE hUser, const char *szDevId, const char *szCmd, const char *pInParam, int nCmdReq, int nChannelNO = -1, int nCmdRes = 0, int nTimeout = 15000, int nSeq = 0);
+
 // 设备通用命令交互
 // nIsBinary >= 0 || nInParamLen > 0传入的为二进制字节数组
 int FUN_DevCmdGeneral(UI_HANDLE hUser, const char *szDevId, int nCmdReq, const char *szCmd, int nIsBinary, int nTimeout, char *pInParam = NULL, int nInParamLen = 0, int nCmdRes = -1, int nSeq = 0);
@@ -548,7 +587,21 @@ int FUN_DevStartWifiConfig(UI_HANDLE hUser, const char *szDevId, const char *szS
 int FUN_DevStartWifiConfigByAPLogin(UI_HANDLE hUser, const char *szDevId, const char *szSSID, const char *szPassword, int nTimeout = 120000);
 void FUN_DevStopWifiConfig();
 
-FUN_HANDLE FUN_DevStarTalk(UI_HANDLE hUser, const char *szDevId, int nSeq = 0);
+/*******************对讲相关的接口**************************
+* 方法名: 开启对讲
+* 描  述: 开启对讲
+* 返回值:
+*         操作句柄
+* 参  数:
+*      输入(in)
+*          [nSupIpcTalk:是否支持IPC对讲，1支持,其他不支持，能力级获取SupportIPCTalk]
+*          [nChannel:-1表示对所有连接的IPC单向广播 ， >=0表示指定某通道进行对讲  *nSupIpcTalk = 0时不需要使用]
+*      输出(out)
+*          [无]
+* 结果消息：
+* 		消息ID：EMSG_START_PLAY = 5501
+****************************************************/
+FUN_HANDLE FUN_DevStarTalk(UI_HANDLE hUser, const char *szDevId, Bool bSupIpcTalk = FALSE, int nChannel = 0, int nSeq = 0);
 int FUN_DevSendTalkData(const char *szDevId, const char *pPCMData, int nDataLen);
 void FUN_DevStopTalk(FUN_HANDLE hPlayer);
 int FUN_DevOption(const char *szDevId, MsgOption *pOpt);
@@ -919,6 +972,8 @@ typedef enum EUIMSG
 #endif
 	EMSG_DEV_START_PUSH_PICTURE = 5147, //开始推图
 	EMSG_DEV_STOP_PUSH_PICTURE = 5148, //停止推图
+	EMSG_DEV_MAIN_LINK_KEEP_ALIVE = 5149, //从后台切回app，主链接检测，保活
+	EMSG_DEV_CONFIG_JSON_NOT_LOGIN = 5150, //设备配置获取，设置(Json格式，不需要登陆设备)
 
     EMSG_SET_PLAY_SPEED = FUN_USER_MSG_BEGIN_1 + 500,
     EMSG_START_PLAY = 5501,
@@ -1392,12 +1447,13 @@ typedef enum EFUN_ERROR
     EE_AS_SYS_NO_VALIDATED_REGISTER_EXTEND_CODE3 = -215006, // 用户名已被注册
     EE_AS_SYS_NO_VALIDATED_REGISTER_EXTEND_CODE4 = -215010, // 注册失败
     
+    //Dss相关错误
     EE_DSS_XMCloud_InvalidParam = -215100,    //通过XMCloud获取设备DSS信息
     EE_DSS_XMCloud_ConnectHls = -215101,    //DSS连接Hls服务器失败
     EE_DSS_XMCloud_InvalidStream= -215102,    //DSS服务器异常
     EE_DSS_XMCloud_Request = -215103,    //DSS服务器请求失败
     EE_DSS_XMCloud_StreamInterrupt = -215104,    //DSS码流格式解析失败
-    
+
     EE_DSS_SQUARE_PARSE_URL = -215110,      //解析雄迈云返回的视频广场url失败
     
     EE_DSS_MINOR_STREAM_DISABLE = -215120,   // DSS  服务器禁止此种码流(-1)
@@ -1409,6 +1465,18 @@ typedef enum EFUN_ERROR
     EE_DSS_BAD_REQUEST = -215130,            // 无效请求（http）
     EE_MEDIA_CONNET_REACHED_MAX  = -215131,  // 媒体视频链接达到最大，访问受限
     
+    //和Dss Token/AuthCode相关的错误
+    EE_DSS_XMClOUD_ERROR_INVALID_TOKEN_FORMAT= -215140, //100001 无效的令牌格式
+    EE_DSS_XMClOUD_ERROR_NOT_MATCH_TOKEN_SERINUMBER = -215141, //100002 不匹配令牌序列号
+    EE_DSS_XMClOUD_ERROR_REMOTE_IP_NOT_MATCH_TOKEN_IP = -215142, //100003 远程ip不匹配令牌ip
+    EE_DSS_XMClOUD_ERROR_TOKNE_EXPIRSE = -215143, //100004 令牌到期
+    EE_DSS_XMClOUD_ERROR_GET_SECRET_KEY_FAILED = -215144, //100005 获取秘钥key失败
+    EE_DSS_XMClOUD_ERROR_TOKEN_NOT_MATCH_SIGN = -215145, //100006 令牌不符
+    EE_DSS_XMClOUD_ERROR_KEY_DATA_INVALIED_FORMAT = -215146, //100007 令牌数据无效格式
+    EE_DSS_XMClOUD_ERROR_DECODE_KEY_DATA_FAILED = -215147, //100008 解密秘钥数据失败
+    EE_DSS_XMClOUD_ERROR_AUTHCODE_NOT_MATCH = -215148, //100009 authcode不匹配
+    EE_DSS_XMClOUD_ERROR_AUTHCODE_CHANGE = -215149, //100010 更改了authcode
+
     EE_ALARM_CHECK_AUTHCODE_FAILED = -221201, //报警授权码错误
     EE_ALARM_NOT_SUPPORTED = -221202,          //不支持（比较在中国界内不支持Google报警）
     

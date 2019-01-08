@@ -10,7 +10,7 @@
 #import "FunSDK/FunSDK.h"
 #import "FunSDK/netsdk.h"
 #import "SDKInitializeModel.h"
-
+#import "DeviceManager.h"
 #import "MainViewController.h"
 
 @implementation AppDelegate{
@@ -139,10 +139,23 @@
 
 // 注册通知失败 处理方法
 -(void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error{
-//    [[[UIAlertView alloc] initWithTitle:TS("Get_APSN_Token_failed") message:nil delegate:nil cancelButtonTitle:TS("Confirm") otherButtonTitles:nil]show];
 }
 
 -(void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo{
+    
+    NSString *devId = userInfo[@"UUID"];
+    DeviceObject *device = [[DeviceControl getInstance]GetDeviceObjectBySN:devId];
+    // 强拆 ForceDismantleAlarm=41
+    // 如果是门铃设备推送消息 就去刷新一下设备状态
+    if (((device.nType == XM_DEV_DOORBELL || device.nType == CZ_DOORBELL || device.nType == XM_DEV_CAT) && [[userInfo objectForKey:@"Event"] intValue] == 30 ) || device.nType == XM_DEV_INTELLIGENT_LOCK || device.nType == XM_DEV_DOORBELL_A || device.nType == XM_DEV_DOORLOCK_V2 ) {
+        //获取设备状态
+        [[DeviceManager getInstance] getDeviceState:device.deviceMac];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(15 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            //因为推送具有延时性，并且因为门铃处在被操作阶段，所以过15秒之后多获取一次保证状态正确
+            [[DeviceManager getInstance] getDeviceState:device.deviceMac];
+        });
+    }
+    
     NSString *message = [NSString stringWithFormat:@"%@",[[userInfo objectForKey:@"aps"] objectForKey:@"alert"]];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         //程序运行期间受到报警信息

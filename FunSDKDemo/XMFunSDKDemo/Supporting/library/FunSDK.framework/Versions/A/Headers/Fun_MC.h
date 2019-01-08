@@ -66,7 +66,7 @@ typedef struct SMCInitInfo
     char token[256];	// Google报警需要256， 多个报警订阅用&&连接
     int language;       // EMSGLANGUAGE
     int appType;        // EAPPTYPE
-    char szAppType[64];	// XXXXXX
+    char szAppType[256];	// XXXXXX 第三方订阅报警URL
 }SMCInitInfo;
 
 // 初始化
@@ -96,7 +96,7 @@ int MC_UnlinkAllAccountsOfDev(UI_HANDLE hUser, const char *uuid, int nSeq = 0);
 int MC_UnlinkDevAbnormal(UI_HANDLE hUser, const char *uuid, const char *apptoken, int nSeq = 0);
 
 // 删除报警信息，此接口使用需谨慎。alrmaID，报警id, 为NULL或空字符串，表示清空;若有多个,以；分割
-int MC_Delete(UI_HANDLE hUser, const char *uuid,const char *deleteType, const char *alrmaID, int nSeq = 0);
+int MC_Delete(UI_HANDLE hUser, const char *uuid,const char *deleteType, const char *alarmID, int nSeq = 0);
 
 //接口废弃-zyj-161029
 //int MC_DevConnect(UI_HANDLE hUser, const char *uuid, int nSeq = 0);

@@ -94,18 +94,18 @@
             if (msg->param1 ==EUPGRADE_STEP_DOWN) { //下载到app
                 //msg->param2 下载进度
                 dataSource.upState = upgradeStateDownload;
-                dataSource.progress = msg->param2/100.0;
+                dataSource.progress = msg->param2;
             }
             else if (msg->param1 == EUPGRADE_STEP_UP) { //上传到设备
                 dataSource.upState = upgradeStateComplete;
-                dataSource.progress = msg->param2/100.0;
+                dataSource.progress = msg->param2;
             }
             else if (msg->param1 == EUPGRADE_STEP_UPGRADE) { //升级进度
                 dataSource.upState = upgradeStateupgrading;
-               dataSource.progress = msg->param2/100.0;
+               dataSource.progress = msg->param2;
             }else if (msg->param1 == EUPGRADE_STEP_COMPELETE) { //升级完成
                 dataSource.upState = upgradeStateSuccess;
-                dataSource.progress = 100.0/100.0;
+                dataSource.progress = 100.0;
             }
             //回调到上层界面
             if(self.delegate && [self.delegate respondsToSelector:@selector(upgradeProgressDeviceResult)]){

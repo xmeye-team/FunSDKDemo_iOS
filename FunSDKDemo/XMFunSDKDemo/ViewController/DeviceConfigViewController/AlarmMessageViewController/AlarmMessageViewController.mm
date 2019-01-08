@@ -110,17 +110,29 @@
     AlarmMessageInfo *info = [messageArray objectAtIndex:indexPath.row];
     NSString *videoType;
     if ([[info getEvent] isEqualToString:@"VideoMotion"]) {
-        videoType = @"Motion_detection";
+        videoType = @"Motion_detection";//移动检测
     }else if ([[info getEvent] isEqualToString:@"VideoBlind"]) {
-        videoType = @"Video_block";
+        videoType = @"Video_block"; //视频遮挡
     }else if ([[info getEvent] isEqualToString:@"VideoLoss"]) {
-        videoType = @"VideoLoss";
+        videoType = @"Video_loss_alarm"; //视频丢失
     }else if ([[info getEvent] isEqualToString:@"LocalIO"]) {
-        videoType = @"LocalIO";
+        videoType = @"LocalIO"; //本地IO报警
     }else if ([[info getEvent] isEqualToString:@"appEventHumanDetectAlarm"]){
-        videoType = @"appEventHumanDetectAlarm";
+        videoType = @"appEventHumanDetectAlarm"; //人形检测
     }else if ([[info getEvent] isEqualToString:@"VideoAnalyze"]){
-        videoType = @"Video_Analyze";
+        videoType = @"AnalyzeConfig"; //智能分析报警
+    }else if ([[info getEvent] isEqualToString:@"LocalAlarm"]){
+        videoType = @"Caller"; //访客来电
+    }else if ([[info getEvent] isEqualToString:@"PIRAlarm"]){
+        videoType = @"IDR_MSG_LOITERING"; //徘徊检测
+    }else if ([[info getEvent] isEqualToString:@"LowBattery"]){
+        videoType = @"IDR_LOW_BATTERY"; //低电量
+    }else if ([[info getEvent] isEqualToString:@"ReserveWakeAlarm"]){
+        videoType = @"IDR_MSG_RESERVER_WAKE"; //预约唤醒
+    }else if ([[info getEvent] isEqualToString:@"IntervalWakeAlarm"]){
+        videoType = @"IDR_MSG_INTERVAL_WAKE"; //间隔唤醒
+    }else if ([[info getEvent] isEqualToString:@"ForceDismantleAlarm"]){
+        videoType = @"IDR_MSG_FORCE_DISMANTLE"; //智能设备被拔出
     }else{
         videoType = [info getEvent];
     }

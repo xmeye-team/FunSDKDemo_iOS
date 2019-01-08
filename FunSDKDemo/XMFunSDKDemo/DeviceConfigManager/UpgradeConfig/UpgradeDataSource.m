@@ -23,7 +23,7 @@
     return TS("");
 }
 - (NSString*)getUpgradeState {//读取下载状态，如下载中、升级中、升级完成等状态
-    NSArray *array = [self getCheckStateArray];
+    NSArray *array = [self getUpgradeStateArray];
     if (self.upState == upgradeStateDownload) {
         return [array objectAtIndex:1];
     }else if (self.upState == upgradeStateComplete){

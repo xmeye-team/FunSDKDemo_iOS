@@ -5,8 +5,9 @@
 //  Created by XM on 2017/3/2.
 //  Copyright © 2017年 Megatron. All rights reserved.
 //
-
 #import <Foundation/Foundation.h>
+
+#define  DATEFORMATER  @"yyyy-MM-dd"
 
 @interface NSDate (TimeCategory)
 /**

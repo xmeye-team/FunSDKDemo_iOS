@@ -24,7 +24,9 @@
 @end
 
 @interface DeviceManager ()
-
+{
+    NSString *deviceMac;
+}
 @end
 
 @implementation DeviceManager
@@ -41,14 +43,14 @@
     return self;
 }
 #pragma mark -通过序列号、局域网搜索、ap模式连接添加设备
-- (void)addDeviceByDeviseSerialnumber:(NSString*)serialNumber {
+- (void)addDeviceByDeviseSerialnumber:(NSString*)serialNumber devType:(int)type; {
     //直接通过序列号添加设备
     SDBDeviceInfo devInfo = {0};
     STRNCPY(devInfo.loginName, SZSTR(@"admin"));
     STRNCPY(devInfo.loginPsw, SZSTR(@""));
     STRNCPY(devInfo.Devmac, SZSTR(serialNumber));
     STRNCPY(devInfo.Devname, SZSTR(serialNumber));
-    devInfo.nType = 0;
+    devInfo.nType = type;
     devInfo.nPort = 34567;
     FUN_SysAdd_Device(self.msgHandle, &devInfo);
 }
@@ -147,8 +149,13 @@
 }
 
 #pragma mark - 唤醒睡眠中的设备
-- (void)deviceWeakUp:(NSString*)deviceMac {
-    FUN_DevWakeUp(self.msgHandle, SZSTR(deviceMac), 0);
+- (void)deviceWeakUp:(NSString*)string {
+    DeviceObject *object = [[DeviceControl getInstance] GetDeviceObjectBySN:string];
+    //门铃门锁等设备才需要每次唤醒
+    if (object.nType == XM_DEV_CAT || object.nType == XM_DEV_DOORBELL || object.nType == CZ_DOORBELL || object.nType == XM_DEV_DOORBELL_A) {
+        deviceMac = string;
+        FUN_DevWakeUp(self.msgHandle, SZSTR(deviceMac), 0);
+    }
 }
 
 #pragma mark - 获取设备通道
@@ -208,6 +215,14 @@
     FUN_SysDelete_Dev(self.msgHandle, [devMac UTF8String], "", "", (int)[deviceArray indexOfObject:devObj]);
 }
 
+#pragma mark - 判断是否是主账号
+- (void)checkMasterAccount:(NSString *)devMac {
+    if (devMac == nil) {
+        ChannelObject *channel = [[DeviceControl getInstance] getSelectChannel];
+        devMac = channel.deviceMac;
+    }
+    Fun_SysIsDevMasterAccountFromServer(self.msgHandle, [devMac UTF8String], 0);
+}
 
 #pragma mark 获取设备列表和添加设备成功之后放入内存
 - (void)resiveDevicelist:(NSMessage *)msg {
@@ -289,7 +304,7 @@
             }
             if (msg->param1 >0) {
                 //获取门铃状态
-                if (devObject.nType == EE_DEV_IDR || devObject.nType == EE_DEV_PEEPHOLE  || devObject.nType == EE_DEV_CZ_IDR) {
+                 if (devObject.nType == XM_DEV_DOORBELL || devObject.nType == XM_DEV_CAT || devObject.nType == CZ_DOORBELL || devObject.nType == XM_DEV_INTELLIGENT_LOCK || devObject.nType == XM_DEV_DOORBELL_A || devObject.nType == XM_DEV_DOORLOCK_V2) {
                     //下面这个方法在获取设备状态回调后调用准确度最高
                     devObject.info.eFunDevState = FUN_GetDevState(SZSTR(devObject.deviceMac), EFunDevStateType_IDR);
                     NSLog(@"eFunDevState %@ %i",devObject.deviceMac,devObject.info.eFunDevState);
@@ -300,14 +315,12 @@
             }
         }
             break;
+             #pragma mark 设备唤醒回调
         case EMSG_DEV_WAKE_UP:{
-            //门铃门锁类产品唤醒回调，这类产品根据设备类型不同，无操作一段时间（15/30秒）后可能会自动休眠，所以这一类设备每次操作前最好都能执行一次唤醒功能。如果想要准确实时获取这类设备的休眠状态，那么需要每过一段时间去获取一下
-            //回调结束刷新
-            DeviceObject *devObject = [[DeviceControl getInstance] GetDeviceObjectBySN:NSSTR(msg->szStr)];
-            if(devObject != nil){
+            //门铃门锁类产品唤醒回调，这类产品根据设备类型不同，无操作一段时间（15/30秒）后可能会自动休眠，所以这一类设备每次操作前最好都能执行一次唤醒功能。如果想要准确实时获取这类设备的休眠状态，那么需要每过一段时间去获取一下。另外门铃门锁等智能唤醒设备，直接按门铃唤醒，会以报警推送的方式发消息给手机，app可以在收到消息后刷新状态
+            //回调结束刷新，deviceMac是开始唤醒设备时保存的
                 if (self.delegate && [self.delegate respondsToSelector:@selector(deviceWeakUp:result:)]) {
-                    [self.delegate deviceWeakUp:devObject.deviceMac result:msg->param1];
-                }
+                    [self.delegate deviceWeakUp:deviceMac result:msg->param1];
             }
         }
             break;
@@ -463,6 +476,12 @@
             NSLog(@"");
         }
             break;
+            #pragma mark 判断是否是主账号回调
+        case EMSG_SYS_IS_MASTERMA: {
+            if ([self.delegate respondsToSelector:@selector(checkMaster:Result:)]) {
+                [self.delegate checkMaster:nil Result:msg->param1];
+            }
+        }
         default:
             break;
     }

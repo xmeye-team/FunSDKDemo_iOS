@@ -97,7 +97,7 @@
     }
     [SVProgressHUD show];
     //通过序列号添加
-    [deviceManager addDeviceByDeviseSerialnumber:devSerialTF.text];
+    [deviceManager addDeviceByDeviseSerialnumber:devSerialTF.text devType:0];
     //修改设备名称和设备密码
     [deviceManager changeDevicePsw:devSerialTF.text devName:devNameTF.text password:devPswTF.text];
 }

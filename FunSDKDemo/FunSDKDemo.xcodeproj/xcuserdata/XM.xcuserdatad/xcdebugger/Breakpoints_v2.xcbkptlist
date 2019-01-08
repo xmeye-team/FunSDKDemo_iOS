@@ -501,12 +501,12 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "XMFunSDKDemo/MediaPlayControl/MediaplayerControl.mm"
-            timestampString = "567421055.663738"
+            filePath = "XMFunSDKDemo/DeviceConfigManager/AlarmMessageConfig/AlarmMessageConfig.mm"
+            timestampString = "568285562.699253"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "237"
-            endingLineNumber = "237"
+            startingLineNumber = "115"
+            endingLineNumber = "115"
             landmarkName = "-OnFunSDKResult:"
             landmarkType = "7">
          </BreakpointContent>
@@ -517,13 +517,93 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "XMFunSDKDemo/MediaPlayControl/MediaplayerControl.mm"
-            timestampString = "567421055.6637959"
+            filePath = "XMFunSDKDemo/DeviceConfigManager/AlarmMessageConfig/AlarmMessageConfig.mm"
+            timestampString = "568285798.96163"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "321"
-            endingLineNumber = "321"
-            landmarkName = "-OnFunSDKResult:"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "-searchAlarmPic:fileName:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "XMFunSDKDemo/DeviceConfigManager/AlarmMessageConfig/AlarmMessageConfig.mm"
+            timestampString = "568285803.2414401"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "-searchAlarmThumbnail:fileName:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "XMFunSDKDemo/ViewController/DeviceConfigViewController/AlarmMessageViewController/AlarmMessageViewController.mm"
+            timestampString = "568286077.718426"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "177"
+            endingLineNumber = "177"
+            landmarkName = "-getAlarmMessageConfigResult:message:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "XMFunSDKDemo/ViewController/DeviceConfigViewController/CloudAbilityViewController/CloudVideoServerViewController/CloudVideoDownloadViewController.mm"
+            timestampString = "568604850.9273829"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "74"
+            endingLineNumber = "74"
+            landmarkName = "-downloadCloudVideoComplete:path:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "XMFunSDKDemo/ViewController/DeviceConfigViewController/CloudAbilityViewController/CloudPhotoServerViewController/CloudPhotoViewController.mm"
+            timestampString = "568556804.340991"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
+            landmarkName = "-getCloudMonthResult:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "XMFunSDKDemo/DeviceConfigManager/CloudAbilityConfig/CloudPhotoConfg/CloudPhotoConfig.mm"
+            timestampString = "568604850.927485"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "-getCloudPhotoMonth:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

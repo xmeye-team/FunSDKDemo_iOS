@@ -19,4 +19,5 @@
 @property (nonatomic, copy) NSString *loginName;
 @property (nonatomic, copy) NSString *loginPsw;
 @property (nonatomic) int channelNumber;  //通道号
+@property (nonatomic) BOOL isFish;  //是否是全景矫正
 @end

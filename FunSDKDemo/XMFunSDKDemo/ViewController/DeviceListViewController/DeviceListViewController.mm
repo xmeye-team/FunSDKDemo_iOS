@@ -157,6 +157,8 @@
     if (devObject.state <=0 ) {
         //提示设备不在线
         [SVProgressHUD showErrorWithStatus:TS("EE_DVR_CONNECT_DEVICE_ERROR") duration:2.0];
+        //刷新当前设备状态，如果是门铃的话，可能已经处于休眠状态而没有实时刷新
+        [[DeviceManager getInstance] getDeviceState:devObject.deviceMac];
         return;
     }
     if (devObject.info.eFunDevState == 4) {//睡眠中
@@ -221,13 +223,13 @@
 }
 #pragma - mark 设备唤醒结果
 - (void)deviceWeakUp:(NSString *)sId result:(int)result {
-    if (result <= 0) {
+    if (result < 0) {
         [MessageUI ShowErrorInt:result];
         return;
     }
      [SVProgressHUD dismiss];
     DeviceObject *object = [[DeviceControl getInstance] GetDeviceObjectBySN:sId];
-    object.info.eFunDevState = 0;
+    object.info.eFunDevState = 1;
     [self.devListTableView reloadData];
 }
 #pragma mark 获取设备通道结果

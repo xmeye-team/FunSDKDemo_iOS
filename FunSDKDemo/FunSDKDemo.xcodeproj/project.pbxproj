@@ -43,6 +43,12 @@
 		964B892B1D766A82003FA9AD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82214340198F0FAC009AEEB3 /* UIKit.framework */; };
 		964B892C1D766A82003FA9AD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8221433C198F0FAC009AEEB3 /* Foundation.framework */; };
 		9651367E21B1158200430F26 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9651367D21B1158100430F26 /* AVKit.framework */; };
+		9668D24221DDB0A600C8898D /* CloudServerViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9668D24121DDB0A600C8898D /* CloudServerViewController.mm */; };
+		96745B7521DDEDC300DC7D66 /* CloudPhotoViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 96745B7421DDEDC300DC7D66 /* CloudPhotoViewController.mm */; };
+		96745B7821DDEDD200DC7D66 /* CloudVideoViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 96745B7721DDEDD200DC7D66 /* CloudVideoViewController.mm */; };
+		96745B7D21DDFBED00DC7D66 /* CloudPhotoConfig.mm in Sources */ = {isa = PBXBuildFile; fileRef = 96745B7C21DDFBED00DC7D66 /* CloudPhotoConfig.mm */; };
+		96745B8021DE263C00DC7D66 /* CloudphotoDayVController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 96745B7F21DE263C00DC7D66 /* CloudphotoDayVController.mm */; };
+		96745B8321DEEEDE00DC7D66 /* XMAlarmMsgResource.m in Sources */ = {isa = PBXBuildFile; fileRef = 96745B8121DEEEDE00DC7D66 /* XMAlarmMsgResource.m */; };
 		96A0FFFB21CDCCBD00D3F459 /* AnalyzeConfig.mm in Sources */ = {isa = PBXBuildFile; fileRef = 96A0FFFA21CDCCBD00D3F459 /* AnalyzeConfig.mm */; };
 		96B8A8FB21CE1C9D00206580 /* AnalyzeDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 96B8A8FA21CE1C9D00206580 /* AnalyzeDataSource.m */; };
 		96B8A90321CE256400206580 /* AnalyzerViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 96B8A90221CE256400206580 /* AnalyzerViewController.mm */; };
@@ -187,6 +193,9 @@
 		96C6B5D621BB6869000B32E7 /* UILabelOutLined.m in Sources */ = {isa = PBXBuildFile; fileRef = 96C6B4CA21BB6868000B32E7 /* UILabelOutLined.m */; };
 		96C6B5D721BB6869000B32E7 /* VRFunctionView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 96C6B4CC21BB6868000B32E7 /* VRFunctionView.mm */; };
 		96C6B5D821BB6869000B32E7 /* VRGLViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 96C6B4CE21BB6868000B32E7 /* VRGLViewController.mm */; };
+		96C977FB21D4AF8E004A1A87 /* CloudAbilityConfig.mm in Sources */ = {isa = PBXBuildFile; fileRef = 96C977FA21D4AF8E004A1A87 /* CloudAbilityConfig.mm */; };
+		96C9780121D4B2F8004A1A87 /* CloudAbilityDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 96C9780021D4B2F8004A1A87 /* CloudAbilityDataSource.m */; };
+		96C9780521D4BDC1004A1A87 /* CloudAbilityViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 96C9780421D4BDC1004A1A87 /* CloudAbilityViewController.mm */; };
 		96EFBCC421BB966A005EBA5A /* xmjp_beye.png in Resources */ = {isa = PBXBuildFile; fileRef = 96EFBC3321BB966A005EBA5A /* xmjp_beye.png */; };
 		96EFBCC521BB966A005EBA5A /* xmjp_bob.png in Resources */ = {isa = PBXBuildFile; fileRef = 96EFBC3421BB966A005EBA5A /* xmjp_bob.png */; };
 		96EFBCC621BB966A005EBA5A /* xmjp_bulb.png in Resources */ = {isa = PBXBuildFile; fileRef = 96EFBC3521BB966A005EBA5A /* xmjp_bulb.png */; };
@@ -298,6 +307,12 @@
 		96EFBD3B21BE028D005EBA5A /* Masonry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96EFBD3A21BE028D005EBA5A /* Masonry.framework */; };
 		96EFBD3D21BE029A005EBA5A /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 96EFBD3C21BE029A005EBA5A /* libstdc++.6.0.9.tbd */; };
 		96FE567B21A5357800B8057D /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96FE567A21A5357800B8057D /* GLKit.framework */; };
+		96FF068E21DEFE1D006CFBA3 /* CloudPhotoDownloadViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 96FF068D21DEFE1D006CFBA3 /* CloudPhotoDownloadViewController.mm */; };
+		96FF069521E2FEE5006CFBA3 /* CloudVideoConfig.mm in Sources */ = {isa = PBXBuildFile; fileRef = 96FF069421E2FEE5006CFBA3 /* CloudVideoConfig.mm */; };
+		96FF06A321E33620006CFBA3 /* CloudVideoDayViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 96FF06A221E33620006CFBA3 /* CloudVideoDayViewController.mm */; };
+		96FF06A621E33695006CFBA3 /* CloudVideoDownloadViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 96FF06A521E33695006CFBA3 /* CloudVideoDownloadViewController.mm */; };
+		96FF06A921E349D8006CFBA3 /* CLouldVideoResource.m in Sources */ = {isa = PBXBuildFile; fileRef = 96FF06A821E349D7006CFBA3 /* CLouldVideoResource.m */; };
+		96FF06AC21E44D06006CFBA3 /* PlayCloudVideoViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 96FF06AB21E44D06006CFBA3 /* PlayCloudVideoViewController.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -338,6 +353,18 @@
 		82214340198F0FAC009AEEB3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		964B8BDC1D766A82003FA9AD /* FunSDKDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FunSDKDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9651367D21B1158100430F26 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
+		9668D24021DDB0A600C8898D /* CloudServerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CloudServerViewController.h; sourceTree = "<group>"; };
+		9668D24121DDB0A600C8898D /* CloudServerViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = CloudServerViewController.mm; sourceTree = "<group>"; };
+		96745B7321DDEDC300DC7D66 /* CloudPhotoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CloudPhotoViewController.h; sourceTree = "<group>"; };
+		96745B7421DDEDC300DC7D66 /* CloudPhotoViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = CloudPhotoViewController.mm; sourceTree = "<group>"; };
+		96745B7621DDEDD200DC7D66 /* CloudVideoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CloudVideoViewController.h; sourceTree = "<group>"; };
+		96745B7721DDEDD200DC7D66 /* CloudVideoViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = CloudVideoViewController.mm; sourceTree = "<group>"; };
+		96745B7B21DDFBED00DC7D66 /* CloudPhotoConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CloudPhotoConfig.h; sourceTree = "<group>"; };
+		96745B7C21DDFBED00DC7D66 /* CloudPhotoConfig.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = CloudPhotoConfig.mm; sourceTree = "<group>"; };
+		96745B7E21DE263C00DC7D66 /* CloudphotoDayVController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CloudphotoDayVController.h; sourceTree = "<group>"; };
+		96745B7F21DE263C00DC7D66 /* CloudphotoDayVController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = CloudphotoDayVController.mm; sourceTree = "<group>"; };
+		96745B8121DEEEDE00DC7D66 /* XMAlarmMsgResource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMAlarmMsgResource.m; sourceTree = "<group>"; };
+		96745B8221DEEEDE00DC7D66 /* XMAlarmMsgResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMAlarmMsgResource.h; sourceTree = "<group>"; };
 		969B224A1A0865AC007BAE95 /* libbz2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libbz2.dylib; path = usr/lib/libbz2.dylib; sourceTree = SDKROOT; };
 		969B224C1A0897BE007BAE95 /* libz.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.dylib; path = usr/lib/libz.1.dylib; sourceTree = SDKROOT; };
 		96A0FFF921CDCCBD00D3F459 /* AnalyzeConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AnalyzeConfig.h; sourceTree = "<group>"; };
@@ -715,6 +742,12 @@
 		96C6B4CE21BB6868000B32E7 /* VRGLViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = VRGLViewController.mm; sourceTree = "<group>"; };
 		96C6B4CF21BB6868000B32E7 /* VRSoft.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VRSoft.h; sourceTree = "<group>"; };
 		96C6B4D021BB6868000B32E7 /* VRSoftDef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VRSoftDef.h; sourceTree = "<group>"; };
+		96C977F921D4AF8E004A1A87 /* CloudAbilityConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CloudAbilityConfig.h; sourceTree = "<group>"; };
+		96C977FA21D4AF8E004A1A87 /* CloudAbilityConfig.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = CloudAbilityConfig.mm; sourceTree = "<group>"; };
+		96C977FF21D4B2F8004A1A87 /* CloudAbilityDataSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CloudAbilityDataSource.h; sourceTree = "<group>"; };
+		96C9780021D4B2F8004A1A87 /* CloudAbilityDataSource.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CloudAbilityDataSource.m; sourceTree = "<group>"; };
+		96C9780321D4BDC1004A1A87 /* CloudAbilityViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CloudAbilityViewController.h; sourceTree = "<group>"; };
+		96C9780421D4BDC1004A1A87 /* CloudAbilityViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = CloudAbilityViewController.mm; sourceTree = "<group>"; };
 		96E9B10B1BCBAA1B005A8590 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		96E9B10D1BCBAA42005A8590 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		96E9B10F1BCBAA5B005A8590 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
@@ -852,6 +885,18 @@
 		96EFBD3C21BE029A005EBA5A /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "XMFunSDKDemo/Supporting/Libraries/libstdc++.6.0.9.tbd"; sourceTree = "<group>"; };
 		96F3B9171A4E4E1E00EE7897 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 		96FE567A21A5357800B8057D /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		96FF068C21DEFE1D006CFBA3 /* CloudPhotoDownloadViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CloudPhotoDownloadViewController.h; sourceTree = "<group>"; };
+		96FF068D21DEFE1D006CFBA3 /* CloudPhotoDownloadViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = CloudPhotoDownloadViewController.mm; sourceTree = "<group>"; };
+		96FF069321E2FEE5006CFBA3 /* CloudVideoConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CloudVideoConfig.h; sourceTree = "<group>"; };
+		96FF069421E2FEE5006CFBA3 /* CloudVideoConfig.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = CloudVideoConfig.mm; sourceTree = "<group>"; };
+		96FF06A121E33620006CFBA3 /* CloudVideoDayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CloudVideoDayViewController.h; sourceTree = "<group>"; };
+		96FF06A221E33620006CFBA3 /* CloudVideoDayViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = CloudVideoDayViewController.mm; sourceTree = "<group>"; };
+		96FF06A421E33695006CFBA3 /* CloudVideoDownloadViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CloudVideoDownloadViewController.h; sourceTree = "<group>"; };
+		96FF06A521E33695006CFBA3 /* CloudVideoDownloadViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = CloudVideoDownloadViewController.mm; sourceTree = "<group>"; };
+		96FF06A721E349D7006CFBA3 /* CLouldVideoResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLouldVideoResource.h; sourceTree = "<group>"; };
+		96FF06A821E349D7006CFBA3 /* CLouldVideoResource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLouldVideoResource.m; sourceTree = "<group>"; };
+		96FF06AA21E44D06006CFBA3 /* PlayCloudVideoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlayCloudVideoViewController.h; sourceTree = "<group>"; };
+		96FF06AB21E44D06006CFBA3 /* PlayCloudVideoViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = PlayCloudVideoViewController.mm; sourceTree = "<group>"; };
 		A14646751DEFBAC9005B8541 /* VideoToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VideoToolbox.framework; path = System/Library/Frameworks/VideoToolbox.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -1006,6 +1051,28 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		96745B7921DDFBA600DC7D66 /* CloudPhotoConfg */ = {
+			isa = PBXGroup;
+			children = (
+				96745B7B21DDFBED00DC7D66 /* CloudPhotoConfig.h */,
+				96745B7C21DDFBED00DC7D66 /* CloudPhotoConfig.mm */,
+				96745B8221DEEEDE00DC7D66 /* XMAlarmMsgResource.h */,
+				96745B8121DEEEDE00DC7D66 /* XMAlarmMsgResource.m */,
+			);
+			path = CloudPhotoConfg;
+			sourceTree = "<group>";
+		};
+		96745B7A21DDFBA600DC7D66 /* CloudVideoConfig */ = {
+			isa = PBXGroup;
+			children = (
+				96FF069321E2FEE5006CFBA3 /* CloudVideoConfig.h */,
+				96FF069421E2FEE5006CFBA3 /* CloudVideoConfig.mm */,
+				96FF06A721E349D7006CFBA3 /* CLouldVideoResource.h */,
+				96FF06A821E349D7006CFBA3 /* CLouldVideoResource.m */,
+			);
+			path = CloudVideoConfig;
+			sourceTree = "<group>";
+		};
 		96A0FFF821CDCC7B00D3F459 /* AnalyzeConfig */ = {
 			isa = PBXGroup;
 			children = (
@@ -1015,6 +1082,32 @@
 				96B8A8FA21CE1C9D00206580 /* AnalyzeDataSource.m */,
 			);
 			path = AnalyzeConfig;
+			sourceTree = "<group>";
+		};
+		96A676E621DCA75800CF21E6 /* CloudVideoServerViewController */ = {
+			isa = PBXGroup;
+			children = (
+				96745B7621DDEDD200DC7D66 /* CloudVideoViewController.h */,
+				96745B7721DDEDD200DC7D66 /* CloudVideoViewController.mm */,
+				96FF06A121E33620006CFBA3 /* CloudVideoDayViewController.h */,
+				96FF06A221E33620006CFBA3 /* CloudVideoDayViewController.mm */,
+				96FF06A421E33695006CFBA3 /* CloudVideoDownloadViewController.h */,
+				96FF06A521E33695006CFBA3 /* CloudVideoDownloadViewController.mm */,
+			);
+			path = CloudVideoServerViewController;
+			sourceTree = "<group>";
+		};
+		96A676E721DCA75900CF21E6 /* CloudPhotoServerViewController */ = {
+			isa = PBXGroup;
+			children = (
+				96745B7321DDEDC300DC7D66 /* CloudPhotoViewController.h */,
+				96745B7421DDEDC300DC7D66 /* CloudPhotoViewController.mm */,
+				96745B7E21DE263C00DC7D66 /* CloudphotoDayVController.h */,
+				96745B7F21DE263C00DC7D66 /* CloudphotoDayVController.mm */,
+				96FF068C21DEFE1D006CFBA3 /* CloudPhotoDownloadViewController.h */,
+				96FF068D21DEFE1D006CFBA3 /* CloudPhotoDownloadViewController.mm */,
+			);
+			path = CloudPhotoServerViewController;
 			sourceTree = "<group>";
 		};
 		96B8A8DE21CE14EC00206580 /* Analyzer */ = {
@@ -1243,6 +1336,7 @@
 		96C6B2B021BB6867000B32E7 /* DeviceConfigManager */ = {
 			isa = PBXGroup;
 			children = (
+				96C977F821D4AF53004A1A87 /* CloudAbilityConfig */,
 				96A0FFF821CDCC7B00D3F459 /* AnalyzeConfig */,
 				96C6B2B121BB6867000B32E7 /* AlarmDetectConfig */,
 				96C6B2B421BB6867000B32E7 /* AlarmMessageConfig */,
@@ -1785,6 +1879,7 @@
 			children = (
 				96C6B44521BB6868000B32E7 /* DeviceConfigViewController.h */,
 				96C6B44621BB6868000B32E7 /* DeviceConfigViewController.mm */,
+				96C9780221D4BDAB004A1A87 /* CloudAbilityViewController */,
 				96B8A90021CE256400206580 /* AnalyzerViewController */,
 				96C6B43021BB6868000B32E7 /* AboutDeviceViewController */,
 				96C6B43321BB6868000B32E7 /* AlarmMessageViewController */,
@@ -2044,6 +2139,8 @@
 				96C6B4BB21BB6868000B32E7 /* PlayBackViewController.mm */,
 				96C6B4BC21BB6868000B32E7 /* PlayViewController.h */,
 				96C6B4BD21BB6868000B32E7 /* PlayViewController.mm */,
+				96FF06AA21E44D06006CFBA3 /* PlayCloudVideoViewController.h */,
+				96FF06AB21E44D06006CFBA3 /* PlayCloudVideoViewController.mm */,
 				96C6B4BE21BB6868000B32E7 /* 鱼眼相关 */,
 			);
 			path = PlayViewController;
@@ -2102,6 +2199,32 @@
 				96C6B4D021BB6868000B32E7 /* VRSoftDef.h */,
 			);
 			path = "鱼眼相关";
+			sourceTree = "<group>";
+		};
+		96C977F821D4AF53004A1A87 /* CloudAbilityConfig */ = {
+			isa = PBXGroup;
+			children = (
+				96C977F921D4AF8E004A1A87 /* CloudAbilityConfig.h */,
+				96C977FA21D4AF8E004A1A87 /* CloudAbilityConfig.mm */,
+				96C977FF21D4B2F8004A1A87 /* CloudAbilityDataSource.h */,
+				96C9780021D4B2F8004A1A87 /* CloudAbilityDataSource.m */,
+				96745B7921DDFBA600DC7D66 /* CloudPhotoConfg */,
+				96745B7A21DDFBA600DC7D66 /* CloudVideoConfig */,
+			);
+			path = CloudAbilityConfig;
+			sourceTree = "<group>";
+		};
+		96C9780221D4BDAB004A1A87 /* CloudAbilityViewController */ = {
+			isa = PBXGroup;
+			children = (
+				96C9780321D4BDC1004A1A87 /* CloudAbilityViewController.h */,
+				96C9780421D4BDC1004A1A87 /* CloudAbilityViewController.mm */,
+				9668D24021DDB0A600C8898D /* CloudServerViewController.h */,
+				9668D24121DDB0A600C8898D /* CloudServerViewController.mm */,
+				96A676E721DCA75900CF21E6 /* CloudPhotoServerViewController */,
+				96A676E621DCA75800CF21E6 /* CloudVideoServerViewController */,
+			);
+			path = CloudAbilityViewController;
 			sourceTree = "<group>";
 		};
 		96EFBC2D21BB966A005EBA5A /* Supporting */ = {
@@ -2332,7 +2455,7 @@
 				ORGANIZATIONNAME = "___FULLUSERNAME___";
 				TargetAttributes = {
 					964B87C31D766A82003FA9AD = {
-						DevelopmentTeam = 4893TRV462;
+						DevelopmentTeam = R6S652TPCM;
 						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.AccessWiFi = {
@@ -2481,6 +2604,7 @@
 			files = (
 				96C6B59821BB6869000B32E7 /* QuickConfigurationView.m in Sources */,
 				96C6B5C621BB6869000B32E7 /* CYGLKView.m in Sources */,
+				96C977FB21D4AF8E004A1A87 /* CloudAbilityConfig.mm in Sources */,
 				96C6B50121BB6869000B32E7 /* SystemResetConfig.mm in Sources */,
 				96C6B50521BB6869000B32E7 /* UpgradeDataSource.m in Sources */,
 				96C6B4DE21BB6869000B32E7 /* NSDate+TimeCategory.m in Sources */,
@@ -2490,10 +2614,12 @@
 				96C6B4EE21BB6869000B32E7 /* CommonConfig.mm in Sources */,
 				96C6B5A821BB6869000B32E7 /* PictureFileViewController.m in Sources */,
 				96C6B59621BB6869000B32E7 /* MyRadarView.m in Sources */,
+				96FF06A621E33695006CFBA3 /* CloudVideoDownloadViewController.mm in Sources */,
 				96C6B4FD21BB6869000B32E7 /* Storage.m in Sources */,
 				96C6B5AB21BB6869000B32E7 /* DownloadViewController.mm in Sources */,
 				96C6B4F721BB6869000B32E7 /* EncodeConfig.mm in Sources */,
 				96C6B59D21BB6869000B32E7 /* AlarmMessageCell.m in Sources */,
+				96FF06A321E33620006CFBA3 /* CloudVideoDayViewController.mm in Sources */,
 				96C6B58F21BB6869000B32E7 /* UserBindViewController.mm in Sources */,
 				96C6B59221BB6869000B32E7 /* AddDeviceInputCell.m in Sources */,
 				96C6B4F621BB6869000B32E7 /* VideoFileDownloadConfig.mm in Sources */,
@@ -2503,6 +2629,7 @@
 				96C6B5C521BB6869000B32E7 /* MainViewController.mm in Sources */,
 				96C6B5A121BB6869000B32E7 /* AlarmLevelViewController.m in Sources */,
 				96C6B50321BB6869000B32E7 /* TimeSynDataSource.m in Sources */,
+				96745B8021DE263C00DC7D66 /* CloudphotoDayVController.mm in Sources */,
 				96C6B5D121BB6869000B32E7 /* ProgressBackView.mm in Sources */,
 				96C6B59521BB6869000B32E7 /* LANSearchViewController.mm in Sources */,
 				96C6B59A21BB6869000B32E7 /* ScanAnimationView.m in Sources */,
@@ -2527,10 +2654,12 @@
 				96C6B5CA21BB6869000B32E7 /* PlayFunctionView.m in Sources */,
 				96C6B57D21BB6869000B32E7 /* ConfigControllerBase.mm in Sources */,
 				96C6B4DF21BB6869000B32E7 /* NSString+Category.m in Sources */,
+				96745B7521DDEDC300DC7D66 /* CloudPhotoViewController.mm in Sources */,
 				96C6B5C021BB6869000B32E7 /* AccountViewController.mm in Sources */,
 				96C6B57F21BB6869000B32E7 /* TimeQuery.m in Sources */,
 				96C6B59121BB6869000B32E7 /* UserInfoViewController.mm in Sources */,
 				96C6B4D221BB6869000B32E7 /* DeviceManager.mm in Sources */,
+				96FF06A921E349D8006CFBA3 /* CLouldVideoResource.m in Sources */,
 				96C6B50021BB6869000B32E7 /* SystemInfoConfig.mm in Sources */,
 				96C6B4DA21BB6869000B32E7 /* MessageUI.mm in Sources */,
 				96C6B5B421BB6869000B32E7 /* PasswordView.m in Sources */,
@@ -2545,15 +2674,19 @@
 				96C6B58821BB6869000B32E7 /* LoginViewController.mm in Sources */,
 				96EFBD2B21BB966A005EBA5A /* main.mm in Sources */,
 				96C6B4F521BB6869000B32E7 /* VideoFileConfig.mm in Sources */,
+				96745B7D21DDFBED00DC7D66 /* CloudPhotoConfig.mm in Sources */,
+				96745B8321DEEEDE00DC7D66 /* XMAlarmMsgResource.m in Sources */,
 				96C6B4F121BB6869000B32E7 /* PictureFileDownloadConfig.mm in Sources */,
 				96C6B5B621BB6869000B32E7 /* RecordViewController.mm in Sources */,
 				96C6B59F21BB6869000B32E7 /* AlarmMessageViewController.mm in Sources */,
 				96C6B5A621BB6869000B32E7 /* PictureDownloadViewController.mm in Sources */,
 				96C6B59021BB6869000B32E7 /* UserInfoView.m in Sources */,
 				96C6B5A521BB6869000B32E7 /* MonthPictureViewController.mm in Sources */,
+				9668D24221DDB0A600C8898D /* CloudServerViewController.mm in Sources */,
 				96C6B5D321BB6869000B32E7 /* PlayViewController.mm in Sources */,
 				96C6B5C821BB6869000B32E7 /* PhotosViewController.mm in Sources */,
 				96C6B5AE21BB6869000B32E7 /* EncodeConfigTableviewCell.m in Sources */,
+				96FF069521E2FEE5006CFBA3 /* CloudVideoConfig.mm in Sources */,
 				96C6B50221BB6869000B32E7 /* TimeSynConfig.mm in Sources */,
 				96C6B4E521BB6869000B32E7 /* DeviceObject.m in Sources */,
 				96C6B5A921BB6869000B32E7 /* ByFileViewController.mm in Sources */,
@@ -2562,12 +2695,15 @@
 				96C6B57121BB6869000B32E7 /* MediaplayerControl.mm in Sources */,
 				96C6B5CF21BB6869000B32E7 /* DateSelectView.m in Sources */,
 				96C6B5D521BB6869000B32E7 /* HardVRViewController.mm in Sources */,
+				96745B7821DDEDD200DC7D66 /* CloudVideoViewController.mm in Sources */,
 				96EFBD3321BB97C9005EBA5A /* SDKInitializeModel.mm in Sources */,
 				96C6B5B821BB6869000B32E7 /* StorageViewController.mm in Sources */,
+				96FF06AC21E44D06006CFBA3 /* PlayCloudVideoViewController.mm in Sources */,
 				96C6B50621BB6869000B32E7 /* VideoRotainConfig.mm in Sources */,
 				96C6B57321BB6869000B32E7 /* TalkBackControl.mm in Sources */,
 				96C6B4FA21BB6869000B32E7 /* RecordConfig.mm in Sources */,
 				96C6B4E921BB6869000B32E7 /* ObSysteminfo.m in Sources */,
+				96FF068E21DEFE1D006CFBA3 /* CloudPhotoDownloadViewController.mm in Sources */,
 				96C6B4FF21BB6869000B32E7 /* SystemFunctionConfig.mm in Sources */,
 				96C6B5CC21BB6869000B32E7 /* PlayView.m in Sources */,
 				96C6B4E221BB6869000B32E7 /* NSUserDefaultData.m in Sources */,
@@ -2625,8 +2761,10 @@
 				96C6B4FE21BB6869000B32E7 /* StorageConfig.mm in Sources */,
 				96C6B59B21BB6869000B32E7 /* SerialNumAddViewController.mm in Sources */,
 				96C6B5B221BB6869000B32E7 /* ItemViewController.m in Sources */,
+				96C9780521D4BDC1004A1A87 /* CloudAbilityViewController.mm in Sources */,
 				96C6B5AD21BB6869000B32E7 /* VideoFileViewController.mm in Sources */,
 				96C6B5C921BB6869000B32E7 /* FishPlayControl.mm in Sources */,
+				96C9780121D4B2F8004A1A87 /* CloudAbilityDataSource.m in Sources */,
 				96C6B58E21BB6869000B32E7 /* UserBindView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2860,7 +2998,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				COPY_PHASE_STRIP = NO;
-				DEVELOPMENT_TEAM = 4893TRV462;
+				DEVELOPMENT_TEAM = R6S652TPCM;
 				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				ENABLE_TESTABILITY = NO;
@@ -2893,11 +3031,11 @@
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = com.XM.WJBPUSH;
+				PRODUCT_BUNDLE_IDENTIFIER = com.CY.PushTest;
 				PRODUCT_MODULE_NAME = "";
 				PRODUCT_NAME = FunSDKDemo;
 				PROVISIONING_PROFILE = "584edf9c-a7bb-452c-9210-d75a6c0aa429";
-				PROVISIONING_PROFILE_SPECIFIER = wjbpush;
+				PROVISIONING_PROFILE_SPECIFIER = DevCYPushTest;
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2920,7 +3058,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development IOS Push Services: com.CY.PushTest";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = 4893TRV462;
+				DEVELOPMENT_TEAM = R6S652TPCM;
 				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -2952,11 +3090,11 @@
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = com.XM.WJBPUSH;
+				PRODUCT_BUNDLE_IDENTIFIER = com.CY.PushTest;
 				PRODUCT_MODULE_NAME = "";
 				PRODUCT_NAME = FunSDKDemo;
 				PROVISIONING_PROFILE = "584edf9c-a7bb-452c-9210-d75a6c0aa429";
-				PROVISIONING_PROFILE_SPECIFIER = wjbpush;
+				PROVISIONING_PROFILE_SPECIFIER = DevCYPushTest;
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				TARGETED_DEVICE_FAMILY = "1,2";

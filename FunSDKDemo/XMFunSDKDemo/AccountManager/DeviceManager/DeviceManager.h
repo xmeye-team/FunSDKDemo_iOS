@@ -34,6 +34,9 @@
 // 修改设备信息结果
 - (void)changeDevice:(NSString *)sId changedResult:(int)result;
 
+// 判断主账号信息结果
+- (void)checkMaster:(NSString *)sId Result:(int)result;
+
 @end
 
 #import <Foundation/Foundation.h>
@@ -64,7 +67,7 @@
 - (void)addDeviceToList:(NSMessage *)msg;
 
 #pragma mark -通过序列号、局域网搜索、ap模式连接添加设备
-- (void)addDeviceByDeviseSerialnumber:(NSString*)serialNumber;//通过输入设备序列号进行添加
+- (void)addDeviceByDeviseSerialnumber:(NSString*)serialNumber devType:(int)type;//通过输入设备序列号添加
 - (void)addDeviceByDeviceIP:(NSString *)deviceIP deviceName:(NSString *)name password:(NSString *)psw port:(NSString *)port;//通过ip/域名进行添加
 - (void)addDeviceByAP;//ap模式下只能直接连接打开，无法进行账号相关操作
 - (void)SearchDevice;//搜索局域网下的设备
@@ -89,6 +92,8 @@
 - (void)changeDevicePsw:(NSString *)devMac devName:(NSString *)name password:(NSString *)psw;
 #pragma mark - 删除设备
 - (void)deleteDeviceWithDevMac:(NSString *)devMac;
+#pragma mark - 判断是否是主账号
+- (void)checkMasterAccount:(NSString *)devMac;
 #pragma mark - 解析二维码
 -(NSArray *)decodeDevInfo:(NSString*)info;
 @end

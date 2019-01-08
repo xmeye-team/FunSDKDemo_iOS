@@ -7,7 +7,6 @@
 //
 
 #import "PlayBackViewController.h"
-#import "MediaplayerControl.h"
 #import "PlayView.h"
 #import "PlayFunctionView.h"
 #import "PlayMenuView.h"

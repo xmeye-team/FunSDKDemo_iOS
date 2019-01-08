@@ -20,6 +20,8 @@
 #import "DeviceconfigTableViewCell.h"
 #import "DeviceConfigViewController.h"
 #import "SystemInfoConfig.h"
+#import "DeviceManager.h"
+#import "CloudAbilityViewController.h"
 #import "AlarmMessageViewController.h"  //推送消息
 #import "EncodingFormatViewController.h"  //编码格式设置
 #import "AnalyzerViewController.h"  //智能分析
@@ -54,7 +56,7 @@
 #pragma mark -- viewDidLoad
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    [[NSNotificationCenter defaultCenter] postNotificationName:MasterAccount object:@"123"];
     //设置导航栏样式
     [self setNaviStyle];
     
@@ -64,12 +66,14 @@
     //配置子视图
     [self configSubView];
     
+     //获取各个设备配置前，如果设备(门铃门锁等等)是在休眠状态，需要先进行唤醒
+    [self checkDeviceSleepType];
+    
     //获取设备能力级SystemFunction
     [self getSystemFunction];
     
     //获取设备信息systeminfo
     [self getSysteminfo];
-  
 }
 
 //获取设备能力级SystemFunction
@@ -89,6 +93,11 @@
     }
     [SVProgressHUD show];
      [_config getSystemInfo];
+}
+//休眠中的设备需要先唤醒才能去获取其他配置
+- (void)checkDeviceSleepType {
+    ChannelObject *object = [[DeviceControl getInstance] getSelectChannel];
+    [[DeviceManager getInstance] deviceWeakUp:object.deviceMac];
 }
 #pragma mark  获取设备systeminfo回调
 - (void)SystemInfoConfigGetResult:(NSInteger)result {
@@ -132,41 +141,41 @@
     if ([titleStr isEqualToString:TS("alarm_config")]) {
         AlarmDetectViewController *alarmDetectVC = [[AlarmDetectViewController alloc] initWithNibName:nil bundle:nil];
         [self.navigationController pushViewController:alarmDetectVC animated:NO];
-    }else if ([titleStr isEqualToString:TS("Encode_config")]){
+    }else if ([titleStr isEqualToString:TS("Encode_config")]){ //编码配置
         EncodeViewController *encodeVC = [[EncodeViewController alloc] initWithNibName:nil bundle:nil];
         [self.navigationController pushViewController:encodeVC animated:NO];
-    }else if ([titleStr isEqualToString:TS("Record_config")]){
+    }else if ([titleStr isEqualToString:TS("Record_config")]){ //录像配置
         RecordViewController *encodeVC = [[RecordViewController alloc] initWithNibName:nil bundle:nil];
         [self.navigationController pushViewController:encodeVC animated:NO];
-    }else if ([titleStr isEqualToString:TS("picture_vonfig")]){
+    }else if ([titleStr isEqualToString:TS("picture_vonfig")]){ //图像配置
         ParamViewController *encodeVC = [[ParamViewController alloc] initWithNibName:nil bundle:nil];
         [self.navigationController pushViewController:encodeVC animated:NO];
-    }else if ([titleStr isEqualToString:TS("time_syn")]){
+    }else if ([titleStr isEqualToString:TS("time_syn")]){ //时间同步
         TimeSynViewController *timeVC = [[TimeSynViewController alloc] initWithNibName:nil bundle:nil];
         [self.navigationController pushViewController:timeVC animated:NO];
-    }else if ([titleStr isEqualToString:TS("record_file")]){
+    }else if ([titleStr isEqualToString:TS("record_file")]){ //设备录像
         VideoFileViewController *videoVC = [[VideoFileViewController alloc] initWithNibName:nil bundle:nil];
         [self.navigationController pushViewController:videoVC animated:NO];
-    }else if ([titleStr isEqualToString:TS("picture_file")]){
+    }else if ([titleStr isEqualToString:TS("picture_file")]){  //设备图片
         PictureFileViewController *pictureVC = [[PictureFileViewController alloc] initWithNibName:nil bundle:nil];
         [self.navigationController pushViewController:pictureVC animated:NO];
-    }else if ([titleStr isEqualToString:TS("password_change")]){
+    }else if ([titleStr isEqualToString:TS("password_change")]){ //修改密码
         PasswordViewController *passwordVC = [[PasswordViewController alloc] initWithNibName:nil bundle:nil];
         [self.navigationController pushViewController:passwordVC animated:NO];
-    }else if ([titleStr isEqualToString:TS("device_storage")]){
+    }else if ([titleStr isEqualToString:TS("device_storage")]){ //设备存储
         StorageViewController *storageVC = [[StorageViewController alloc] initWithNibName:nil bundle:nil];
         [self.navigationController pushViewController:storageVC animated:NO];
-    }else if ([titleStr isEqualToString:TS("About_Device")]){
+    }else if ([titleStr isEqualToString:TS("About_Device")]){ //关于设备
         AboutDeviceViewController *deviceVC = [[AboutDeviceViewController alloc] initWithNibName:nil bundle:nil];
         [self.navigationController pushViewController:deviceVC animated:NO];
-    }else if ([titleStr isEqualToString:TS("Equipment_Update")]){
+    }else if ([titleStr isEqualToString:TS("Equipment_Update")]){ //设备升级
         UpgradeDeviceViewController *upgradeVC = [[UpgradeDeviceViewController alloc] initWithNibName:nil bundle:nil];
         [self.navigationController pushViewController:upgradeVC animated:NO];
-    }else if ([titleStr isEqualToString:TS("Alarm_message_push")]){
+    }else if ([titleStr isEqualToString:TS("Alarm_message_push")]){ //推送消息
         AlarmMessageViewController *alarmMessageVC = [[AlarmMessageViewController alloc] initWithNibName:nil bundle:nil];
         [self.navigationController pushViewController:alarmMessageVC animated:NO];
         
-    }else if ([titleStr isEqualToString:TS("AnalyzeConfig")]){
+    }else if ([titleStr isEqualToString:TS("AnalyzeConfig")]){ //智能分析
         ChannelObject *channel = [[DeviceControl getInstance] getSelectChannel];
         DeviceObject *object  = [[DeviceControl getInstance] GetDeviceObjectBySN:channel.deviceMac];
         if(object.sysFunction.NewVideoAnalyze == NO){
@@ -175,7 +184,7 @@
         }
         AnalyzerViewController *analyzeVC = [[AnalyzerViewController alloc] init];
         [self.navigationController pushViewController:analyzeVC animated:NO];
-    }else if ([titleStr isEqualToString:TS("Encoding_format")]){
+    }else if ([titleStr isEqualToString:TS("Encoding_format")]){ //视频格式
         ChannelObject *channel = [[DeviceControl getInstance] getSelectChannel];
         DeviceObject *object  = [[DeviceControl getInstance] GetDeviceObjectBySN:channel.deviceMac];
         if(object.sysFunction.SupportSmartH264 == NO){
@@ -184,9 +193,12 @@
         }
         EncodingFormatViewController *formatVC = [[EncodingFormatViewController alloc] init];
         [self.navigationController pushViewController:formatVC animated:NO];
-    }else if([titleStr isEqualToString:TS("Watermark_setting")]){
+    }else if([titleStr isEqualToString:TS("Watermark_setting")]){ //水印
         WaterMarkViewController *waterMarkVC = [[WaterMarkViewController alloc] init];
         [self.navigationController pushViewController:waterMarkVC animated:NO];
+    }else if([titleStr isEqualToString:TS("Cloud_storage")]){ //云服务
+        CloudAbilityViewController *cloudVC = [[CloudAbilityViewController alloc] init];
+        [self.navigationController pushViewController:cloudVC animated:NO];
     }else{
         return;
     }
@@ -218,6 +230,7 @@
                               @{@"title":@"Json和DevCmd调试",@"detailInfo":@""},
                               @{@"title":@"鱼眼信息",@"detailInfo":@""},
                               @{@"title":TS("AnalyzeConfig"),@"detailInfo":@""},
+                              @{@"title":TS("Cloud_storage"),@"detailInfo":@""},
                               @{@"title":TS("Encoding_format"),@"detailInfo":@""},
                               @{@"title":TS("Watermark_setting"),@"detailInfo":@""}];
 }

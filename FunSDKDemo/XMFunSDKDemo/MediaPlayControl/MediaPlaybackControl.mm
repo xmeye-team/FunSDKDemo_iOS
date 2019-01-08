@@ -46,6 +46,34 @@
     //[super start];
     return self.player;
 }
+
+#pragma mark - 根据传入的日期进行云视频回放（也可以自己设置时间段，这里是播放全天的云视频）
+- (void)startPlayCloudVideo:(NSDate*)date {
+    SDK_SYSTEM_TIME beginTime;
+    SDK_SYSTEM_TIME endTime;
+    //下面是播放一整天的云视频，也可以根据想要播放的云视频录像段，自己设置开始和结束时间
+    beginTime.year = [NSDate getYearFormDate:date];
+    beginTime.month = [NSDate getMonthFormDate:date];
+    beginTime.day = [NSDate getDayFormDate:date];
+    beginTime.hour =0;
+    beginTime.minute = 0;
+    beginTime.second = 0;
+    
+    endTime.year = [NSDate getYearFormDate:date];
+    endTime.month = [NSDate getMonthFormDate:date];
+    endTime.day = [NSDate getDayFormDate:date];
+    endTime.hour = 23;
+    endTime.minute = 59;
+    endTime.second = 59;
+    
+    time_t ToTime_t(SDK_SYSTEM_TIME *time);
+    int beginTimeInt = (int)ToTime_t(&beginTime);
+    
+    time_t ToTime_t(SDK_SYSTEM_TIME *time);
+    int endTimeInt = (int)ToTime_t(&endTime);
+    
+    self.player = FUN_MediaCloudRecordPlay(self.msgHandle, SZSTR(self.devID),self.channel, "", beginTimeInt, endTimeInt, (__bridge LP_WND_OBJ)self.renderWnd);
+}
 #pragma mark - 停止
 -(int)stop{
     

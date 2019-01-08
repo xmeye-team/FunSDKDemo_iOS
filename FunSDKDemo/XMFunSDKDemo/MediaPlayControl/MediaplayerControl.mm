@@ -314,6 +314,8 @@
             if ( self.delegate && [self.delegate respondsToSelector:@selector(mediaPlayer:Hardandsoft:Hardmodel:)] ) {
                 [self.delegate mediaPlayer:self Hardandsoft:Hardandsoft Hardmodel:Hardmodel];
             }
+            ChannelObject *channel = [[DeviceControl getInstance] getSelectChannel];
+            channel.isFish = self.IsYuv;
         }
             break;
 #pragma mark YUV数据回调

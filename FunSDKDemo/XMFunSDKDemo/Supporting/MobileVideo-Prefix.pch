@@ -14,6 +14,13 @@
 #import "MessageUI.h"
 #import "DeviceControl.h"
 
+// 开放平台App信息，需要在开放平台上面创建APP来生成，每一个APP对应一组不同并且唯一的平台信息，不能重复
+#define UUID "jufeng"   //客户唯一标识
+#define APPKEY "a16ea8f9d5164d1d830e8dbc66a71e24"   //APP唯一标识
+#define APPSECRET "672f645441b14a259356d027a6b8853f"   //内容保护参数
+#define MOVECARD 5   //内容保护参数
+
+
 #define SZSTR(x)    [x UTF8String]
 #define NSSTR(x)    [NSString ToNSStr:x]
 #define STRNCPY(x,y) strncpy(x, y, sizeof(x))
@@ -57,7 +64,9 @@
 //时间格式
 #define TimeFormatter @"yyyy-MM-dd HH:mm:ss"
 
-
+//通知消息key
+#define MasterAccount @"MasterAccount"
+#define PushNotification @"PushNotification"
 
 #pragma mark - 设备类型定义
 NS_ENUM(NSInteger,XM_DEV_TYPE)
@@ -92,6 +101,9 @@ NS_ENUM(NSInteger,XM_DEV_TYPE)
     XM_DEV_NSEYE      = 601,   //直播小雨点
     
     XM_DEV_INTELLIGENT_LOCK= 286326823, // 门铃锁
+    XM_DEV_DOORLOCK_V2 = 0x11110031,    // 门锁支持对讲 智联大迈
+    XM_DEV_DOORBELL_A = 285409282,      // 门铃
+    XM_DEV_SMALL_V = 0x11110032,        // 小V
     CZ_DOORBELL         = 286457857, // 创泽门铃
 };
 

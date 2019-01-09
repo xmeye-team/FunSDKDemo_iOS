@@ -17,7 +17,7 @@
 #import "ProgressBackView.h"
 #import "FishPlayControl.h"
 
-@interface PlayCloudVideoViewController () <DateSelectViewDelegate,CloudVideoConfigDelegate,MediaplayerControlDelegate,basePlayFunctionViewDelegate,MediaPlayBackControlDelegate>
+@interface PlayCloudVideoViewController () <DateSelectViewDelegate,CloudVideoTimeDelegate,MediaplayerControlDelegate,basePlayFunctionViewDelegate,MediaPlayBackControlDelegate>
 {
     PlayView *pVIew;                    //播放画面
     PlayFunctionView *toolView;         //工具栏
@@ -60,7 +60,7 @@
     //获取要播放的设备信息
     [self initDataSource];
     
-    //开始搜索录像文件
+    //开始搜索云视频文件
     [self startSearchFile];
 }
 
@@ -81,7 +81,7 @@
     mediaPlayer.playbackDelegate = self;
     
     videoConfig = [[CloudVideoConfig alloc] init];
-    videoConfig.delegate = self;
+    videoConfig.timeDelegate = self;
 }
 
 -(FishPlayControl*)feyeControl{
@@ -98,7 +98,7 @@
 }
 - (void)setNaviStyle {
     self.view.backgroundColor = [UIColor whiteColor];
-    self.navigationItem.title = TS("Remote_View");
+    self.navigationItem.title = TS("Cloud_video");
     self.rightBarBtn = [[UIBarButtonItem alloc] initWithImage:nil style:UIBarButtonItemStylePlain target:self action:@selector(pushToNextViewController)];
     
     self.navigationItem.rightBarButtonItem = self.rightBarBtn;
@@ -211,7 +211,18 @@
 {
     pBackView.ifSliding = NO;
     [pVIew playViewBufferIng];
-    [mediaPlayer seekToTime:addTime];
+    //1、停止播放
+    [mediaPlayer stop];
+        //2、重新开始播放 addTime单位是秒
+    int hour = (int)addTime/60/60;
+    int minute = (int)(addTime/60)%60;
+    int second = (int)addTime%60;
+    int year = [NSDate getYearFormDate:dateView.date];
+     int month = [NSDate getMonthFormDate:dateView.date];
+     int day = [NSDate getDayFormDate:dateView.date];
+    NSString *dateString = [NSString stringWithFormat:@"%04d-%0d-%02d %02d:%02d:%02d",year,month,day,hour,minute,second];
+    NSDate *date = [NSDate dateFromString:dateString format:TimeFormatter];
+    [mediaPlayer startPlayCloudVideo:date];
 }
 #pragma mark - 跳转到设备下一级界面
 - (void)pushToNextViewController {
@@ -239,10 +250,8 @@
     [mediaPlayer refresh];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [mediaPlayer stop];
+        [self startSearchFile];
     });
-    
-    [self startSearchFile];
-    
 }
 #pragma mark - 返回设备列表界面
 - (void)popViewController {
@@ -253,13 +262,23 @@
 }
 
 #pragma mark - funsdk回调
-#pragma mark  录像按文件查询查询回调
-- (void)getVideoResult:(NSInteger)result{
+#pragma mark  云视频查询回调
+- (void)getCloudVideoTimeResult:(NSInteger)result {
     if (result >= 0) {
-        //[pBackView refreshProgressWithSearchResult:[videoConfig getVideoTimeArray]];
+        [pBackView refreshProgressWithSearchResult:[videoConfig getVideoTimeArray]];
         
         [pVIew playViewBufferIng];
-        [mediaPlayer startPlayBack:dateView.date];
+        
+        //设置云视频时间并开始播放
+        int hour = 0;
+        int minute = 0;
+        int second = 0;
+        int year = [NSDate getYearFormDate:dateView.date];
+        int month = [NSDate getMonthFormDate:dateView.date];
+        int day = [NSDate getDayFormDate:dateView.date];
+        NSString *dateString = [NSString stringWithFormat:@"%04d-%0d-%02d %02d:%02d:%02d",year,month,day,hour,minute,second];
+        NSDate *date = [NSDate dateFromString:dateString format:TimeFormatter];
+        [mediaPlayer startPlayCloudVideo:date];
     }
     else{
         [SVProgressHUD showErrorWithStatus:TS("Video_Not_Found")];

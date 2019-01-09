@@ -63,7 +63,8 @@
 #define DateFormatter @"yyyy-MM-dd"
 //时间格式
 #define TimeFormatter @"yyyy-MM-dd HH:mm:ss"
-
+//时间格式
+#define TimeFormatter2 @"HH:mm:ss"
 //通知消息key
 #define MasterAccount @"MasterAccount"
 #define PushNotification @"PushNotification"

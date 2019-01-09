@@ -100,7 +100,7 @@
     //通过序列号添加
     [deviceManager addDeviceByDeviseSerialnumber:devSerialTF.text deviceName:devNameTF.text devType:0];
     //修改设备名称和设备密码
-    [deviceManager changeDevicePsw:devSerialTF.text devName:devNameTF.text password:devPswTF.text];
+    [deviceManager changeDevicePsw:devSerialTF.text loginName:loginNameTF.text password:devPswTF.text];
 }
 
 #pragma mark 点击二维码扫描

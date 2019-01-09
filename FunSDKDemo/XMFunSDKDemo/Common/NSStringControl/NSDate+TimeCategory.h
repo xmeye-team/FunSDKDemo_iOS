@@ -68,6 +68,9 @@
 + (int)getYearFormDate:(NSDate*)date;
 + (int)getMonthFormDate:(NSDate*)date;
 + (int)getDayFormDate:(NSDate*)date;
++ (int)getHourFormDate:(NSDate*)date;
++ (int)getMinuteFormDate:(NSDate*)date;
++ (int)getSecondFormDate:(NSDate*)date;
 
 /**
  *  NSDate日期比较，是否是同一天，同一月，同一年

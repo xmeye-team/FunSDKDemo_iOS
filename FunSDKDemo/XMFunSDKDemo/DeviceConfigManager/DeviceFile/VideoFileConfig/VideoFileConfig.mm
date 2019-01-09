@@ -222,9 +222,7 @@
     info.type = type;
     info.start_Time = ss;
     info.end_Time = es;
-    if (type != TYPE_NONE) {
-        [array addObject:info];
-    }
+    [array addObject:info];
 }
 //读取录像类型
 -(Video_Type)getType:(int)sdkType{

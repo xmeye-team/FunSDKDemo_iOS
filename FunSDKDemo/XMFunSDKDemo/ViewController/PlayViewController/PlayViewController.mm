@@ -184,7 +184,7 @@
                 UITextField *passWordTextField = alert.textFields.firstObject;
                 DeviceManager *manager = [DeviceManager getInstance];
                 //点击确定修改密码
-                [manager changeDevicePsw:channel.deviceMac devName:device.loginName password:passWordTextField.text];
+                [manager changeDevicePsw:channel.deviceMac loginName:device.loginName password:passWordTextField.text];
                 //开始播放视频
                 [self startRealPlay];
             }];

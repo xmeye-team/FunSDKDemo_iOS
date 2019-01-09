@@ -250,7 +250,7 @@
                 DeviceObject *devObject = [deviceArray objectAtIndex:selectNum];
                  DeviceManager *manager = [DeviceManager getInstance];
                 //点击确定修改密码
-                [manager changeDevicePsw:sId devName:devObject.loginName password:passWordTextField.text];
+                [manager changeDevicePsw:sId loginName:devObject.loginName password:passWordTextField.text];
             }];
             [alert addAction:cancelAction];
             [alert addAction:okAction];

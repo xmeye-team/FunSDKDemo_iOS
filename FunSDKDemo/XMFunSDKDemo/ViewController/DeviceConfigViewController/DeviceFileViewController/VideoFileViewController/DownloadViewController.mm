@@ -27,6 +27,7 @@
 
 #pragma mark - 开始下载设备录像
 - (void)startDownloadRecord:(RecordInfo*)recordInfo {
+    [SVProgressHUD show];
     record = recordInfo;
     if (config == nil) {
         config = [[VideoFileDownloadConfig alloc] init];
@@ -50,6 +51,7 @@
 }
 #pragma mark -下载录像结果回调
 - (void)fileDownloadEndResult {
+    [SVProgressHUD dismiss];
     progres = 1;
     NSIndexPath *path = [NSIndexPath indexPathForRow:2 inSection:0];
     NSArray *array = [NSArray arrayWithObject:path];

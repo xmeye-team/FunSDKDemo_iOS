@@ -8,6 +8,7 @@
 
 #import "CloudAbilityViewController.h"
 #import "CloudServerViewController.h"
+#import "PlayCloudVideoViewController.h"
 #import "ItemViewController.h"
 #import "ItemTableviewCell.h"
 #import "CloudAbilityConfig.h"
@@ -98,10 +99,10 @@
     if ([title isEqualToString:TS("Cloud_storage")]) {
         cell.Labeltext.text =  [_cloudConfig getCloudState];
     }
-    if ([title isEqualToString:TS("record_file")]) {
+    if ([title isEqualToString:TS("search_Video")]) {
         cell.Labeltext.text = [_cloudConfig getVideoEnable];
     }
-    if ([title isEqualToString:TS("picture_file")]) {
+    if ([title isEqualToString:TS("search_picture")]) {
         cell.Labeltext.text =  [_cloudConfig getPicEnable];
     }
     return cell;
@@ -119,7 +120,7 @@
             CloudServerViewController *cloudServerVC = [[CloudServerViewController alloc] init];
             [self.navigationController pushViewController:cloudServerVC animated:YES];
         }
-    }else if ([titleStr isEqualToString:TS("record_file")]) {
+    }else if ([titleStr isEqualToString:TS("search_Video")]) {
        //云视频
         if ([[_cloudConfig getVideoEnable] isEqualToString:TS("not_opened")]) {
             return;
@@ -127,7 +128,7 @@
             CloudVideoViewController *cloudVideoVC = [[CloudVideoViewController alloc] init];
              [self.navigationController pushViewController:cloudVideoVC animated:YES];
         }
-    }else if ([titleStr isEqualToString:TS("picture_file")]) {
+    }else if ([titleStr isEqualToString:TS("search_picture")]) {
         //云图片
         if ([[_cloudConfig getVideoEnable] isEqualToString:TS("not_opened")]) {
             return;
@@ -135,8 +136,10 @@
             CloudPhotoViewController *cloudPhotoVC = [[CloudPhotoViewController alloc] init];
             [self.navigationController pushViewController:cloudPhotoVC animated:YES];
         }
-    }else if ([titleStr isEqualToString:TS("Remote_View")]) {
+    }else if ([titleStr isEqualToString:TS("Cloud_video")]) {
         //云视频播放
+        PlayCloudVideoViewController *playCloudVC = [[PlayCloudVideoViewController alloc] init];
+        [self.navigationController pushViewController:playCloudVC animated:YES];
     }else{
         return;
     }
@@ -159,6 +162,6 @@
 }
 #pragma mark - 界面和数据初始化
 - (void)initDataSource {
-    titleArray = (NSMutableArray*)@[TS("Cloud_storage"),TS("record_file"),TS("picture_file"),TS("Remote_View")];
+    titleArray = (NSMutableArray*)@[TS("Cloud_storage"),TS("search_Video"),TS("search_picture"),TS("Cloud_video")];
 }
 @end

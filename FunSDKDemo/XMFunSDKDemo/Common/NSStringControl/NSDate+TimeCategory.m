@@ -73,6 +73,27 @@ static NSDateFormatter *dateFormatter;
     }
     return 1;
 }
++ (int)getHourFormDate:(NSDate*)date {
+    NSArray *array = [NSDate getTimeAray:date];
+    if (array!= nil && array.count==3) {
+        return [[array objectAtIndex:0] intValue];
+    }
+    return 0;
+}
++ (int)getMinuteFormDate:(NSDate*)date {
+    NSArray *array = [NSDate getTimeAray:date];
+    if (array!= nil && array.count==3) {
+        return [[array objectAtIndex:1] intValue];
+    }
+    return 0;
+}
++ (int)getSecondFormDate:(NSDate*)date {
+    NSArray *array = [NSDate getTimeAray:date];
+    if (array!= nil && array.count==3) {
+        return [[array objectAtIndex:2] intValue];
+    }
+    return 0;
+}
 +(NSArray*)getDateAray:(NSDate*)date{
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:DateFormatter];
@@ -80,6 +101,16 @@ static NSDateFormatter *dateFormatter;
     NSArray *array = [dateString componentsSeparatedByString:@"-"];
     if (array == nil || array.count <3) {
         array = [NSArray arrayWithObjects:@"2017",@"1",@"1", nil];
+    }
+    return array;
+}
++(NSArray*)getTimeAray:(NSDate*)date{
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:TimeFormatter2];
+    NSString *dateString = [dateFormatter stringFromDate:date];
+    NSArray *array = [dateString componentsSeparatedByString:@":"];
+    if (array == nil || array.count <3) {
+        array = [NSArray arrayWithObjects:@"0",@"0",@"0", nil];
     }
     return array;
 }

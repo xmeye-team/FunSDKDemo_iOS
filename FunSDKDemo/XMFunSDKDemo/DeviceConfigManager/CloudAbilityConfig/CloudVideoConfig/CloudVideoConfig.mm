@@ -9,11 +9,13 @@
 #import "CloudVideoConfig.h"
 #import "FunSDK/FunSDK.h"
 #import "FunSDK/Fun_CM.h"
+#import "TimeInfo.h"
 
 @interface CloudVideoConfig ()
 {
     NSMutableArray *fileArray;  //搜索某一天的云视频数组结果
     NSMutableArray *dateArray; //搜索某一个月哪些天有云视频的结果数组
+    NSMutableArray *timeArray;
 }
 @end
 
@@ -39,6 +41,7 @@
 #pragma mark  获取传入日期云存储中的云视频
 - (void)searchCloudVideo:(NSDate*)date {
     fileArray = [[NSMutableArray alloc] initWithCapacity:0];
+    timeArray = [[NSMutableArray alloc] initWithCapacity:0];
     ChannelObject *channel = [[DeviceControl getInstance] getSelectChannel];
     self.devID = channel.deviceMac;
     SDK_SYSTEM_TIME beginNTime;
@@ -128,7 +131,13 @@
     }
     return [NSMutableArray array];
 }
-
+#pragma mark 读取这一天有录像的时间段
+- (NSMutableArray*)getVideoTimeArray {
+    if (timeArray) {
+        return timeArray;
+    }
+    return [NSMutableArray array];
+}
 #pragma mark - OnFunSDKResult
 -(void)OnFunSDKResult:(NSNumber *)pParam{
     
@@ -173,12 +182,16 @@
             break;
 #pragma mark 搜索云视频文件回调
         case EMSG_MC_SearchMediaByTime:{
+            NSInteger _add = 0;
             if ( msg->param1 < 0) {
             }else{
                 NSData *data = [[[NSString alloc]initWithUTF8String:msg->szStr] dataUsingEncoding:NSUTF8StringEncoding];
                 if ( data == nil ){
                     if ([self.delegate respondsToSelector:@selector(getCloudVideoResult:)]) {
                         [self.delegate getCloudVideoResult:msg->param1];
+                    }
+                    if ([self.timeDelegate respondsToSelector:@selector(getCloudVideoTimeResult:)]) {
+                        [self.timeDelegate getCloudVideoTimeResult:msg->param1];
                     }
                     return;
                 }
@@ -187,12 +200,18 @@
                     if ([self.delegate respondsToSelector:@selector(getCloudVideoResult:)]) {
                         [self.delegate getCloudVideoResult:msg->param1];
                     }
+                    if ([self.timeDelegate respondsToSelector:@selector(getCloudVideoTimeResult:)]) {
+                        [self.timeDelegate getCloudVideoTimeResult:msg->param1];
+                    }
                     return;
                 }
                 NSDictionary *body = [[appData objectForKey:@"AlarmCenter"] objectForKey:@"Body"];
                 if ( body == nil) {
                     if ([self.delegate respondsToSelector:@selector(getCloudVideoResult:)]) {
                         [self.delegate getCloudVideoResult:msg->param1];
+                    }
+                    if ([self.timeDelegate respondsToSelector:@selector(getCloudVideoTimeResult:)]) {
+                        [self.timeDelegate getCloudVideoTimeResult:msg->param1];
                     }
                     return;
                 }
@@ -201,7 +220,15 @@
                     if ([self.delegate respondsToSelector:@selector(getCloudVideoResult:)]) {
                         [self.delegate getCloudVideoResult:msg->param1];
                     }
+                    if ([self.timeDelegate respondsToSelector:@selector(getCloudVideoTimeResult:)]) {
+                        [self.timeDelegate getCloudVideoTimeResult:msg->param1];
+                    }
                     return;
+                }
+                if (self.timeDelegate) {
+                    for (int i = 0; i < 1440; i ++) {
+                        [self createVideoDataWithType:TYPE_NONE andStartTime:(i*60) andEndTime:((i*60) + 60) toArray:timeArray];
+                    }
                 }
                 for (int i = 0; i<videoArray.count; i++) {
                     CLouldVideoResource* resource = [[CLouldVideoResource alloc] init];
@@ -224,19 +251,48 @@
                     resource.indexFile = [infoDic objectForKey:@"IndexFile"];
                     
                     NSArray *dateArray = [beginDateString componentsSeparatedByString:@"-"];
-                    NSArray *timeArray = [beginTimeStr componentsSeparatedByString:@":"];
+                    NSArray *timeArrays = [beginTimeStr componentsSeparatedByString:@":"];
                     
                     resource.year = [[dateArray firstObject] intValue];
                     resource.month = [dateArray[1] intValue];
                     resource.day = [[dateArray lastObject] intValue];
-                    resource.hour = [[timeArray firstObject] intValue];
-                    resource.minute = [timeArray[1] intValue];
-                    resource.second =[[timeArray lastObject] intValue];
-                    [fileArray addObject:resource];
+                    resource.hour = [[timeArrays firstObject] intValue];
+                    resource.minute = [timeArrays[1] intValue];
+                    resource.second =[[timeArrays lastObject] intValue];
+                    
+                    if (self.delegate) { //设备云视频配置界面查询
+                        [fileArray addObject:resource];
+                    }else if (self.timeDelegate) { //云视频回放查询录像时间
+                        int startTime = resource.minute + resource.hour *60;
+                        NSArray *endtimeArray = [stopTimeStr componentsSeparatedByString:@":"];
+                        int endMin = 0;
+                        int endHou = 0;
+                        if (endtimeArray.count >= 2) {
+                            endMin =[[endtimeArray objectAtIndex:1] intValue];
+                            endHou =[[endtimeArray firstObject] intValue];
+                        }
+                        int endTime = endHou *60 + endMin;
+                        for (int i = 0; i< endTime-startTime+1; i++) {
+                            TimeInfo *info = [[TimeInfo alloc] init];
+                            info.type = TYPE_NORMAL;
+                            info.start_Time = (startTime+i)*60;
+                            info.end_Time = ((startTime+i) + 1)*60;
+                            if (timeArray.count > startTime+i) {
+                                [timeArray replaceObjectAtIndex:startTime+i withObject:info];
+                            }
+                            _add = (startTime+i-1)*60/4;
+                        }
+                    }
                 }
             }
             if ([self.delegate respondsToSelector:@selector(getCloudVideoResult:)]) {
                 [self.delegate getCloudVideoResult:msg->param1];
+            }
+            if ([self.timeDelegate respondsToSelector:@selector(addTimeDelegate:)]) {
+                [self.timeDelegate addTimeDelegate:_add];
+            }
+            if ([self.timeDelegate respondsToSelector:@selector(getCloudVideoTimeResult:)]) {
+                [self.timeDelegate getCloudVideoTimeResult:msg->param1];
             }
         }
             break;
@@ -310,5 +366,15 @@
     [jsonString stringByReplacingOccurrencesOfString:@"\n" withString:@""];
     
     return jsonString;
+}
+
+//存储到 _array_Video数组中
+-(void)createVideoDataWithType:(enum Video_Type)type andStartTime:(int)ss  andEndTime:(int)es toArray:(NSMutableArray *)array {
+    //开辟内存
+    TimeInfo *info = [[TimeInfo alloc] init];
+    info.type = type;
+    info.start_Time = ss;
+    info.end_Time = es;
+    [array addObject:info];
 }
 @end

@@ -27,8 +27,6 @@
     //默认账号
     self.userNameTf.text = @"zz6831854";
     self.passwordTf.text = @"6831854";
-//    self.userNameTf.text = @"太阳很好";
-//    self.passwordTf.text = @"qwe12345";
     
     //实时检测用户名是否已经记录过
     [self.userNameTf addTarget:self action:@selector(onUserNameChanged) forControlEvents:UIControlEventEditingChanged];

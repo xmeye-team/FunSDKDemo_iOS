@@ -647,6 +647,7 @@ device_storage=设备存储管理
 About_Device=关于设备
 Equipment_Update=设备升级
 photos=APP相册
+Cloud_video=云视频
 Cloud_storage=云服务
 not_suport=不支持
 not_opened=未开通

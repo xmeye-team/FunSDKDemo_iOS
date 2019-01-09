@@ -29,12 +29,21 @@
 - (void)downloadCloudVideoComplete:(int)result path:(NSString*)path;
 
 @end
+@protocol CloudVideoTimeDelegate <NSObject>
+@optional
+//获取云视频信息代理回调
+- (void)getCloudVideoTimeResult:(NSInteger)result;
+//获取云视频时间代理回调
+- (void)addTimeDelegate:(NSInteger)add;
+
+@end
 #import "ConfigControllerBase.h"
 #import "CLouldVideoResource.h"
 
 @interface CloudVideoConfig : ConfigControllerBase
 
 @property (nonatomic, assign) id <CloudVideoConfigDelegate> delegate;
+@property (nonatomic, assign) id <CloudVideoTimeDelegate> timeDelegate;
 
 #pragma mark - 获取传入这一天当月有云视频的日期
 - (void)getCloudVideoMonth:(NSDate*)date;
@@ -50,5 +59,7 @@
 - (NSMutableArray*)getMonthVideoArray;
 #pragma mark  读取获取到的传入一天中的云视频数组
 - (NSMutableArray*)getCloudVideoFileArray;
+#pragma mark 读取这一天有录像的时间段
+- (NSMutableArray*)getVideoTimeArray;
 @end
 

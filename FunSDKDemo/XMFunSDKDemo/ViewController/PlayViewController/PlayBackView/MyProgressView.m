@@ -206,8 +206,7 @@
         
         
     }
-    else if (self.type == UNIT_TYPE_SECOND)
-    {
+    else if (self.type == UNIT_TYPE_SECOND) {
         
         // 绘制下标和单位
         TimeInfo *info1 = [self.dataArray objectAtIndex:self.leftN];

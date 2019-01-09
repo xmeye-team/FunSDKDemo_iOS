@@ -55,9 +55,9 @@
     beginTime.year = [NSDate getYearFormDate:date];
     beginTime.month = [NSDate getMonthFormDate:date];
     beginTime.day = [NSDate getDayFormDate:date];
-    beginTime.hour =0;
-    beginTime.minute = 0;
-    beginTime.second = 0;
+    beginTime.hour = [NSDate getHourFormDate:date];
+    beginTime.minute = [NSDate getMinuteFormDate:date];
+    beginTime.second = [NSDate getSecondFormDate:date];
     
     endTime.year = [NSDate getYearFormDate:date];
     endTime.month = [NSDate getMonthFormDate:date];

@@ -46,7 +46,6 @@
     if (result < 0) {
         [MessageUI ShowErrorInt:(int)result];
     }else{
-        [SVProgressHUD dismiss];
         thumbPath = path;
         [tableV reloadData];
     }
@@ -57,7 +56,6 @@
     if (result <0) {
         [MessageUI ShowErrorInt:result];
     }else{
-        [SVProgressHUD dismiss];
     }
 }
 #pragma mark 下载视频进度
@@ -69,8 +67,9 @@
 }
 #pragma mark 下载视频完成
 - (void)downloadCloudVideoComplete:(int)result path:(NSString*)path {
+    [SVProgressHUD dismiss];
     progres = 1;
-    videoPath = path;
+    videoPath = @"";
     [tableV reloadData];
 }
 

@@ -207,7 +207,7 @@
 }
 
 #pragma mark - 修改设备密码
-- (void)changeDevicePsw:(NSString *)devMac devName:(NSString *)name password:(NSString *)psw {
+- (void)changeDevicePsw:(NSString *)devMac loginName:(NSString *)name password:(NSString *)psw {
     FUN_DevSetLocalPwd(SZSTR(devMac),SZSTR(name), SZSTR(psw));
 }
 

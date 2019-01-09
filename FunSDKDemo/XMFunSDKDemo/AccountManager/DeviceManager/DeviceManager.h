@@ -89,7 +89,7 @@
 #pragma mark - 修改设备信息 name:设备名称，user：设备用户名，默认admin，psw：用户密码
 - (void)changeDevice:(NSString *)devMac devName:(NSString *)name username:(NSString *)user password:(NSString *)psw;
 #pragma mark - 修改设备密码
-- (void)changeDevicePsw:(NSString *)devMac devName:(NSString *)name password:(NSString *)psw;
+- (void)changeDevicePsw:(NSString *)devMac loginName:(NSString *)name password:(NSString *)psw;
 #pragma mark - 删除设备
 - (void)deleteDeviceWithDevMac:(NSString *)devMac;
 #pragma mark - 判断是否是主账号

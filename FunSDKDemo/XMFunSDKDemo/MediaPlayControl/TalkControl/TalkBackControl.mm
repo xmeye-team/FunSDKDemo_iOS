@@ -19,7 +19,8 @@
     //先停止音频
     FUN_MediaSetSound(_handle, 0, 0);
     if (_hTalk == 0) {
-        _hTalk =FUN_DevStarTalk(self.msgHandle, [self.deviceMac UTF8String]);
+//        FUN_DevStarTalk(self.msgHandle, [self.deviceMac UTF8String]);
+       _hTalk = FUN_DevStarTalk(self.msgHandle, [self.deviceMac UTF8String], FALSE, 0, 0);
     }
     const char *str = "{\"Name\":\"OPTalk\",\"OPTalk\":{\"Action\":\"PauseUpload\"},\"SessionID\":\"0x00000002\"}";
     FUN_DevCmdGeneral(self.msgHandle, [self.deviceMac UTF8String], 1430, "PauseUpload", 0, 0, (char*)str, 0, -1, 0);

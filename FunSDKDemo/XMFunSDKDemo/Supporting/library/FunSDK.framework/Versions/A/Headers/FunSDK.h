@@ -226,7 +226,7 @@ void Fun_Crash(char *crashInfo);
 * 方法名: FunSDK编译版本信息
 * 描  述: FunSDK编译版本日期，版本号
 * 返回值:
-*      date=%s&time=%s&number=1.0.0  日期&时间&FunSDK版本号
+*      compiletime=%s&number=1.0.1  编译日期&FunSDK版本号
 *      版本号组成：1.0.0：主版本号.次版本号.修订号
 *      		         主版本号：全盘重构时增加；重大功能或方向改变时增加；大范围不兼容之前的接口时增加；
 *			         次版本号：增加新的业务功能时增加；

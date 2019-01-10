@@ -167,7 +167,7 @@
 }
 
 #pragma mark - funsdk回调处理
--(void)getLogoWidgetResult:(BOOL)result{
+-(void)getLogoWidgetResult:(NSInteger)result{
     if (result > 0) {
         //成功，刷新界面数据
         [tableView reloadData];
@@ -177,7 +177,7 @@
     }
 }
 
--(void)getOsdLogoConfigResult:(BOOL)result{
+-(void)getOsdLogoConfigResult:(NSInteger)result{
     if (result > 0) {
         //成功，刷新界面数据
         [tableView reloadData];
@@ -187,7 +187,7 @@
     }
 }
 
--(void)setLogoWidgetResult:(BOOL)result{
+-(void)setLogoWidgetResult:(NSInteger)result{
     if (result > 0) {
         //成功
         [SVProgressHUD dismissWithSuccess:TS("Success")];
@@ -196,7 +196,7 @@
     }
 }
 
--(void)setOsdLogoConfigResult:(BOOL)result{
+-(void)setOsdLogoConfigResult:(NSInteger)result{
     if (result > 0) {
         //成功
         [SVProgressHUD dismissWithSuccess:TS("Success")];

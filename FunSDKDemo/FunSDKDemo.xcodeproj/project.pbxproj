@@ -323,6 +323,8 @@
 		203BD11B21DF602D005B91E9 /* BuzzerConfig.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = BuzzerConfig.mm; sourceTree = "<group>"; };
 		203BD12621DF7515005B91E9 /* BuzzerViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BuzzerViewController.mm; sourceTree = "<group>"; };
 		203BD12721DF7515005B91E9 /* BuzzerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuzzerViewController.h; sourceTree = "<group>"; };
+		2910675421E6DB1D00FD3E56 /* libz.1.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.tbd; path = usr/lib/libz.1.tbd; sourceTree = SDKROOT; };
+		2910675621E6DB5100FD3E56 /* libiconv.2.4.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.2.4.0.tbd; path = usr/lib/libiconv.2.4.0.tbd; sourceTree = SDKROOT; };
 		291E429E21A3A1F8009A73BE /* FunSDKDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FunSDKDemo.entitlements; sourceTree = "<group>"; };
 		2939951121CA1BE2004FC87C /* WaterMarkViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WaterMarkViewController.h; sourceTree = "<group>"; };
 		2939951221CA1BE2004FC87C /* WaterMarkViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = WaterMarkViewController.mm; sourceTree = "<group>"; };
@@ -921,10 +923,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96FF06BE21E4A249006CFBA3 /* libbz2.tbd in Frameworks */,
 				5C78C27D1F53F0E5003CC286 /* libc.tbd in Frameworks */,
 				96FF06C221E4A263006CFBA3 /* libiconv.tbd in Frameworks */,
 				96FF06C021E4A254006CFBA3 /* libresolv.tbd in Frameworks */,
-				96FF06BE21E4A249006CFBA3 /* libbz2.tbd in Frameworks */,
 				96FF06BC21E4A240006CFBA3 /* libz.tbd in Frameworks */,
 				96FF06BA21E4A21B006CFBA3 /* libsqlite3.0.tbd in Frameworks */,
 				96EFBD3D21BE029A005EBA5A /* libstdc++.6.0.9.tbd in Frameworks */,
@@ -1069,6 +1071,8 @@
 		8221433B198F0FAC009AEEB3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2910675621E6DB5100FD3E56 /* libiconv.2.4.0.tbd */,
+				2910675421E6DB1D00FD3E56 /* libz.1.tbd */,
 				96FF06C121E4A263006CFBA3 /* libiconv.tbd */,
 				96FF06BF21E4A254006CFBA3 /* libresolv.tbd */,
 				96FF06BD21E4A249006CFBA3 /* libbz2.tbd */,

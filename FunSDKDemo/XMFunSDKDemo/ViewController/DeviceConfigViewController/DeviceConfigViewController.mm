@@ -234,14 +234,14 @@
                               @{@"title":TS("Alarm_message_push"),@"detailInfo":@""},
                               @{@"title":TS("About_Device"),@"detailInfo":@""},
                               @{@"title":TS("Equipment_Update"),@"detailInfo":@""},
-                              @{@"title":@"GB配置",@"detailInfo":@""},
-                              @{@"title":@"Json和DevCmd调试",@"detailInfo":@""},
-                              @{@"title":@"鱼眼信息",@"detailInfo":@""},
                               @{@"title":TS("AnalyzeConfig"),@"detailInfo":@""},
                               @{@"title":TS("Cloud_storage"),@"detailInfo":@""},
                               @{@"title":TS("Encoding_format"),@"detailInfo":@""},
                               @{@"title":TS("Watermark_setting"),@"detailInfo":@""},
                               @{@"title":TS("Buzzer_setting"),@"detailInfo":@""},
-                              @{@"title":TS("appEventHumanDetectAlarm"),@"detailInfo":@""}];
+                              @{@"title":TS("appEventHumanDetectAlarm"),@"detailInfo":@""},
+                              @{@"title":@"GB配置",@"detailInfo":@""},
+                              @{@"title":@"Json和DevCmd调试",@"detailInfo":@""},
+                              @{@"title":@"鱼眼信息",@"detailInfo":@""}];
 }
 @end

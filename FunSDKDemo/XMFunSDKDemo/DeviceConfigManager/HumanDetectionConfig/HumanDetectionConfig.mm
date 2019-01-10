@@ -14,7 +14,7 @@
     Detect_HumanDetectionDVR humanDetectionDVR;   //人形检测
 }
 
-#pragma mark - 获取人形检测能力级
+#pragma mark - 获取人形检测配置
 -(void)getHumanDetectConfig{
     //获取通道
     ChannelObject *channel = [[DeviceControl getInstance] getSelectChannel];
@@ -24,7 +24,7 @@
     [self GetConfig];
 }
 
-#pragma mark - 回调
+#pragma mark - 获取配置回调
 -(void)OnGetConfig:(CfgParam *)param{
     [super OnGetConfig:param];
     if ([param.name isEqualToString:[NSString stringWithUTF8String:humanDetectionDVR.Name()]]){
@@ -34,7 +34,7 @@
     }
 }
 
-#pragma mark 保存配置回调信息
+#pragma mark 保存配置回调
 - (void)OnSetConfig:(CfgParam *)param {
      if ([param.name isEqualToString:[NSString stringWithUTF8String:humanDetectionDVR.Name()]]){
          if (self.delegate && [self.delegate respondsToSelector:@selector(HumanDetectionConfigSetResult:)]) {
@@ -43,22 +43,22 @@
      }
 }
 
-#pragma mark - 获取人形检测报警功能开关状态
+#pragma mark - 读取人形检测报警功能开关状态
 -(int)getHumanDetectEnable{
     return humanDetectionDVR.Enable.Value();
 }
 
-#pragma mark - 获取人形检测报警录像开关状态
+#pragma mark - 读取人形检测报警录像开关状态
 -(int)getHumanDetectRecordEnable{
     return humanDetectionDVR.mEventHandler.RecordEnable.Value();
 }
 
-#pragma mark - 获取人形检测报警抓图开关状态
+#pragma mark - 读取人形检测报警抓图开关状态
 -(int)getHumanDetectSnapEnable{
     return humanDetectionDVR.mEventHandler.SnapEnable.Value();
 }
 
-#pragma mark - 获取人形检测手机推送开关状态
+#pragma mark - 读取人形检测手机推送开关状态
 -(int)getHumanDetectMessageEnable{
     return humanDetectionDVR.mEventHandler.MessageEnable.Value();
 }

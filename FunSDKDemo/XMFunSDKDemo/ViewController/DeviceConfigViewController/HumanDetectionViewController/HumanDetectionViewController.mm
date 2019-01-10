@@ -131,11 +131,9 @@
 }
 
 #pragma mark - 获取配置回调
--(void)HumanDetectionConfigGetResult:(BOOL)result{
-    if (result > 0) {
+-(void)HumanDetectionConfigGetResult:(NSInteger)result{
+    if (result >0) {
         //成功，刷新界面数据
-        [titleArray removeAllObjects];
-        titleArray = [[NSMutableArray alloc] initWithObjects:TS("Alarm_function"),TS("Alarm_video"),TS("Alarm_picture"),TS("Send_to_phone"),nil];
         [tableView reloadData];
         [SVProgressHUD dismiss];
     }else{
@@ -143,7 +141,7 @@
     }
 }
 
--(void)HumanDetectionConfigSetResult:(BOOL)result{
+-(void)HumanDetectionConfigSetResult:(NSInteger)result{
     if (result > 0) {
         //成功
         [SVProgressHUD dismissWithSuccess:TS("Success")];
@@ -152,15 +150,10 @@
     }
 }
 
-#pragma mark - 界面和数据初始化
--(void)initDataSource {
-    titleArray = [[NSMutableArray alloc] initWithCapacity:0];
-}
-
 - (void)configSubView {
     UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave  target:self action:@selector(saveConfig)];
     self.navigationItem.rightBarButtonItem = rightButton;
-    [self.view addSubview:tableView];
+    [self.view addSubview:self.tableView];
 }
 
 - (UITableView *)tableView {
@@ -170,9 +163,13 @@
         tableView.dataSource = self;
         [tableView registerClass:[ItemTableviewCell class] forCellReuseIdentifier:@"ItemTableviewCell"];
     }
-    
     return tableView;
 }
 
+
+#pragma mark - 界面和数据初始化
+-(void)initDataSource {
+    titleArray = [[NSMutableArray alloc] initWithObjects:TS("Alarm_function"),TS("Alarm_video"),TS("Alarm_picture"),TS("Send_to_phone"),nil];
+}
 
 @end

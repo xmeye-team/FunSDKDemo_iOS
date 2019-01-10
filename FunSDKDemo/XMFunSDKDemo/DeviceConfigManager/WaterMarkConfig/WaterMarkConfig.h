@@ -22,13 +22,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 @optional
 //获取官方水印回调
--(void)getOsdLogoConfigResult:(BOOL)result;
+-(void)getOsdLogoConfigResult:(NSInteger)result;
 //获取自定义水印信息回调
--(void)getLogoWidgetResult:(BOOL)result;
+-(void)getLogoWidgetResult:(NSInteger)result;
 //设置官方水印回调
--(void)setOsdLogoConfigResult:(BOOL)result;
+-(void)setOsdLogoConfigResult:(NSInteger)result;
 //设置自定义水印信息回调
--(void)setLogoWidgetResult:(BOOL)result;
+-(void)setLogoWidgetResult:(NSInteger)result;
 
 @end
 

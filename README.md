@@ -20,7 +20,7 @@ GitHub下载的代码，supporting/library文件夹中FunSDK.Framework可能是�
 ## FunSDKDemo流程图
 
 程序功能界面和操作流程可以参考 FunSDKDemo流程图chart.pdf 文件
-
+![Demo](FunSDK_Demo_iOS_Guide.png)
 
 ## 其他说明
 

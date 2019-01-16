@@ -4,9 +4,9 @@ FunSDK(手机客户端SDK)Demo for iOS
 ## 开发环境
 
 |系统工具|最低版本|
-| - | - | - |
-Mac OS | 10.13.6     
-XCODE | 9.4.1 
+|--|--|
+|Mac OS | 10.13.6|     
+|XCODE | 9.4.1|
 
 ## 开发准备
  第一次使用FunSDKDemo之前，请先登录雄迈开放平台，http://docs-open.xmeye.net/#/  并仔细阅读新手指南和各项说明。 

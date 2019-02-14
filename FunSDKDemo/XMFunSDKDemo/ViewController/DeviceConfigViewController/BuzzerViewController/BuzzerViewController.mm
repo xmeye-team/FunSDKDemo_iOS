@@ -80,8 +80,12 @@
 }
 
 #pragma mark --setConfigAboutDeviceBuzzerStateResult
-- (void)setDeviceBuzzerAlarmConfigResult{
-    [SVProgressHUD showSuccessWithStatus:TS("config_Save_Success") duration:1.5f];
+- (void)setDeviceBuzzerAlarmConfigResult:(int)result{
+    if (result <0) {
+        [MessageUI ShowErrorInt:result];
+    }else{
+        [SVProgressHUD showSuccessWithStatus:TS("config_Save_Success") duration:1.5f];
+    }
 }
 
 #pragma mark -- UITableViewDelegate/DataSource

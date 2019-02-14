@@ -20,6 +20,10 @@
 #define APPSECRET "672f645441b14a259356d027a6b8853f"   //内容保护参数
 #define MOVECARD 5   //内容保护参数
 
+//#define UUID  "79279113d6fc4bfcbd7a4a81705b1e53"
+//#define APPKEY "56f0aaa189054b4aa74ff64f35f5b957"
+//#define APPSECRET "03a83c7b448f4aedb978948bd3faa826"
+//#define MOVECARD 2 //4
 
 #define SZSTR(x)    [x UTF8String]
 #define NSSTR(x)    [NSString ToNSStr:x]

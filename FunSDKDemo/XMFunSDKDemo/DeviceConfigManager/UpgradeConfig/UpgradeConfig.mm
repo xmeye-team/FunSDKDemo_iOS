@@ -30,6 +30,7 @@
 -(void)upgradeStartDevice {
     if (dataSource.cState != CheckStateComplete || dataSource.upState == upgradeStateDownload) {
         //不是可更新状态或者正在下载中的话，直接return
+        [SVProgressHUD dismissWithError:TS("last_Version")];
         return;
     }
     //获取通道，开始升级

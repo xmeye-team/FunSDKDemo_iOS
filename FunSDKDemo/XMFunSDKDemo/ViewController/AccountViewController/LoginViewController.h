@@ -25,4 +25,6 @@
 - (IBAction)cloudLogin;
 - (IBAction)localLogin;
 - (IBAction)apLogin:(id)sender;
+
+- (IBAction)registerUser;
 @end

@@ -7,7 +7,7 @@
 //
 
 #import "LoginViewController.h"
-
+#import "RegisterViewController.h"
 #import "UserAccountModel.h"
 @interface LoginViewController () <UserAccountModelDelegate>
 {
@@ -23,10 +23,6 @@
     //账号相关功能接口管理器
     accountModel = [[UserAccountModel alloc] init];
     accountModel.delegate = self;
-    
-    //默认账号
-    self.userNameTf.text = @"zz6831854";
-    self.passwordTf.text = @"6831854";
     
     //实时检测用户名是否已经记录过
     [self.userNameTf addTarget:self action:@selector(onUserNameChanged) forControlEvents:UIControlEventEditingChanged];
@@ -86,7 +82,10 @@
     [SVProgressHUD showWithMaskType:SVProgressHUDMaskTypeBlack];
     [accountModel loginWithTypeAP];
 }
-
+- (IBAction)registerUser {
+    RegisterViewController *registerVC = [[RegisterViewController alloc] init];
+    [self.navigationController pushViewController:registerVC animated:YES];
+}
 #pragma mark 登录结果回调,result 结果信息，一般<0是失败，>=0是成功
 - (void)loginWithNameDelegate:(long)reslut {
     [SVProgressHUD dismiss];

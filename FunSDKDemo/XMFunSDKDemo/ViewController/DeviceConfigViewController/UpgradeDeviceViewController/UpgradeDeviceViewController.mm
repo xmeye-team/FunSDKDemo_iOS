@@ -110,6 +110,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSString *titleStr = titleArray[indexPath.row];
     if ([titleStr isEqualToString:TS("Equipment_Update")]) {
+        [SVProgressHUD show];
         //开始升级设备
         [config upgradeStartDevice];
     }

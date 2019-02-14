@@ -22,7 +22,7 @@
 - (void)getDeviceBuzzerAlarmConfigResult:(BOOL)AlarmBellState;
 
 #pragma mark 保存设备报警配置结果回调
-- (void)setDeviceBuzzerAlarmConfigResult;
+- (void)setDeviceBuzzerAlarmConfigResult:(int)result;
 
 @end
 

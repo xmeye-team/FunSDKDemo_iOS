@@ -7,7 +7,7 @@
 //
 /***
  
-设备和通道信息的内存控制器，仅仅是控制内存信息
+设备和通道信息的内存控制器，仅仅是控制内存信息，并不能用来获取设备在线状态、通道信息等等，获取设备通道信息、在线状态的方法在DeviceManager中
  
  *****/
 #import <Foundation/Foundation.h>
@@ -25,7 +25,7 @@
 - (void)checkDeviceValid;
 #pragma mark 保存设备到本地存储
 - (void)saveDeviceList;
-#pragma mark  通过序列号获取deviceObject对象
+#pragma mark  通过序列号获取deviceObject对象,这个只是读取设备对象，设备的在线状态和通道信息等需要使用DeviceManager中的接口先行获取
 - (DeviceObject *)GetDeviceObjectBySN:(NSString *)devSN;
 #pragma mark 初始化channelObject对象
 - (ChannelObject *)addName:(NSString*)channelName ToDeviceObject:(DeviceObject*)devObject;

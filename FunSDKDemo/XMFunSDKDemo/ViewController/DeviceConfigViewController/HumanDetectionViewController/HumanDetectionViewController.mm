@@ -132,7 +132,7 @@
 
 #pragma mark - 获取配置回调
 -(void)HumanDetectionConfigGetResult:(NSInteger)result{
-    if (result >0) {
+    if (result >= 0) {
         //成功，刷新界面数据
         [tableView reloadData];
         [SVProgressHUD dismiss];
@@ -142,7 +142,7 @@
 }
 
 -(void)HumanDetectionConfigSetResult:(NSInteger)result{
-    if (result > 0) {
+    if (result >= 0) {
         //成功
         [SVProgressHUD dismissWithSuccess:TS("Success")];
     }else{

@@ -48,11 +48,13 @@
                         if (self.delegate && [self.delegate respondsToSelector:@selector(getDeviceBuzzerAlarmConfigResult:)]) {
                             [self.delegate getDeviceBuzzerAlarmConfigResult:AlarmBellState];
                         }
+                    }else{
+                        [MessageUI ShowErrorInt:msg->param1];
                     }
                 }else if (msg->param3 == 1040){
 #pragma mark -- 设置蜂鸣播放状态结果回调
-                    if (self.delegate && [self.delegate respondsToSelector:@selector(setDeviceBuzzerAlarmConfigResult)]) {
-                        [self.delegate setDeviceBuzzerAlarmConfigResult];
+                    if (self.delegate && [self.delegate respondsToSelector:@selector(setDeviceBuzzerAlarmConfigResult:)]) {
+                        [self.delegate setDeviceBuzzerAlarmConfigResult:msg->param1];
                     }
                 }
             }

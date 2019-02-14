@@ -12,7 +12,7 @@
 {
     NSMutableArray *deviceArray; //包含所有设备的数组
     NSMutableArray *channelPlayingArray; //即将播放的设备通道数组
-    NSInteger selectChannel; //当前预览通道数组中，正在处理的通道索引（多通道预览时生效，但通道预览时默认0）
+    NSInteger selectChannel; //当前预览通道数组中，正在处理的通道索引（多通道预览时生效，目前只添加了一个通道进行预览，所以默认0不需要设置）
 }
 @end
 @implementation DeviceControl
@@ -47,6 +47,7 @@
 
 #pragma mark - 将要预览的设备通道数组处理
 - (void)setPlayItem:(ChannelObject *)channel {
+    [channelPlayingArray removeAllObjects];
     [channelPlayingArray addObject:channel];
 }
 - (NSMutableArray *)getPlayItem {
